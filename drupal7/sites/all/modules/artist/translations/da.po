@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Artist\n"
+"POT-Creation-Date: 2010-05-31 14:39+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Martin Lütken <martin@lutken.dk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: artist_display_artist.inc:20
+msgid "Sorry artist"
+msgstr "Beklager kunstner"
+
+#: artist_display_artist.inc:20
+msgid "not found"
+msgstr "ikke fundet"
+
+#: artist_display_artist.inc:41
+msgid "Discography"
+msgstr "Diskografi"
+
+#: artist_display_artist.inc:74
+msgid "Album"
+msgstr "Album"
+
+#: artist_display_artist.inc:75
+msgid "Year"
+msgstr "År"
+
+#: artist_display_artist.inc:136
+msgid "album"
+msgstr "album"
+
+#: artist_display_artist.inc:145
+msgid "Name"
+msgstr "Navn"
+
+#: artist_display_artist.inc:146
+msgid "Time"
+msgstr "Tid"
+
+#: artist.module:24
+#: artist.info:0
+msgid "Artist"
+msgstr "Kunstner"
+
+#: artist.module:63
+msgid "More events on this day."
+msgstr "Flere hændelser denne dag"
+
+#: artist.module:64
+msgid "more"
+msgstr "mere"
+
+#: artist.module:84
+msgid "Maximum number of links"
+msgstr "Maksimalt antal links"
+
+#: artist.module:88
+msgid "The maximum number of links to display in the block."
+msgstr "Maks antal links der må vises i blokken."
+
+#: artist.module:120
+msgid "You must enter an integer for the maximum number of links."
+msgstr "Du skal indtaste et heltal for maks. antal links."
+
+#: artist.module:123
+msgid "Maximum number of links must be positive."
+msgstr "Maksimum antal links skal være et positivt heltal."
+
+#: artist.module:146
+msgid "Displays the artist page in AirplayMusic Drupal CMS"
+msgstr "Viser kunstner siden i AirplayMusic."
+
+#: artist.module:132
+msgid "access artist content"
+msgstr "access artist content"
+
+#: artist.module:100
+msgid "Artist module settings"
+msgstr "access artist content"
+
+#: artist.module:101
+msgid "Setup display settings for Artist pages"
+msgstr "Setup display settings for Artist pages"
+
+#: artist.info:0
+msgid "A module that displays the artist's page."
+msgstr "A module that displays the artist's page."
+
+#: artist.info:0
+msgid "Airplay"
+msgstr "Airplay"
+

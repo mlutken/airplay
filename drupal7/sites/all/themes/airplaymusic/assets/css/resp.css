@@ -1,0 +1,514 @@
+/* laptops/ desktop devices START */
+
+@media only screen and (min-width : 1024px) {
+}
+
+/* laptops/ desktop devices END */
+
+/*####################################################################################
+  TABPORT/SCREEN
+  ##################################################################################*/
+@media (min-width: 768px) and (max-width: 1035px) {
+
+.not-front .well { padding:19px 5px 65px 5px; }
+.user_settings .left, .user_settings .right { width:100%; }
+.user_settings .left .status .no, .user_settings .left .status .ok, .user_settings .left .status .error { margin: 7px 0px 8px 20px; }
+#profile_artists_sm .profile_artist, #profile_artists_ap .profile_artist { width: 49%; }
+#cookieInformerBooklet,
+#tabs .info_box_agent,
+#section_home #record_store_icon_section { display:none; }
+#section_home #guide_sections .guide_section .text { min-height: 130px; }
+#section_home #guide_sections .guide_section h2 { font-size:90%; }
+#section_home #guide_sections .guide_section_wrapper { margin: 0% 1.5%; padding: 0% 3%; width: 30%; }
+#section_home #guide_sections .guide_section { width:100%; }
+#section_home #music_search_desc .desc,
+#section_home #music_search_desc .icons { float:left;	width: 100%;	padding:20px; }
+.header-wrapper .container .logo,
+.header-wrapper .container .top_menu { 	margin:0px; padding:0px; width:95%; }
+.txtfield_wrapper h2 { font-size: 1.5em; }
+.list-price-table td { padding: 15px 6px; }
+.list-price-table th, .list-price-table td { font-size: 1.1em; }
+.row-fluid .span4 { width:22%; }
+#logo { width:275px; height:43px; }
+#artist_wiki .streaming_dropdown .streaming_wimp,
+#artist_wiki .streaming_dropdown .streaming_deezer,
+#artist_wiki .streaming_dropdown .streaming_rdio,
+#artist_wiki .streaming_dropdown .streaming_spotify,
+#artist_wiki .streaming_dropdown .streaming_napster,
+#album_wiki .streaming_dropdown .streaming_wimp,
+#album_wiki .streaming_dropdown .streaming_deezer,
+#album_wiki .streaming_dropdown .streaming_rdio,
+#album_wiki .streaming_dropdown .streaming_spotify,
+#album_wiki .streaming_dropdown .streaming_napster,
+#song_wiki .streaming_dropdown .streaming_wimp, 
+#song_wiki .streaming_dropdown .streaming_deezer, 
+#song_wiki .streaming_dropdown .streaming_rdio, 
+#song_wiki .streaming_dropdown .streaming_spotify, 
+#song_wiki .streaming_dropdown .streaming_napster { width:20%; }
+/* GUIDE PAGES */
+#festival_guide { width:90%; float:left; }
+#festival_guide #artists .item, #festival_guide #festivals .item, #festival_guide #selected_filters .item,
+#concert_guide #artists .item, #concert_guide #concerts .item, #concert_guide #intervals .item { float:left; line-height:27px; color:#E55D09; width:49%; overflow: hidden; white-space: nowrap; padding:0px 5px 0px 5px; font-size: 115%; }
+#festival_guide #artists .selected, #festival_guide #festivals .selected, #festival_guide #selected_filters .selected,
+#concert_guide #artists .selected, #concert_guide #concerts .selected,
+#concert_guide #intervals .selected, #concert_guide #intervals .selected a,
+#shop_guide #countries .selected, #shop_guide #countries .selected a,
+#shop_guide #media_formats .selected, #shop_guide #media_formats .selected a,
+#shop_guide #record_store_type .selected, #shop_guide #record_store_type .selected a {  color:#000000; }
+#festival_guide #filters .alphabet .items .item,
+#concert_guide #filters .alphabet .items .item { width:25px;  float: left; font-size:100%; }
+#festival_guide #festivalcontainers #containers .list_container .header .icons { float:right; width:15%; line-height:28px; height:28px; }
+#concert_guide, #festival_guide, #section_guides #tabs { width:100%; float:left; }
+#festival_guide #filters_text div,
+#concert_guide #filters_text div { background-color: #272221; width:33%; float:left; height: 42px; line-height: 42px; text-align:center; }
+/* footer */
+.footerfield_container #social_media .label { padding:10px 0px 10px 10px; }
+.footerfield_container #social_media .icons { padding:0px 0px 0px 0px; width: 100%; position:relative; }
+.footerfield_container #social_media .icons #facebook,
+.footerfield_container #social_media .icons #google_plus,
+.footerfield_container #social_media .icons #linkedin,
+.footerfield_container #social_media .icons #twitter { position: absolute; top: 50%; left: 50%; margin-top: 0px; }
+.footerfield_container #social_media .icons #facebook { margin-left: -65px; }
+.footerfield_container #social_media .icons #google_plus { margin-left: -35px; }
+.footerfield_container #social_media .icons #linkedin { margin-left: -5px; }
+.footerfield_container #social_media .icons #twitter { margin-left: 25px; }
+.footerfield_container .content ul.menu { margin: 0px 0px 0px 15px; }
+.footer-wrapper h2,
+.footertxt_right .content h2 { padding: 0px 0px 0px 15px; }
+.footer-wrapper ul a { font-size: 1.0em; line-height: 2em; }
+.footer-wrapper ul.menu li { padding:0px; margin:0px; }
+.footer-wrapper .footertxt_right ul li.leaf { padding:0px 0px 0px 10px; margin:0px; }
+}
+/* tablet/ screen devices END */
+
+
+/*####################################################################################
+  TABLET
+  ##################################################################################*/
+@media (max-width:767px) {
+
+/*
+.txtfield_wrapper h2 {
+  margin-bottom: 0px;
+  border-top: 2px solid #e65e08;
+  border-bottom: none;
+  padding-top: 10px;
+}
+.txtfield p {
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+*/
+
+/* Header */
+
+.header-wrapper .container .logo,
+.header-wrapper .container .top_menu { margin:0px; padding:0px; width:95%; }
+#logo { margin: 0px 5% 30px 5%; width:220px; height:34px; }
+
+
+/* Site layout */
+
+.well { padding: 2%; width: 100%; }
+.not-front .well { padding:19px 5px 65px 5px; }
+.well td {  vertical-align: top; }
+.well h1 { font-size: 1.8em; }
+.addthis_default_style,
+.list-price-intro,
+#node-8 img,
+#banner_right_120x600,
+.list-price-table .list-artist-album .album_cover_icon,
+.list-price-table .merchandise_image_icon,
+#cookieInformerBooklet,
+.info_box_agent,
+#section_home #music_search_desc .icons,
+#section_home #record_store_icon_section,
+table.sticky-header,
+#product_concert .list-price-table .list-artist-item-year,
+#product_merchandise .list-price-table .list-artist-item-year,
+#product_merchandise .merchandise_image_no_icon,
+#product_merchandise .merchandise_image_icon,
+#product_albums .album_cover_no_icon,
+#product_albums .album_cover_icon { display:none; }
+
+/* Guides */
+
+#shop_guide #shopcontainers #containers .list_container .grading { width:25%; }
+#shop_guide #shopcontainers #containers .list_container .link,
+#shop_guide #shopcontainers #containers .list_container .country { width:12.5%; }
+#shop_guide #shopcontainers #containers .list_container .format,
+#shop_guide #shopcontainers #containers .list_container .type,
+#shop_guide #shopcontainers #containers .list_container .shopname { width:50%; }
+#shop_guide #shopcontainers #containers .list_container .items_header .grading { width:25%; }
+#shop_guide #shopcontainers #containers .list_container .items_header .link,
+#shop_guide #shopcontainers #containers .list_container .items_header .country { width:12.5%; }
+#shop_guide #shopcontainers #containers .list_container .items_header .type,
+#shop_guide #shopcontainers #containers .list_container .items_header .format,
+#shop_guide #shopcontainers #containers .list_container .items_header .shopname { width:50%; }
+#shop_guide #filters_text { height:82px;}
+#shop_guide #filters_text > div { width:50%; }
+#festival_guide #festivalcontainers #containers .list_container .header .name { width:100%; }
+#festival_guide #festivalcontainers #containers .list_container .header .date { width:42.5%; margin: 0% 0% 0% 2.5%;}
+#festival_guide #artists .item, #festival_guide #festivals .item, #festival_guide #selected_filters .item,
+#concert_guide #artists .item, #concert_guide #concerts .item, #concert_guide #intervals .item { float:left; line-height:27px; color:#E55D09; width:49%; overflow: hidden; white-space: nowrap; padding:0px 5px 0px 5px; font-size: 115%; }
+#festival_guide #artists .selected, #festival_guide #festivals .selected, #festival_guide #selected_filters .selected,
+#concert_guide #artists .selected, #concert_guide #concerts .selected,
+#concert_guide #intervals .selected, #concert_guide #intervals .selected a,
+#shop_guide #countries .selected, #shop_guide #countries .selected a,
+#shop_guide #media_formats .selected, #shop_guide #media_formats .selected a,
+#shop_guide #record_store_type .selected, #shop_guide #record_store_type .selected a {  color:#000000; }
+#festival_guide #filters .alphabet .items .item,
+#concert_guide #filters .alphabet .items .item { width:25px;  float: left; font-size:100%; }
+#festival_guide #festivalcontainers #containers .list_container .header .icons { float:right; width:25%; line-height:28px; height:28px; }
+#concert_guide, #festival_guide, #section_guides #tabs { width:100%; float:left; }
+#festival_guide #festivalcontainers #containers .list_container .items .item .artist,
+#festival_guide #festivalcontainers #containers .list_container .items .item .date { padding-left: 5%; width:45%; }
+#festival_guide #filters_text div,
+#concert_guide #filters_text div { background-color: #272221; width:33%; float:left; height: 42px; line-height: 42px; text-align:center; }
+
+/* User settings section */
+
+.user_settings .left, .user_settings .right { width:100%; }
+.user_settings .left .status .no, .user_settings .left .status .ok, .user_settings .left .status .error { margin: 7px 0px 8px 20px; }
+#profile_artists_sm .profile_artist, #profile_artists_ap .profile_artist { width: 49%; }
+
+/* Front page */
+
+#section_home #music_search_desc { padding:0px; }
+#section_home .logo { background-size:80%; margin:10px 0px; }
+#section_home .search-music { height: 70px; margin: 0px; width: 100%; }
+#section_home .search-music #edit-apms-lookup-large-all { font-size: 20px; }
+#section_home #autocomplete { font-size:20px; }
+#section_home #autocomplete li { font-size:20px; line-height:35px; }
+#section_home #autocomplete li.selected div { font-size:20px; }
+#section_home .search-music .form-item { height: 70px; margin: 0px; width: 82%; }
+#section_home .search-music #edit-apms-large-form-submit { width:70px; max-width:18%; }
+#section_home #guide_sections .guide_section_wrapper { margin: 1.5%; padding: 0% 5%; width: 97%; }
+#section_home #guide_sections .guide_section { width:100%; }
+#section_home #guide_sections .guide_section .text { min-height: 80px; }
+#section_home #music_search_desc .desc,
+#section_home #music_search_desc .icons { float:left; width: 100%; padding:20px; }
+#section_home #music_search_desc .icons .icon { float:left; width: 50%; margin-top:10px; }
+
+
+/* Search form */
+
+.search-music { margin: 1.5% 0% 0% 5%; width: 90%; }
+.search-music #edit-apms-lookup-large-all { font-size:15px; }
+.form-item-apms-lookup-large-all { width: 90%; }
+.search-music .form-item { max-width: 91%; width: 91%; }
+#autocomplete,
+#autocomplete div,
+#edit-apms-lookup-large-artist #autocomplete,
+#edit-apms-lookup-large-album #autocomplete,
+#edit-apms-lookup-large-song  #autocomplete { width:100%; }
+
+
+/* Search table */
+
+#tabs { height:auto; margin-top:30px; }
+#tabs #product_tabs_album, #tabs #product_tabs_song,
+#tabs #product_tabs_merchandise, #tabs #product_tabs_concert,
+#tabs #tabs_currency, #tabs #price_agent_link_container,
+#section_artist #tabs #tabs_currency { width: 32%; float:left; }
+#section_artist #tabs #tabs_currency { text-align: right; }
+
+#tabs #search_title_album_container,
+#tabs #search_title_song_container,
+#tabs #search_title_merchandise_container { top:-35px; left:0px; }
+
+#tabs #tabs_currency,
+#tabs #price_agent_link_container { left: 230px; position: absolute; top: -30px; }
+#tabs #price_agent_link_container { left: 150px; }
+#tabs #price_agent_link_container > div { float:left; }
+
+/* Force table to not be like tables anymore */
+.list-price-table table, thead, tbody, th, td, tr { 
+  display: block;
+  max-width: 100%; 
+}
+/* Hide table headers (but not display: none;, for accessibility) */
+.list-price-table thead tr { 
+  position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.list-price-table thead tr:first-child {
+  position: static;
+}
+.list-price-table thead tr th:first-child {
+    display: block;
+}
+.list-price-table thead tr th
+ {
+  width: 93%;
+  float: left;
+  padding:6px 0px 6px 0px;
+}
+.list-price-table .header-artist-artist-search-result,
+.list-price-table .header-artist-genre-search-result,
+.list-price-table .header-artist-buy-at-url-search-result,
+.list-price-table .header-album-album-search-result,
+.list-price-table .header-album-artist-search-result,
+.list-price-table .header-album-buy-at-url-search-result,
+.list-price-table .header-song-song-search-result,
+.list-price-table .header-song-artist-search-result,
+.list-price-table .header-song-buy-at-url-search-result
+{
+  width: 50%;
+  float: left;
+  padding:6px 0px 6px 0px;
+}
+.list-price-table .header-artist-album,
+.list-price-table .header-artist-song,
+.list-price-table .header-artist-merchandise,
+.list-price-table .header-artist-concert {
+    display: block;
+    width:50%;
+	padding:6px 0px 6px 0px;
+}
+.list-price-table .header-album-album,
+.list-price-table .header-song-song {
+    display: block;
+    width:73%;
+	padding-left: 2%;
+}
+.list-price-table thead tr .header-artist-format,
+.list-price-table thead tr .header-artist-streaming {
+    width:10%;
+}
+.list-price-table thead tr .header-album-buy-at-url,
+.list-price-table thead tr .header-song-buy-at-url {
+    display:none;
+}
+.list-price-table .header-artist-price-format {
+    width: 35%;
+}
+.list-price-table .header-album-price-format,
+.list-price-table .header-song-price-format {
+    width: 25%;
+}
+#product_concert .list-price-table thead tr .header-artist-streaming {
+    width:20%;
+}
+.list-price-table .header-artist-price-format .media_format_dropdown,
+.list-price-table .header-album-price-format .media_format_dropdown,
+.list-price-table .header-song-price-format .media_format_dropdown { z-index: 100; }
+.list-price-table .header-artist-price-format .media_format_dropdown a,
+.list-price-table .header-album-price-format .media_format_dropdown a,
+.list-price-table .header-song-price-format .media_format_dropdown a { font-size:1.1em; }
+.list-price-table thead tr .header-artist-streaming div,
+.list-price-table thead tr .header-album-buy-at-url div,
+.list-price-table thead tr .header-song-buy-at-url div,
+.list-price-table .header-artist-price-format .media_format_dropdown div,
+.list-price-table .header-album-price-format .media_format_dropdown div,
+.list-price-table .header-song-price-format .media_format_dropdown div { display:none; }
+
+.list-price-table .header-album-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-song-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-artist-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-artist-price-format .media_format_dropdown .link,
+.list-price-table .header-album-price-format .media_format_dropdown .link,
+.list-price-table .header-song-price-format .media_format_dropdown .link { display:block; }
+
+
+
+.list-price-table .header-artist-concert {
+	width:32.5%;
+}
+.list-price-table .header-artist-concert-price-format, .list-price-table .header-artist-concert-start-time {
+	width:15%;
+}
+.list-price-table td { 
+/* Behave  like a "row" */
+	border: none;
+	position: relative;
+	height: 20px;
+    font-size: 1.2em;
+}
+.list-price-table td:nth-last-child(1) {
+  border: none;
+}
+.list-price-table td:before { 
+	/* Now like a table header */
+	position: absolute;
+	/* Top/left values mimic padding */
+	top: 6px;
+	left: 6px;
+    width:100%;
+	padding-right: 10px; 
+	white-space: nowrap;
+	margin-top: 10px;
+}
+.list-price-table tr.row-heading td {
+  background: rgb(245,245,245);
+  font-size: 130%;
+}
+.list-price-table tr td:nth-child(1) {
+	padding-left: 5px;
+	margin-left: -5px;
+    width:100%;
+	border: none;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+.list-price-table tbody,
+.list-price-table .header-album-format,
+.list-price-table .header-song-format {
+    clear:both;
+    width:100%;
+}
+.list-price-table tr .list-artist-format,
+.list-price-table tr .list-album-buy-at-url,
+.list-price-table tr .list-song-buy-at-url,
+.list-price-table tr .list-album-format,
+.list-price-table tr .list-song-format {
+    text-align:right;
+}
+.header-album-buy-at-url .streaming_dropdown .link,
+.header-song-buy-at-url .streaming_dropdown .link,
+.header-artist-streaming .streaming_dropdown .link {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+/* Footer*/
+.footerfield_container .footertxt_right h2 { padding-left:0px; }
+.footer-wrapper h2 { display: block; height: 25px; padding: 0px; font-size: 1.9em; margin-bottom: 0px; }
+.footer-wrapper ul a { font-size: 1.7em; line-height: 2em; }
+.footer-wrapper ul li.leaf,
+.footer-wrapper .footertxt_right ul li.leaf { padding: 0px; margin: 0px; }
+.footer-wrapper .footertxt_left,
+.footer-wrapper .footertxt_center_left,
+.footer-wrapper .footertxt_center_right,
+.footer-wrapper .footertxt_right { text-align: center; font-size: 0.6em; }
+.footerfield_container .content ul.menu { margin: 0px 0px 30px 0px; text-align:center; }
+.footerfield_container #social_media .label { padding: 5px 0px 5px 0px ; text-align: center; font-size:1.7em; }
+.footerfield_container #social_media .icons { padding:0px 0px 0px 0px; width: 100%; position:relative; }
+.footerfield_container #social_media .icons #facebook,
+.footerfield_container #social_media .icons #google_plus,
+.footerfield_container #social_media .icons #linkedin,
+.footerfield_container #social_media .icons #twitter { position: absolute; top: 50%; left: 50%; margin-top: 0px; }
+.footerfield_container #social_media .icons #facebook { margin-left: -57px; }
+.footerfield_container #social_media .icons #google_plus { margin-left: -27px; }
+.footerfield_container #social_media .icons #linkedin { margin-left: 3px; }
+.footerfield_container #social_media .icons #twitter { margin-left: 33px; }
+
+/* tablet devices END */
+
+}
+/*####################################################################################
+  SMARTPHONE
+  ##################################################################################*/
+@media (max-width: 480px) {
+
+#logo {
+	margin: 0px 5% 30px 5%;
+	width:220px;
+	height:34px;
+}
+#section_home .search-music #edit-apms-lookup-large-all {
+    font-size: 17px;
+	padding:0px 0px 0px 1%;
+}
+/*
+#section_home #autocomplete {
+	font-size:16px;
+}
+#section_home #autocomplete li {
+    font-size:16px;
+	line-height:35px;
+}
+#section_home #autocomplete li.selected div {
+	font-size:16px;
+}
+.search-music #edit-apms-lookup-large-all { font-size:14px; }
+.header-wrapper .container .logo,
+.header-wrapper .container .top_menu {
+	margin:0px;
+	padding:0px;
+	width:95%;
+}
+.well {
+  padding: 2%;
+}
+.txtfield h2, .txtfield p {
+  padding-left: 5%;
+}
+.search-music {
+  margin: 1% 0% 0% 0%;
+  width: 90%;
+}
+.form-item-apms-lookup-large-all {
+    width: 87%;
+}
+
+*/
+/* ------------------------------------------> Bandoverview*/
+/*
+
+.list-price-table .header-artist-price-format .media_format_dropdown,
+.list-price-table .header-album-price-format .media_format_dropdown,
+.list-price-table .header-song-price-format .media_format_dropdown {
+	z-index: 100;
+}
+.list-price-table thead tr .header-artist-streaming div,
+.list-price-table thead tr .header-album-buy-at-url div,
+.list-price-table thead tr .header-song-buy-at-url div { display:none; }
+
+.list-price-table .header-artist-price-format .media_format_dropdown div,
+.list-price-table .header-album-price-format .media_format_dropdown div,
+.list-price-table .header-song-price-format .media_format_dropdown div
+{
+	display:none;
+}
+
+.list-price-table .header-album-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-song-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-artist-price-format .media_format_dropdown div:nth-child(1),
+.list-price-table .header-artist-price-format .media_format_dropdown .link,
+.list-price-table .header-album-price-format .media_format_dropdown .link,
+.list-price-table .header-song-price-format .media_format_dropdown .link {
+	display:block;
+}
+.list-price-table .list-artist-merchandise,
+#product_merchandise .list-artist-price-format,
+#product_merchandise tr td:nth-child(1) {
+	width:33%;
+	float:left;
+}
+
+.list-price-table .list-artist-concert,
+#product_concert .list-artist-concert-start-time,
+#product_concert .list-artist-price-format,
+#product_concert .list-artist-streaming,
+#product_concert tr td:nth-child(1) {
+	width:100%;
+}
+
+.header-album-buy-at-url .streaming_dropdown .link,
+.header-song-buy-at-url .streaming_dropdown .link,
+.header-artist-streaming .streaming_dropdown .link {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.header-album-buy-at-url .streaming_dropdown #streamings,
+.header-song-buy-at-url .streaming_dropdown #streamings,
+.header-artist-streaming .streaming_dropdown #streamings
+{
+    min-width: 150%;
+    left: -55px;
+}
+#node-8 td {
+    width:100%;
+}
+
+*/
+}
+@media (max-width: 360px) {
+    .form-item-apms-lookup-large-all {
+        width: 80%;
+    }
+}

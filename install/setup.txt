@@ -1,0 +1,69 @@
+
+LoadModule rewrite_module    	 		  	/usr/lib/apache2/mod_rewrite.so
+
+# --- The following line enables name based virtual hosts ---
+NameVirtualHost *:80
+
+
+<VirtualHost *:80>
+	ServerName airplaymusic.localhost 
+	DocumentRoot /home/ml/code/airplay/drupal
+	AccessFileName .htaccess
+	<Directory "/home/ml/code/airplay/drupal">
+		RewriteEngine on
+		RewriteBase /
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+		AllowOverride All
+		Options Indexes Includes
+		Order allow,deny
+		allow from all
+	</Directory>
+</VirtualHost>
+
+------------------------
+--- Create databases ---
+------------------------
+RUN this against MySQL:
+
+CREATE DATABASE airplay_drupal7;
+CREATE DATABASE airplay_music_v1;
+GRANT ALL PRIVILEGES ON airplay_drupal7.* To 'airplay_user'@'localhost' IDENTIFIED BY 'Deeyl1819';
+GRANT ALL PRIVILEGES ON airplay_music_v1.* To 'airplay_user'@'localhost' IDENTIFIED BY 'Deeyl1819';
+
+If unable to connect to the database - make sure that you dont have an anonymous user like 'ALL'@'%' or 'ALL'@'localhost' - or something like that.
+
+Then import the data/airplay_music_v1-structure-and-static-data.sql into airplay_music_v1
+
+In bin directory run:
+
+Then finally do a:
+chmod 777 drupal7/sites/default/files
+chmod -R 777 drupal7/sites/default/files/* 
+
+-----------
+--- Tøm ---
+-----------
+TRUNCATE `all_artists`;
+TRUNCATE `all_item_bases`;
+TRUNCATE `artist`;
+TRUNCATE `artist_alias`;
+TRUNCATE `artist_lookup`;
+TRUNCATE `artist_synonym`;
+TRUNCATE `artist_text`;
+TRUNCATE `info_artist`;
+TRUNCATE `intro_text_artist`;
+TRUNCATE `item_base`;
+TRUNCATE `item_base_alias`;
+TRUNCATE `item_base_correction`;
+TRUNCATE `item_base_lookup`;
+TRUNCATE `item_base_text`;
+TRUNCATE `item_price`;
+TRUNCATE `job_status`;
+TRUNCATE `job_status_log`;
+TRUNCATE `live_search_cache`;
+TRUNCATE `record_store`;
+TRUNCATE `unknown_genre`;
+TRUNCATE `unknown_media_format`;
+TRUNCATE `unknown_media_type`;

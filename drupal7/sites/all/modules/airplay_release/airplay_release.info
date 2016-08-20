@@ -1,0 +1,7 @@
+<?php 
+; $Id: Airplay Release.info,v 1.0.0.0 2011/02/09 10:11:15 MyName Exp $
+name = "Example Block"
+description = "Airplay Release"
+core = "7.x"
+package = "Airplay Release"
+?>

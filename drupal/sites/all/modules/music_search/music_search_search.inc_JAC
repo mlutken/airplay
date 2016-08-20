@@ -1,0 +1,370 @@
+<?php 
+// $Id$
+
+/// Get Html string with autocomplete offset id tag.
+function ap_autocomplete_offset( $offset_top_in_pixels) {
+    $page_content = '';
+    // include offset_top hack for all browsers except IE
+    if ( !strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') ) {
+        $page_content .= "<div id='autocomplete_data' offset_top=$offset_top_in_pixels ></div>";   
+    }
+    return $page_content;
+}
+
+
+function music_search_search() {
+	$page_content = '';
+	
+// 	dfb ( $_GET, 'XXX music search _GET');
+	$lookup = $_GET['lookup'];
+    $page_content .= ap_autocomplete_offset(25);
+    // // 	$page_content .= "<div class='radio_horizontal' style='float:left'>" . t('Find:') .  " </div>";
+	$page_content .= drupal_get_form('apms_large_form' );
+	return $page_content;
+}
+
+
+function ap_music_search_display_results()
+{
+// 	dfb ($_GET, "music_search_display_album_matches _GET");
+	
+	$iArtistExactMatches = 0;
+	$iAlbumExactMatches  = 0;
+	$iSongExactMatches   = 0;
+	$lookup = $_GET['lookup'];
+	$search_for = $_GET['search_for'];
+	
+// //  	dfb ( $_GET, 'ap_music_search_display_results  _GET');
+ 	
+	$page_content = "";
+    $page_content .= drupal_get_form('apms_large_form' );
+	
+    $page_content .= "<table width='100%' >";
+    $page_content .= "<tr><td ><div class=ap_item_type_name style='float:left;margin:12px' >"  . t('Results for') . ":</div><div class=ap_item_headline1 style='float:left'>&nbsp;{$lookup}</div></td></tr>";
+    $page_content .= "</table>";
+	
+	if ( $search_for == 'artist' || $search_for == 'all' ) {
+		$page_content .= music_search_display_artist_matches($lookup, $iArtistExactMatches);
+	}
+	if ( $search_for == 'album' || $search_for == 'all'  || $search_for == 'title' ) {
+		$page_content .= music_search_display_album_matches($lookup, $iAlbumExactMatches);
+	}
+	if ( $search_for == 'song' || $search_for == 'all' || $search_for == 'title' ) {
+		$page_content .= music_search_display_song_matches($lookup, $iSongExactMatches );
+	}
+	$iTotalExactMatches = $iArtistExactMatches + $iAlbumExactMatches + $iSongExactMatches;
+	if ( $iArtistExactMatches == 1 && $search_for == 'artist' ) {
+		$page_content = prices_display_artist($lookup, true);
+	}
+	else if ( $iAlbumExactMatches == 1 && $search_for == 'album' ) {
+		$page_content = prices_display_album($lookup);
+	}
+	else if ( $iAlbumExactMatches == 1 && $search_for == 'song' ) {
+		$page_content = prices_display_song($lookup);
+	}
+	
+// // 	dfb ( $iArtistExactMatches, "iArtistExactMatches");
+// // 	dfb ( $iAlbumExactMatches, "iAlbumExactMatches");
+// // 	dfb ( $iSongExactMatches, "iSongExactMatches");
+	
+	return $page_content;
+}
+
+
+
+function ap_music_search_autocomplete_artist( $sSearch ) 
+{   
+    $_SESSION['search_for'] = 'artist';
+
+//  	dfb ( "ap_music_search_autocomplete_artist");
+	if ( strlen($sSearch) < 3 )	{
+		$aEmtyMatches = array();
+		print drupal_to_js($aEmtyMatches);
+		exit();
+		return;
+	}
+	db_set_active('airplay_music');
+	
+	$sQueryArtists = "
+		SELECT artist_name, genre_name FROM {artist} 
+		LEFT JOIN {genre} ON artist.genre_id = genre.genre_id 
+	 	WHERE artist_name LIKE '%s%%'";
+	
+	$aMatches = array();
+	$iMaxResults = 15;
+	$result = db_query_range( $sQueryArtists, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aMatches[ $o->artist_name ] = $o->artist_name . ' (<b>' . $o->genre_name . '</b>)';
+	}
+	
+	db_set_active('default');
+	
+	print drupal_to_js($aMatches);
+// 	exit();
+}
+
+
+function ap_music_search_autocomplete_album( $sSearch ) 
+{
+    $_SESSION['search_for'] = 'album';
+//  	dfb ( "ap_music_search_autocomplete_album");
+	if ( strlen($sSearch) < 3 )	{
+		$aEmtyMatches = array();
+		print drupal_to_js($aEmtyMatches);
+		exit();
+		return;
+	}
+// 	dfb ( "ap_music_search_autocomplete_album");
+	db_set_active('airplay_music');
+	
+	$sQueryAlbums = "SELECT DISTINCT( album_simple_name ) FROM {album_simple} WHERE album_simple_name LIKE '%s%%'";
+	
+	$aMatches = array();
+	$iMaxResults = 15;
+	$result = db_query_range( $sQueryAlbums, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aMatches[ $o->album_simple_name ] = $o->album_simple_name;
+	}
+	db_set_active('default');
+	
+	print drupal_to_js($aMatches);
+// 	exit();
+}
+
+
+function ap_music_search_autocomplete_song( $sSearch ) 
+{
+    $_SESSION['search_for'] = 'song';
+ // 	dfb ( "ap_music_search_autocomplete_song");
+	if ( strlen($sSearch) < 3 )	{
+		$aEmtyMatches = array();
+		print drupal_to_js($aEmtyMatches);
+		exit();
+		return;
+	}
+// 	dfb ( "ap_music_search_autocomplete_song");
+	db_set_active('airplay_music');
+	
+	$sQuerySongs = "SELECT DISTINCT( song_simple_name ) FROM {song_simple} WHERE song_simple_name LIKE '%s%%'";
+	
+	$aMatches = array();
+	$iMaxResults = 15;
+	$result = db_query_range( $sQuerySongs, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aMatches[ $o->song_simple_name ] = $o->song_simple_name;
+	}
+	db_set_active('default');
+	
+	print drupal_to_js($aMatches);
+// 	exit();
+}
+
+
+function apms_autocomplete_set_search_for(  ) 
+{
+	//$search_for = $_GET['search_for'];
+/*	if ( $search_for != "" ) 	$_SESSION['apms_autocomplete__search_for'] = $search_for;
+	else						$_SESSION['apms_autocomplete__search_for'] = null;*/
+}
+
+
+
+
+
+
+function ap_music_search_autocomplete_all( $sSearch ) 
+{
+// 	dfb("ap_music_search_autocomplete_all");
+	if ( strlen($sSearch) < 3 )	{
+		$aEmtyMatches = array();
+		print drupal_to_js($aEmtyMatches);
+		exit();
+		return;
+	}
+	db_set_active('airplay_music');
+	
+	$sQueryArtists = "SELECT DISTINCT ( artist_name ) FROM {artist} WHERE artist_name LIKE '%s%%'";
+	$sQueryAlbums = "SELECT DISTINCT ( album_name ) FROM {album} WHERE album_name LIKE '%s%%'";
+	$sQuerySongs = "SELECT DISTINCT ( song_name ) FROM {song} WHERE song_name LIKE '%s%%'";
+	
+	$aMatches = array();
+	$aArtists = array();
+	$aAlbums = array();
+	$aSongs = array();
+	$iMaxResults = 15;
+	$result = db_query_range( $sQueryArtists, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aArtists[] = $o->artist_name;
+	}
+	
+	$result = db_query_range( $sQueryAlbums, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aAlbums[] = $o->album_name;
+	}
+	
+	$result = db_query_range( $sQuerySongs, $sSearch, 0, $iMaxResults);
+	while ($o = db_fetch_object($result)) {
+		$aSongs[] = $o->song_name;
+	}
+	db_set_active('default');
+	
+	$bStillMatches = true;
+	$i = 0;
+	while ( $bStillMatches )
+	{
+		$bStillAlbums = count ($aAlbums) > $i;	
+		$bStillArtists = count ($aArtists) > $i;	
+		$bStillSongs = count ($aSongs) > $i;	
+		$bStillMatches = $bStillAlbums || $bStillArtists || $bStillSongs;
+		
+		if ( $bStillArtists ) {
+			$aMatches[ $aArtists[$i] ] = $aArtists[$i] . ' (<b>' . t('Artist') . '</b>)';
+		}
+		if ( $bStillAlbums ) {
+			$aMatches[ $aAlbums[$i] ] = $aAlbums[$i] . ' (<b>' . t('Album') . '</b>)';
+		}
+		if ( $bStillSongs ) {
+			$aMatches[ $aSongs[$i] ] = $aSongs[$i] . ' (<b>' . t('Song') . '</b>)';
+		}
+		$i++;	
+	}	
+	print drupal_to_js($aMatches);
+// 	exit();
+}
+
+
+
+function ap_music_search_autocomplete_title( $sSearch ) 
+{
+//      dfb ( "ap_music_search_autocomplete_title");
+    if ( strlen($sSearch) < 3 ) {
+        $aEmtyMatches = array();
+        print drupal_to_js($aEmtyMatches);
+        exit();
+        return;
+    }
+    db_set_active('airplay_music');
+    
+    $sQueryAlbums = "SELECT DISTINCT( album_name ) FROM {album} WHERE album_name LIKE '%s%%'";
+    $sQuerySongs = "SELECT DISTINCT( song_name ) FROM {song} WHERE song_name LIKE '%s%%'";
+    
+    $aMatches = array();
+    $aAlbums = array();
+    $aSongs = array();
+    $iMaxResults = 15;
+    $result = db_query_range( $sQueryAlbums, $sSearch, 0, $iMaxResults);
+    while ($o = db_fetch_object($result)) {
+        $aAlbums[] = $o->album_name;
+    }
+    
+    $result = db_query_range( $sQuerySongs, $sSearch, 0, $iMaxResults);
+    while ($o = db_fetch_object($result)) {
+        $aSongs[] = $o->song_name;
+    }
+    db_set_active('default');
+    
+    $bStillMatches = true;
+    $i = 0;
+    while ( $bStillMatches )
+    {
+        $bStillAlbums = count ($aAlbums) > $i;  
+        $bStillSongs = count ($aSongs) > $i;    
+        $bStillMatches = $bStillAlbums || $bStillSongs;
+        
+        if ( $bStillAlbums ) {
+            $aMatches[ $aAlbums[$i] ] =  $aAlbums[$i];
+        }
+        if ( $bStillSongs ) {
+            $aMatches[ $aSongs[$i] ] = $aSongs[$i];
+        }
+        $i++;   
+    }   
+    print drupal_to_js($aMatches);
+//  exit();
+}
+
+
+
+// 
+// '(<b>' . t('Ar') . '</b>) ' . 
+
+// -------------------
+// --- FORM: small --- 
+// -------------------
+
+//  
+
+/*
+function ap_music_search_form_small(&$form_state) 
+{
+	$form['search_for'] = array (
+	'#type' => 'radios',
+	'#default_value' => 'artist',
+	'#options' => array (
+		'artist'   => t('Artist'),
+		'album'   => t('Album'),
+		'song' => t('Song'),
+		'all'   => t('All'),)
+	);	
+	$form['lookup'] = array(
+		'#type' => 'textfield',
+		'#size' => 20,
+		'#maxlength' => 64,
+		'#autocomplete_path' => 'music-search/autocomplete_all',
+		'#description' => t('Lookup artists, albums, songs')
+	);
+	$form['submit'] = array('#type' => 'submit', '#value' => t('Search music'));
+	return $form;
+}
+
+function ap_music_search_form_small_alter(&$form, &$form_state)
+{
+	dfb( $form_state['search_for']['#options'] ,"ap_music_search_form_small");
+}
+
+function ap_music_search_form_small_validate($form, &$form_state) {
+ 	dfb ("ap_music_search_form_small_validate");
+}
+
+function ap_music_search_form_small_submit($form, &$form_state) 
+{
+ 	dfb ("ap_music_search_form_small_submit");
+	$lookup = $form_state['values']['lookup'];
+ 	$form_state['redirect'] = array("music-search/results", array("lookup" => "$lookup" ) ); 
+}
+*/
+// -------------------
+// --- FORM: large ---
+// -------------------
+/*
+function ap_music_search_form_large(&$form_state) 
+{
+	// Access log settings:
+	$form['lookup'] = array(
+		'#type' => 'textfield',
+		'#size' => 40,
+		'#maxlength' => 64,
+		'#autocomplete_path' => 'music-search/autocomplete_all',
+		'#description' => t('Lookup artists, albums, songs')
+	);
+	$form['submit'] = array('#type' => 'submit', '#value' => t('Search music'));
+	return $form;
+}
+
+function ap_music_search_form_large_validate($form, &$form_state) {
+//  	dfb ("ap_music_search_form_large_validate");
+}
+
+function ap_music_search_form_large_submit($form, &$form_state) 
+{
+// 	dfb("ap_music_search_form_large_submit");
+	$lookup = $form_state['values']['lookup'];
+ 	$form_state['redirect'] = array("music-search/results", array("lookup" => "$lookup" ) ); 
+}
+
+function ap_music_search_form_large_alter(&$form, &$form_state)
+{
+// 	dfb("ap_music_search_form_large_alter");
+}
+
+*/

@@ -1,0 +1,16 @@
+<?php
+
+/*
+ *  Implementation of hook_form_alter().
+ */
+function no_anon_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_login':
+    case 'user_login_block':
+    case 'user_pass_reset':
+      if ($form_state['post']) {
+      // Someone's attempting to log in.  Let's allow session cookies.
+        ini_set('session.use_cookies', 1);
+      }
+  }
+}

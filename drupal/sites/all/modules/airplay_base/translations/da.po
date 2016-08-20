@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: airplay_base\n"
+"POT-Creation-Date: 2010-05-31 14:24+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Martin Lütken <martin@lutken.dk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: airplay_base_utils.inc:68
+msgid "DKK"
+msgstr "Danske kr"
+
+#: airplay_base_utils.inc:69
+msgid "EUR"
+msgstr "Euro"
+
+#: airplay_base_utils.inc:70
+msgid "GBP"
+msgstr "Engelske pund"
+
+#: airplay_base_utils.inc:71
+msgid "NOK"
+msgstr "Norske kr"
+
+#: airplay_base_utils.inc:72
+msgid "SEK"
+msgstr "Svenske kr"
+
+#: airplay_base_utils.inc:73
+msgid "USD"
+msgstr "Amerikanske dollars"
+
+#: airplay_base_utils.inc:89
+msgid "All"
+msgstr "Alle"
+
+#: airplay_base_utils.inc:90
+msgid "CD"
+msgstr "CD"
+
+#: airplay_base_utils.inc:91
+msgid "MP3"
+msgstr "MP3"
+
+#: airplay_base_utils.inc:93
+msgid "Vinyl"
+msgstr "Vinyl"
+
+#: airplay_base_utils.inc:94
+msgid "DVD"
+msgstr "DVD"
+
+#: airplay_base_utils.inc:99
+msgid "SACD"
+msgstr "Super Audio CD"
+
+#: airplay_base_utils.inc:100
+msgid "SACDH"
+msgstr "Super Audio CD Hybrid"
+
+#: airplay_base_utils.inc:101
+msgid "DVDA"
+msgstr "DVD Audio"
+
+#: airplay_base_utils.inc:102
+msgid "Single"
+msgstr "Single CD"
+
+#: airplay_base_utils.inc:120;139
+msgid "Ascending"
+msgstr "Stigende"
+
+#: airplay_base_utils.inc:121;140
+msgid "Descending"
+msgstr "Faldende"
+
+#: airplay_base_utils.inc:123;142
+msgid "sort by"
+msgstr "sorter efter"
+
+#: airplay_base.module:53
+msgid "Airplay base module"
+msgstr "Airplay base module"
+
+#: airplay_base.module:39
+msgid "access airplay_base content"
+msgstr "access airplay_base content"
+
+#: airplay_base.info:0
+msgid "Airplay Base"
+msgstr "Airplay Base"
+
+#: airplay_base.info:0
+msgid "A module with base functionality for Airplay Music."
+msgstr "A module with base functionality for Airplay Music."
+
+#: airplay_base.info:0
+msgid "Airplay"
+msgstr "Airplay"
+

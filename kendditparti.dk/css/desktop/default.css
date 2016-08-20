@@ -1,0 +1,123 @@
+
+/* --- common --- */
+
+/* See here: http://gradcolor.com/css3-gradient.php?c=3 */
+.redWhiteBlueGradientVertical {
+    width:200px;height:100%;
+    background-color:#e66589;
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#e66589, endColorstr=#f7f7f5);
+    background-image:-moz-linear-gradient(top, #e66589 0%, #f7f7f5 50%,#1388d6 100%);
+    background-image:linear-gradient(top, #e66589 0%, #f7f7f5 50%,#1388d6 100%);
+    background-image:-webkit-linear-gradient(top, #e66589 0%, #f7f7f5 50%,#1388d6 100%);
+    background-image:-o-linear-gradient(top, #e66589 0%, #f7f7f5 50%,#1388d6 100%);
+    background-image:-ms-linear-gradient(top, #e66589 0%, #f7f7f5 50%,#1388d6 100%);
+    background-image:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#e66589), color-stop(50%,#f7f7f5),color-stop(100%,#1388d6));
+}
+
+.redWhiteBlueGradientHorizontal {
+    width:100%;height:100%;
+    background-color:#a8e9ff;
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#a8e9ff, endColorstr=#f0faff);
+    background-image:-moz-linear-gradient(left, #a8e9ff 0%, #f0faff 50%,#d1546d 100%);
+    background-image:linear-gradient(left, #a8e9ff 0%, #f0faff 50%,#d1546d 100%);
+    background-image:-webkit-linear-gradient(left, #a8e9ff 0%, #f0faff 50%,#d1546d 100%);
+    background-image:-o-linear-gradient(left, #a8e9ff 0%, #f0faff 50%,#d1546d 100%);
+    background-image:-ms-linear-gradient(left, #a8e9ff 0%, #f0faff 50%,#d1546d 100%);
+    background-image:-webkit-gradient(linear, left bottom, right bottom, color-stop(0%,#a8e9ff), color-stop(50%,#f0faff),color-stop(100%,#d1546d));
+}
+
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+/* --- mainPage --- */
+
+.mainPage .logos {
+/*    width: 32px;
+    height: 32px;*/
+}
+
+/* resize images */
+.mainPage .logos img {
+/*    width: 100%;
+    height: auto;*/
+}
+
+.mainPage table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+
+/* --- mainResults --- */
+
+.mainResults .logos {
+    width: 48px;
+    height: 48px;
+}
+
+/* resize images */
+.mainResults .logos img {
+    width: 100%;
+    height: auto;
+}
+
+.mainResults table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/* Answers count text*/
+.mainResults .answersCount {
+    font-size: 130%;
+    font-weight: bold;
+    padding:10px;
+}
+
+/* Answers pct (%) text*/
+.mainResults .answersPct {
+}
+
+/* party name and link*/
+.mainResults .partyName {
+}
+
+/* --- answersChecked --- */
+
+.answersChecked .logos {
+    width: 32px;
+    height: 32px;
+}
+
+/* resize images */
+.answersChecked .logos img {
+    width: 100%;
+    height: auto;
+}
+
+.answersChecked table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+}
+
+
+.answersChecked .policyGroupName {
+    font-size: 130%;
+    font-weight: bold;
+/*     color: black; */
+}
+
+.answersChecked .questionName {
+    font-size: 115%;
+    font-weight: bold;
+    color: blue;
+}
+
+.answersChecked .partyLetter {
+    font-size: 130%;
+    font-weight: bold;
+}

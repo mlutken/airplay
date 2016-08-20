@@ -1,0 +1,26 @@
+<VirtualHost *:80>
+	ServerAdmin airplaysite@airplaymusic.dk
+	ServerName filesupload.airplaymusic.dk
+	DocumentRoot /home/sleipner/airplay/filesupload/public_html
+	AccessFileName .htaccess
+
+	<Directory /home/sleipner/airplay/filesupload/public_html>
+		AllowOverride All
+		Options Includes		
+		Order allow,deny
+		allow from 90.185.203.79 # JAC
+		allow from 80.167.238.34 # Slagteriet
+		allow from 90.185.117.97 # Ulrik
+		allow from 188.40.98.7   # Server www tyskland
+		# Martin arbejde
+		# Martin hjemme
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel error
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

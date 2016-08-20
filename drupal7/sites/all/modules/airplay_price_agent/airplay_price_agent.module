@@ -1,0 +1,672 @@
+<?php
+
+	module_load_include('inc', 'airplay_price_agent', 'airplay_price_agent_db_views'); 
+
+	/*
+		TODO - send validate mail click - header ændres til ALBUM/KONCERT
+	*/
+	
+/**
+* @file
+* A block module for setting and changing Price agents
+*/
+
+function airplay_price_agent_perm() {
+	return array('access airplay_price_agent content');
+}
+
+function airplay_price_agent_permission() {
+  return array(
+    'access airplay_price_agent content' => array(
+      'title' => t('Acces permissions for airplay_price_agent'),
+    ),
+  );
+}
+
+/**
+* Page callback: Airplay Music User settings
+*
+* @see current_posts_menu()
+*/
+function airplay_price_agent_form($form, &$form_state) {
+  $form['airplay_price_agent_max'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum number of posts'),
+    '#default_value' => variable_get('airplay_price_agent_max', 3),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#description' => t('The maximum number of links to display in the block.'),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+/**
+* Implements hook_menu().
+*/
+function airplay_price_agent_menu() {
+	$items = array();
+	$items['admin/config/content/airplay_price_agent'] = array(
+		'title' => 'Airplay Music Price Agents',
+		'description' => 'Configuration for Airplay Music Price Agents module',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('airplay_price_agent_form'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['airplay_price_agent/price_agent_ajax'] = array(
+		'title' => '',
+		'page callback' => 'airplay_price_agent_ajax',
+		'access arguments' => array('access airplay_price_agent content'),
+		'type' => MENU_CALLBACK
+		);
+  return $items;
+}
+
+/**
+* Function used to handle all ajax request about price agent ... user need to be validated ?? DRUPAL? access control
+*/
+
+function airplay_price_agent_ajax() {
+	global $user;
+	// GET["id"] = agent id
+	// GET["aid"] = artist id
+	// GET["mid"] = media format id
+	// GET["agent"] = action string
+	
+	// User is logged in - ajax is called with agent type and aid (artist_id)
+	if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["agent"]) && isset($_REQUEST["aid"]) ) {
+		if (airplay_price_agent_has_validated_mail($user->uid)) {
+			if ($_REQUEST["agent"] == "get_create_concert_form") {
+				// If user does not have an agent for this artist.
+				$agent = airplay_price_agent_get_agent_from_user_and_artist($user->uid, $_REQUEST["aid"], 4);
+				if (count($agent) == 0) {
+					print airplay_price_agent_get_concert_agent_for_artist_html($user->uid, $_REQUEST["aid"]);
+				// User has an agent for this artist.
+				} else {
+					print airplay_price_agent_get_concert_agent_for_artist_exists_html();
+				}
+			} else if ($_REQUEST["agent"] == "save_concert_price_agent" && isset($_REQUEST["mid"]) && ($_REQUEST["mid"] == 0 || $_REQUEST["mid"] == 128 || $_REQUEST["mid"] == 129)) {
+				$agent_id = airplay_price_agent_save_concert_agent_for_artist($user->uid, $_REQUEST["aid"]);
+				if ($agent_id != 0) {
+				// TODO - delete media_format if needed http://stackoverflow.com/questions/782575/php-mysql-updating-many-to-many-relationship-with-checkbox-form
+					if ($_REQUEST["mid"] == 0) {
+						airplay_price_agent_save_media_format_for_agent($agent_id, 128);
+						airplay_price_agent_save_media_format_for_agent($agent_id, 129);
+						$m_id = "128,129";
+					} else {
+						airplay_price_agent_save_media_format_for_agent($agent_id, $_REQUEST["mid"]);
+						$m_id = $_REQUEST["mid"];
+					}
+					airplay_price_agent_send_init_mail_for_concerts($user->uid, $_REQUEST["aid"], $m_id, $agent_id);
+					print airplay_price_agent_get_concert_agent_for_artist_saved_html();
+				} else {
+					print airplay_price_agent_get_concert_agent_for_artist_exists_html();
+				}
+			} else if ($_REQUEST["agent"] == "save_edit_concert_price_agent" && isset($_REQUEST["id"]) && isset($_REQUEST["mid"]) && ($_REQUEST["mid"] == 0 || $_REQUEST["mid"] == 128 || $_REQUEST["mid"] == 129)) {
+				// TODO - FIX AND DELETE - SIKKERHED
+				$agent_id = $_REQUEST["id"];
+				airplay_price_agent_delete_agent_media_format_rel($agent_id);
+				// TODO - delete media_format if needed http://stackoverflow.com/questions/782575/php-mysql-updating-many-to-many-relationship-with-checkbox-form
+				if ($_REQUEST["mid"] == 0) {
+					airplay_price_agent_save_media_format_for_agent($agent_id, 128);
+					airplay_price_agent_save_media_format_for_agent($agent_id, 129);
+				} else {
+					airplay_price_agent_save_media_format_for_agent($agent_id, $_REQUEST["mid"]);
+				}
+				print airplay_price_agent_get_concert_agent_for_artist_edited_html();
+			} else if ($_REQUEST["agent"] == "save_edit_album_price_agent" && isset($_REQUEST["id"]) && isset($_REQUEST["mid"]) && isset($_REQUEST["price"])) {
+			// TODO - FIX AND DELETE - SIKKERHED
+				$agent_id = $_REQUEST["id"];
+				$agent_id = airplay_price_agent_save_album_agent_for_artist($user->uid, $_REQUEST["aid"], $_REQUEST["ibid"], (int)$_REQUEST["price"]);
+				if ($agent_id != 0) {
+					airplay_price_agent_delete_agent_media_format_rel($agent_id);
+					if ($agent_id != 0) {
+						$aCheckboxes = $_REQUEST["mid"];
+						$checkboxes_count = count($aCheckboxes);
+						// Save media formats - OPTIMIZE
+						for($i=0; $i < $checkboxes_count; $i++)
+						{
+							airplay_price_agent_save_media_format_for_agent($agent_id, $aCheckboxes[$i]);
+						}
+					}
+				}
+				print airplay_price_agent_get_concert_agent_for_artist_edited_html();
+			} else if ($_REQUEST["agent"] == "get_create_album_form" && isset($_REQUEST["ibid"])) {
+				print airplay_price_agent_get_album_agent_for_artist_html($user->uid, $_REQUEST["aid"], $_REQUEST["ibid"]);
+			} else if ($_REQUEST["agent"] == "save_album_price_agent" && isset($_REQUEST["ibid"]) && isset($_REQUEST["price"])) {
+				//http://stackoverflow.com/questions/782575/php-mysql-updating-many-to-many-relationship-with-checkbox-form
+				// TODO - delete media_format if needed http://stackoverflow.com/questions/782575/php-mysql-updating-many-to-many-relationship-with-checkbox-form
+				//airplay_price_agent_save_album_agent_for_artist($user->uid, $_REQUEST["aid"], $_REQUEST["ibid"], $_REQUEST["price"]);
+				// Make sure that we can add 0 prices
+				$agent_id = airplay_price_agent_save_album_agent_for_artist($user->uid, $_REQUEST["aid"], $_REQUEST["ibid"], (int)$_REQUEST["price"]);
+				if ($agent_id != 0) {
+					$aCheckboxes = $_REQUEST["mid"];
+					$checkboxes_count = count($aCheckboxes);
+					// Save media formats - OPTIMIZE
+					for($i=0; $i < $checkboxes_count; $i++)
+					{
+						print $aCheckboxes[$i] . "   ";
+						airplay_price_agent_save_media_format_for_agent($agent_id, $aCheckboxes[$i]);
+					}
+					print airplay_price_agent_get_album_agent_for_artist_saved_html();
+					airplay_price_agent_update_agent_last_sent($agent_id);
+				} else {
+					print airplay_price_agent_get_album_agent_for_artist_exists_html();
+				}
+			}
+		// Mail is not validated.
+		} else {
+			if (isset($_REQUEST["agent"]) && stristr($_REQUEST["agent"], "concert")) {
+				print airplay_price_agent_get_not_validated_mail_HTML("concert");
+			} else if (isset($_REQUEST["agent"]) && stristr($_REQUEST["agent"], "album")) {
+				print airplay_price_agent_get_not_validated_mail_HTML("album");
+			} 
+		}
+	// Edit agent
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["agent"]) && isset($_REQUEST["id"]) && $_REQUEST["agent"] == "edit_agent" ) {
+		$aData = airplay_price_agent_get_agent_data($user->uid, $_REQUEST["id"]);
+		print airplay_price_agent_get_edit_agent_HTML($aData, $_REQUEST["id"]);
+	// Send validate mail
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["agent"]) && !isset($_REQUEST["aid"]) && $_REQUEST["agent"] == "send_validate_mail" ) {
+		print airplay_price_agent_send_validate_mail($user->uid);
+	// Confirm html
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["agent"]) && !isset($_REQUEST["aid"]) && isset($_REQUEST["id"]) && $_REQUEST["agent"] == "confirm_delete_agent" ) {
+		print airplay_price_agent_get_delete_agent_confirm_HTML();
+	// Delete agent after the confirm.
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["agent"]) && !isset($_REQUEST["aid"]) && isset($_REQUEST["id"]) && $_REQUEST["agent"] == "postback_delete_agent" ) {
+		airplay_price_agent_delete($user->uid, $_REQUEST["id"]);
+		print airplay_price_agent_get_empty_HTML();
+	// User is not logged in
+	} else {
+		if (isset($_REQUEST["agent"]) && stristr($_REQUEST["agent"], "concert")) {
+			print airplay_price_agent_get_user_not_logged_on_HTML("concert");
+		} else if (isset($_REQUEST["agent"]) && stristr($_REQUEST["agent"], "album")) {
+			print airplay_price_agent_get_user_not_logged_on_HTML("album");
+		} else {
+			print airplay_price_agent_get_user_not_logged_on_HTML("");
+		}
+	}
+}
+
+/*************************
+*	HTML FUNCTIONS
+*************************/
+
+/**
+* Function used to get the correct form for editing an agent.
+*/
+function airplay_price_agent_get_edit_agent_HTML($aData, $agent_id) {
+	$sHtml = "";
+	if (count($aData) > 0) {
+		$item_type = $aData[0]["item_type"];
+	}
+	if ($item_type == 1) {
+		$sHtml .=  airplay_price_agent_get_album_agent_for_artist_edit_HTML($aData);
+	} else if ($item_type == 4) {
+		$sHtml .= airplay_price_agent_get_edit_concert_agent_for_artist_HTML($aData);
+	}
+	return $sHtml;
+}
+
+/**
+*	User not logged in.
+*/
+function airplay_price_agent_get_user_not_logged_on_HTML($agent_type) {
+	$sHtml = "";
+	$sHtml .=  "<div id='response'>";
+	if ($agent_type == "concert") {
+		$sHtml .= "<div class='header'>Koncert Agent</div>";
+	} else if ($agent_type == "album") {
+		$sHtml .= "<div class='header'>Album Agent</div>";
+	} else {
+		$sHtml .= "<div class='header'>Airplay Music Agent</div>";
+	}
+	$sHtml .= "<div class='subheader'>Du skal være logget ind som bruger for at benytte denne service.</div>";
+	$sHtml .= "<div class='full'>Login / bruger-oprettelse finder du i menuen i toppen af denne side... <a href='javascript:void(0);' onClick='jQuery(\"#top_menu_element_3\").click();'>her</a></div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+*	Empty element for not making AJAX fail.
+*/
+function airplay_price_agent_get_empty_HTML() {
+	$sHtml =  "<div id='response'></div>";
+	return $sHtml;
+}
+
+/**
+*	Get HTML for confirm deleting an agent.
+*/
+function airplay_price_agent_get_delete_agent_confirm_HTML() {
+	$sHtml = "";
+	$sHtml =  "<div id='response'>";
+	$sHtml .= "<div class='header'>Ønsker du at slette denne agent?</div>";
+	$sHtml .= "<div class='full'>";
+	$sHtml .= "<div style='float:right;padding-left:25px;'><input type='button' onClick='ap_user_settings_price_agent_confirm_delete_agent(" . $_REQUEST["id"] . ", false);' value='Nej' /></div>";
+	$sHtml .= "<div style='float:right;padding-left:25px;'><input type='button' onClick='ap_user_settings_price_agent_confirm_delete_agent(" . $_REQUEST["id"] . ", true);' value='Ja' /></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get mail not validated html
+*/
+
+function airplay_price_agent_get_not_validated_mail_HTML($agent_type) {
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	if ($agent_type == "concert") {
+		$sHtml .= "<div class='header'>Koncert Agent</div>";
+	} else if ($agent_type == "album") {
+		$sHtml .= "<div class='header'>Album Agent</div>";
+	}
+	$sHtml .= "<div class='subheader'>Denne service kræver at din mail-adresse er godkendt.</div>";
+	$sHtml .= "<div class='full'>Klik <a href='javascript:void(0);' onClick='ap_price_agent_send_validate_mail();'>her</a> for validering af din mail-adresse.</div>";
+	$sHtml .= "</div>";
+
+	return $sHtml;
+}
+
+/**
+* Get mail validating mail not sent
+*/
+function airplay_price_agent_get_mail_not_sent_html() {
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Airplay Music Agent</div>";
+	$sHtml .= "<div class='subheader'>&nbsp;</div>";
+	$sHtml .= "<div class='full'>Der var en fejl i afsendelsen af din mail.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get mail validating mail not sent
+*/
+function airplay_price_agent_get_mail_sent_html() {
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Airplay Music Agent</div>";
+	$sHtml .= "<div class='subheader'>&nbsp;</div>";
+	$sHtml .= "<div class='full'>Vi har sendt en mail til dig med aktiveringslink til validering af din mail-adresse.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for agent saved.
+*/
+function airplay_price_agent_get_concert_agent_for_artist_saved_html()
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Koncert Agent</div>";
+	$sHtml .= "<div class='subheader'>Din Koncert Agent er nu oprettet.</div>";
+	$sHtml .= "<div class='full'>Du vil fremover få besked når vi finder koncerter der matcher din Agent. Nedenfor finder du listen med allerede kendte koncerter.  </div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for agent saved.
+*/
+function airplay_price_agent_get_concert_agent_for_artist_edited_html()
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Koncert Agent</div>";
+	$sHtml .= "<div class='subheader'>Din Koncert Agent er nu ændret.</div>";
+	$sHtml .= "<div class='full'>Du vil fremover få besked når vi finder koncerter der matcher din Agent.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for agent saved.
+*/
+function airplay_price_agent_get_concert_agent_for_artist_exists_html()
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Koncert Agent</div>";
+	$sHtml .= "<div class='subheader'>Kan ikke oprette Koncert Agent.</div>";
+	$sHtml .= "<div class='full'>Du er allerede tilmeldt Koncert Agent for denne kunstner.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+
+/**
+* Get HTML for agent saved.
+*/
+function airplay_price_agent_get_album_agent_for_artist_saved_html()
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Album Agent</div>";
+	$sHtml .= "<div class='subheader'>Din Album Agent er nu oprettet.</div>";
+	$sHtml .= "<div class='full'>Du vil fremover få besked når vi finder tilbud der matcher din Agent.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for agent saved.
+*/
+function airplay_price_agent_get_album_agent_for_artist_exists_html()
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	$sHtml .= "<div class='header'>Album Agent</div>";
+	$sHtml .= "<div class='subheader'>Kan ikke oprette Album Agent.</div>";
+	$sHtml .= "<div class='full'>Du er allerede tilmeldt Album Agent for dette album.</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for creating a new album agent
+*/
+function airplay_price_agent_get_album_agent_for_artist_html($user_id, $artist_id, $item_base_id)
+{
+	$aMediaFormats = airplay_price_agent_get_media_format_names();
+	$max_price_text = "Max. pris";
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	// Hidden form elements start.
+	$sHtml .= "<div style='display:none;'>";
+	$sHtml .= airplay_price_agent_get_media_format_names_checkboxes($aMediaFormats);
+	$sHtml .= "</div>";
+	// Hidden form elements end.
+	$sHtml .= "<div class='header'>Album Agent</div>";
+	$sHtml .= "<div class='subheader'>Opret Album Agent og få besked om matchende tilbud.</div>";
+	$sHtml .= "<div class='left'>Din Album Agent giver besked når musiksøgemaskinen finder tilbud for valgte album, der matcher pris og/eller format.</div>";
+	$sHtml .= "<div class='right'>";
+	$sHtml .= "<div style='width:100%;float:left;'><input id='agent_price' value='{$max_price_text}' onFocus='if (this.value == \"{$max_price_text}\") { this.value = \"\"; }' onBlur='if (this.value == \"\") { this.value = \"{$max_price_text}\"; }' type='text'><div class='currency_label'>kr</div></div>";
+	$sHtml .= airplay_price_agent_get_media_format_names_layout($aMediaFormats);
+	$sHtml .= "<div class='button_spacer'><input type='button' onClick='ap_price_agent_create_album_agent_postback({$artist_id}, {$item_base_id});' value='Opret' /></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	return $sHtml;
+}
+
+/**
+* Get HTML for creating a new album agent
+*/
+function airplay_price_agent_get_album_agent_for_artist_edit_HTML($aAgent)
+{
+	$artist_id = $aAgent[0]["artist_id"];
+	$agent_id = $aAgent[0]["agent_id"];
+	$item_base_id = $aAgent[0]["item_base_id"];
+	$max_price = $aAgent[0]["max_price"];
+	
+	$aMediaFormats = airplay_price_agent_get_media_format_names();
+	$aMediaFormatsSelected = airplay_price_agent_get_media_format_for_agent($agent_id);
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	// Hidden form elements start.
+	$sHtml .= "<div style='display:none;'>";
+	$sHtml .= airplay_price_agent_get_media_format_names_checkboxes($aMediaFormats, $aMediaFormatsSelected);
+	$sHtml .= "</div>";
+	// Hidden form elements end.
+	$sHtml .= "<div class='header'>Album agent</div>";
+	$sHtml .= "<div class='subheader'>Ændre Album Agent og få besked om matchende tilbud.</div>";
+	$sHtml .= "<div class='left'>Din Album Agent giver dig besked når musiksøgemaskinen finder tilbud for valgte album, der matcher pris og/eller format.</div>";
+	$sHtml .= "<div class='right'>";
+	$sHtml .= "<div style='width:100%;float:left;'><input id='agent_price' value='{$max_price}' type='text'><div class='currency_label'>kr</div></div>";
+	$sHtml .= airplay_price_agent_get_media_format_names_layout_with_selected_formats($aMediaFormats, $aMediaFormatsSelected);
+	$sHtml .= "<div class='button_spacer'><input type='button' onClick='ap_price_agent_edit_album_agent_postback({$artist_id}, {$agent_id}, {$item_base_id});' value='Ændre' /></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	return $sHtml;
+}
+
+/**
+* Get HTML for creating a new concert agent
+*/
+function airplay_price_agent_get_concert_agent_for_artist_html($user_id, $artist_id)
+{
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	// Hidden form elements start.
+	$sHtml .= "<select id='agent_mid' style='display:none;'>";
+	$sHtml .= "<option value='-1' selected='selected' />";
+	$sHtml .= "<option value='0' />";
+	$sHtml .= "<option value='128' />";
+	$sHtml .= "<option value='129' />";
+	$sHtml .= "</select>";
+	// Hidden form elements end.
+	$sHtml .= "<div class='header'>Koncert Agent</div>";
+	$sHtml .= "<div class='subheader'>Opret Koncert Agent og få besked om koncerter og musikfestivaler.</div>";
+	$sHtml .= "<div class='left'>Din Koncert Agent giver dig besked når der annonceres nye koncerter og musikfestivaler med valgte kunstner.</div>";
+	$sHtml .= "<div class='right'>";
+	$sHtml .= "<div class='129 unselected' onClick='ap_price_agent_select_concert_format(129);'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_concert_format(129);'>Festival</div>";
+	$sHtml .= "<div  class='128 unselected' onClick='ap_price_agent_select_concert_format(128);'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_concert_format(128);'>Koncert</div>";
+	$sHtml .= "<div class='button_spacer'><input type='button' onClick='ap_price_agent_create_concert_agent_postback({$artist_id});' value='Opret' /></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/**
+* Get HTML for creating a edit concert agent
+*/
+function airplay_price_agent_get_edit_concert_agent_for_artist_HTML($aAgent)
+{
+	$artist_id = $aAgent[0]["artist_id"];
+	$agent_id = $aAgent[0]["agent_id"];
+	
+	$aMediaFormats = airplay_price_agent_get_media_format_for_agent($agent_id);
+	if (count($aMediaFormats) > 1) {
+		$media_format_id = 0;
+	} else {
+		$media_format_id = $aMediaFormats[0]["media_format_id"];
+	}
+
+	$sHtml = "";
+	$sHtml .= "<div id='response'>";
+	// Hidden form elements start.
+	$sHtml .= "<select id='agent_mid' style='display:none;'>";
+	$sHtml .= "<option value='-1' />";
+	$sHtml .= "<option value='0' " . ($media_format_id == 0 ? 'selected="selected"' : '') . " />";
+	$sHtml .= "<option value='128' " . ($media_format_id == 128 ? 'selected="selected"' : '') . " />";
+	$sHtml .= "<option value='129' " . ($media_format_id == 129 ? 'selected="selected"' : '') . " />";
+	$sHtml .= "</select>";
+	// Hidden form elements end.
+	$sHtml .= "<div class='header'>Koncert Agent</div>";
+	$sHtml .= "<div class='subheader'>Ændre Koncert Agent og få besked om koncerter og musikfestivaler.</div>";
+	$sHtml .= "<div class='left'>Din Koncert Agent giver dig besked når der annonceres nye koncerter og musikfestivaler med valgte kunstner.</div>";
+	$sHtml .= "<div class='right'>";
+	$sHtml .= "<div class='129 " . ( ($media_format_id == 129 || $media_format_id == 0) ? 'selected' : 'unselected') . "' onClick='ap_price_agent_select_concert_format(129);'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_concert_format(129);'>Festival</div>";
+	$sHtml .= "<div  class='128 " . ( ($media_format_id == 128 || $media_format_id == 0) ? 'selected' : 'unselected') . "' onClick='ap_price_agent_select_concert_format(128);'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_concert_format(128);'>Koncert</div>";
+	$sHtml .= "<div class='button_spacer'><input type='button' onClick='ap_price_agent_edit_concert_agent_postback({$agent_id}, {$artist_id});' value='Ændre' /></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	return $sHtml;
+}
+
+/*********************                   *********************/
+
+
+/**
+* Delete all agent data for a specific agent_id
+*/
+function airplay_price_agent_delete($user_id, $agent_id) {
+	
+	$aUserAgent = airplay_price_agent_get_agent_data($user_id, $agent_id);
+	
+	if (count($aUserAgent) > 0) {
+		airplay_price_agent_delete_agent_log($agent_id);
+		airplay_price_agent_delete_agent_media_format_rel($agent_id);
+		airplay_price_agent_delete_agent_queue($agent_id);
+		airplay_price_agent_delete_agent($agent_id);
+	}
+}
+
+/**
+* Send the first mail with all concerts and/or festivals
+*/
+
+function airplay_price_agent_send_init_mail_for_concerts($user_id, $artist_id, $media_format_ids, $agent_id) {
+
+	$aUserSettings = airplay_price_agent_get_user_settings_data($user_id);
+
+	if (count($aUserSettings) > 0) {
+		$aData = airplay_price_agent_get_data_for_init_mail_for_concerts($artist_id, $media_format_ids);
+		if ($aData > 0) {
+			require_once ( __DIR__ . '/../../../../../aphp/aphp_fix_include_path.php' );
+			require_once ( __DIR__ . '/../../../../../aphp/agents/AgentFactory.php' );
+			require_once ( __DIR__ . '/../../../../../aphp/PHPMailer/AirplayMusicMailer.php' );
+
+			$oAgentFactory = new AgentFactory();
+			$oAgent = $oAgentFactory->createAgent('mail');
+			
+			$display_name = $aUserSettings[0]["firstname"] . " " . $aUserSettings[0]["lastname"];
+			$user_email = $aUserSettings[0]["mail"];
+			$artist_name = $aData[0]["artist_name"];
+			$send_alternative_text = "";
+			$send_text = $oAgent->getInitConcertMailHTML($aData, $display_name);
+			$oAgent->ap_sendmail($display_name, $user_email, $send_text, $send_alternative_text, "Koncert Agent for {$artist_name} er oprettet");
+			airplay_price_agent_update_agent_last_sent($agent_id);
+		}
+	}
+};
+
+
+
+function airplay_price_agent_send_validate_mail($user_id) {
+	$sHtml = "";
+	$user_name = "";
+	$user_email = "";
+	$aArgs = array ( );
+	global $conf;
+	$temp = (array)$conf["language_default"];
+	$domain = $temp['domain'];
+	// MOVE TO DB_VIEW
+	$sQuery = "SELECT mail, hash_timestamp_created, firstname, lastname FROM user_settings WHERE user_id = :user_id";
+	$aArgs = array ( ':user_id' => $user_id );
+	db_set_active('airplay_music_v1');
+	$query_result = db_query($sQuery, $aArgs);
+	while ( $a = $query_result->fetchAssoc() ) {
+			$user_email = $a["mail"];
+			$display_name = $a["firstname"] . " " . $a["lastname"];
+			$hash_timestamp_created = $a["hash_timestamp_created"];
+	} 
+	db_set_active('default');
+
+	if ($user_email != "" && $display_name != "") {
+
+		$link = "{$domain}/bruger-indstillinger?validatemail=true&email={$user_email}&hash={$hash_timestamp_created}";
+
+		require_once ( __DIR__ . '/../../../../../aphp/aphp_fix_include_path.php' );
+		require_once ( __DIR__ . '/../../../../../aphp/agents/AgentFactory.php' );
+		require_once ( __DIR__ . '/../../../../../aphp/PHPMailer/AirplayMusicMailer.php' );
+
+		$oAgentFactory = new AgentFactory();
+		$oAgent = $oAgentFactory->createAgent('mail');
+		$send_alternative_text = "";		
+		$send_text = $oAgent->getValidateMailHTML($display_name, $link);
+		
+		$oAgent->ap_sendmail($display_name, $user_email, $send_text, $send_alternative_text, "Aktivering mail-adresse til Airplay Music Agent");
+		
+		$sHtml = airplay_price_agent_get_mail_sent_html();
+	} else {
+		$sHtml = airplay_price_agent_get_mail_not_sent_html();
+	}
+	return $sHtml;
+}
+
+
+
+/**
+* Make divs from a media format array.
+*/
+function airplay_price_agent_get_media_format_names_layout($aMediaFormats) {
+	$s = "";
+	foreach($aMediaFormats AS $aMediaFormat) {
+		$media_format_id = $aMediaFormat["media_format_id"];
+		$media_format_name = $aMediaFormat["media_format_name"];
+		$s .= "<div class='{$media_format_id} unselected' onClick='ap_price_agent_select_item_format({$media_format_id});'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_item_format({$media_format_id});'>{$media_format_name}</div>";
+	}
+	return $s;
+}
+
+/**
+* Make checkboxes from a media format array.
+*/
+function airplay_price_agent_get_media_format_names_checkboxes($aMediaFormats, $aMediaFormatsSelected = NULL) {
+	$s = "";
+	if (is_null($aMediaFormatsSelected)) {
+		foreach($aMediaFormats AS $aMediaFormat) {
+			$media_format_id = $aMediaFormat["media_format_id"];
+			$s .= "<input type='checkbox' name='price_agent_media_format' value='{$media_format_id}' id='price_agent_media_format_{$media_format_id}'>";
+		}
+	} else {
+		foreach($aMediaFormats AS $aMediaFormat) {
+			$checked = "";
+			$media_format_id = $aMediaFormat["media_format_id"];
+			$media_format_name = $aMediaFormat["media_format_name"];
+			foreach($aMediaFormatsSelected AS $aData) {
+				if ($media_format_id == $aData["media_format_id"]) {
+					$checked = "checked='yes'";
+				}
+			}
+			$s .= "<input type='checkbox' name='price_agent_media_format' value='{$media_format_id}' id='price_agent_media_format_{$media_format_id}' {$checked} >";
+		}
+	}
+	return $s;
+}
+
+/**
+* Make checkboxes from a media format array.
+*/
+function airplay_price_agent_get_media_format_names_layout_with_selected_formats($aMediaFormats, $aMediaFormatsSelected) {
+	$s = "";
+	foreach($aMediaFormats AS $aMediaFormat) {
+		$selected = "unselected";
+		$media_format_id = $aMediaFormat["media_format_id"];
+		$media_format_name = $aMediaFormat["media_format_name"];
+		foreach($aMediaFormatsSelected AS $aData) {
+			if ($media_format_id == $aData["media_format_id"]) {
+				$selected = "selected";
+			}
+		}
+		$s .= "<div class='{$media_format_id} {$selected}' onClick='ap_price_agent_select_item_format({$media_format_id});'>&nbsp;</div><div class='input_label' onClick='ap_price_agent_select_item_format({$media_format_id});'>{$media_format_name}</div>";
+	}
+	return $s;
+}
+
+/**
+* Implements hook_block_info().
+*/
+function airplay_price_agent_block_info() {
+  $blocks['airplay_price_agent'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Airplay Music Price Agent'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE
+  );
+  return $blocks;
+}
+
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_price_agent_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_price_agent":
+		$output = '<p>Page for setting and changing Airplay Music Price Agents.</p>';
+		break;
+	}
+	return $output;
+}

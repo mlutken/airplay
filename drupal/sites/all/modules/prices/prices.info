@@ -1,0 +1,5 @@
+; $Id$
+name = Prices
+description = Module for displaying and comparing prices on music.
+core = 6.x
+package = "Airplay"

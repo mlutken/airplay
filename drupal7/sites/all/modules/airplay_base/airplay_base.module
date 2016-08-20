@@ -1,0 +1,72 @@
+<?php 
+// $Id$
+
+module_load_include('inc', 'airplay_base', 'airplay_base_constants');  
+module_load_include('inc', 'airplay_base', 'airplay_base_utils');  
+module_load_include('inc', 'airplay_base', 'airplay_base_locale_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_string_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_url_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_helpers');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_Table');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_SimpleIdAssign');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_DefaultTables');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__settings');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__subgenre');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__record_store');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__record_label');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__artist');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__info_artist');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__album_simple');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__album');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__song');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__song_simple');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__album_song_rel');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__buy_album');  
+// // module_load_include('inc', 'airplay_base', 'airplay_base_tbl__buy_album_history');  
+module_load_include('inc', 'airplay_base', 'airplay_base_tbl__buy_song');  
+// // module_load_include('inc', 'airplay_base', 'airplay_base_tbl__buy_song_history');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_XMLReader');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_SiteMapWriter');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_WordFilesWriter');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_FreeDbReader');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db_UploadReader');  
+module_load_include('inc', 'airplay_base', 'airplay_base_db');  
+module_load_include('inc', 'airplay_base', 'airplay_base_currency_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_MiscDataUpdater');  
+
+
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the airplay_base module
+*/
+function airplay_base_perm() {
+	return array('access airplay_base content');
+} // function airplay_base_perm()
+
+function airplay_base_permission() {
+  return array(
+    'access airplay_base content' => array(
+      'title' => t('Acces permissions for airplay_base'),
+    ),
+  );
+}
+
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_base_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_base":
+		$output = '<p>'.  t("Airplay base module") .'</p>';
+		break;
+	}
+	return $output;
+} // function airplay_base_help
+
+

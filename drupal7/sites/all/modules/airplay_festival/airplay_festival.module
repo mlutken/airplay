@@ -1,0 +1,539 @@
+<?php
+/**
+* @file
+* A block module that displays a list of artists from a list of festivals on /festival page.
+*/
+
+function airplay_festival_perm() {
+	return array('access airplay_festival content');
+}
+
+function airplay_festival_permission() {
+  return array(
+    'access airplay_festival content' => array(
+      'title' => t('Acces permissions for airplay_festival'),
+    ),
+  );
+}
+
+/**
+* Page callback: Airplay Music festival settings
+*
+* @see current_posts_menu()
+*/
+function airplay_festival_form($form, &$form_state) {
+  $form['airplay_festival_max'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum number of posts'),
+    '#default_value' => variable_get('airplay_festival_max', 3),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#description' => t('The maximum number of links to display in the block.'),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+/**
+* Implements hook_menu().
+*/
+function airplay_festival_menu() {
+	$items = array();
+	$items['admin/config/content/airplay_festival'] = array(
+		'title' => 'Airplay Festival',
+		'description' => 'Configuration for Airplay Music festival module',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('airplay_festival_form'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['airplay_festival'] = array(
+		'title' => 'Airplay Festival',
+		'page callback' => '',
+		'access callback' => 'access content',
+		'access arguments' => array('access airplay_festival content'),
+		'type' => MENU_CALLBACK
+	);
+	$items['festival'] = array(
+		'title' => 'Airplay Festival',
+		'page callback' => '',
+		'access callback' => 'access content',
+		'access arguments' => array('access airplay_festival content'),
+		'type' => MENU_CALLBACK
+	);
+  return $items;
+}
+
+/**
+* Implements hook_block_view().
+*
+* Prepares the contents of the block.
+*/
+function airplay_festival_block_view($delta = '') {
+	/*switch ($delta) {
+		case 'airplay_festival':
+			if (user_access('access airplay_festival content')) {
+				$block['subject'] = "t('Current posts')";
+				$block['content'] = airplay_festival_display_contents();
+			}
+			return $block;
+	}*/
+}
+
+function airplay_festival_node_view($node, $view_mode) {
+	 if ($node->type=="page" && $node->title == "Musikfestival Guide"){
+        if ($view_mode == 'full'){
+            $node->content['content'] = array(
+                 "#markup"=> airplay_festival_display_contents(),
+                 "#weight"=> 100
+              );  
+           }
+         return $node;
+    }    
+}
+
+function ap_format_date_festival($from_date, $to_date, $languageCode, $from_to_boolean) {
+	$formatted = "";
+	if ($languageCode == "da") {
+		if ($from_to_boolean == 1) {
+			$from_splitted = explode( "-", $from_date);
+			$to_splitted = explode( "-", $to_date);
+			// Date is the same.
+			if ($from_splitted == $to_splitted) {
+				$formatted .= $to_splitted[2] . ". "	. ap_month_number_to_name( $to_splitted[1], $languageCode) . " " . $to_splitted[0];
+			// Month is not the same.
+			} else if ($from_splitted[1] != $to_splitted[1]) {
+				$formatted .= $from_splitted[2] . ". "	. ap_month_number_to_name( $from_splitted[1], $languageCode) . " - " . $to_splitted[2] . ". "	. ap_month_number_to_name( $to_splitted[1], $languageCode) . " " . $to_splitted[0];
+			} else {
+				$formatted .= $from_splitted[2] . ". - " . $to_splitted[2] . ". "	. ap_month_number_to_name( $to_splitted[1], $languageCode) . " " . $to_splitted[0];
+			}
+		} else {
+			$from_splitted = explode( "-", $from_date);
+			$formatted .= $from_splitted[2] . ". "	. ap_month_number_to_name( $from_splitted[1], $languageCode) . ". " . $from_splitted[0];
+		}
+	}
+	return $formatted;
+}
+
+function ap_month_number_to_name($month, $languageCode) {
+	if ($languageCode == "da") {
+		if ($month == "01") {
+			return "jan";
+		} else if ($month == "02") {
+			return "feb";
+		} else if ($month == "03") {
+			return "mar";
+		} else if ($month == "04") {
+			return "apr";
+		} else if ($month == "05") {
+			return "maj";
+		} else if ($month == "06") {
+			return "jun";
+		} else if ($month == "07") {
+			return "jul";
+		} else if ($month == "08") {
+			return "aug";
+		} else if ($month == "09") {
+			return "sep";
+		} else if ($month == "10") {
+			return "okt";
+		} else if ($month == "11") {
+			return "nov";
+		} else if ($month == "12") {
+			return "dec";
+		}
+	}
+}
+
+
+function airplay_festival_display_contents() {
+    
+    $sHtml = "";
+    $aAllRowsVenue = array();
+	$aAllRowsVenueName = array();
+	$aAllRowsFestivals = array();
+	$aAllRowsArtists = array();
+	$aChange = array();
+	$aArgs = array();
+	$festival_count = 0;
+	$festival_on_map_count = 0;
+	
+	drupal_add_js( drupal_get_path('module', 'airplay_festival') . '/festival_js.js');
+	
+	$languageCode = ap_language_code();
+	 
+    $saveDB = db_set_active('airplay_music_v1');
+
+    $sQuery = "SELECT DISTINCT item_price.item_price_name, record_store_url, record_store_event_date_text, record_store_logo, COALESCE(latitude, 0) AS latitude, COALESCE(longitude, 0) AS longitude, record_store.record_store_id FROM item_price
+	LEFT JOIN festival_item_price_rel ON item_price.item_price_name = festival_item_price_rel.item_price_name
+	INNER JOIN artist ON artist.artist_id = item_price.artist_id INNER JOIN record_store ON record_store.record_store_id = item_price.record_store_id WHERE item_type = 4 AND media_format_id = 129 ORDER BY record_store_event_date_text ASC";
+    $query_result_venue = db_query($sQuery, $aArgs );
+	
+	$sQuery = "SELECT artist_name, item_price_name, item_event_date, item_event_time, record_store_event_date_text, artist.artist_id FROM item_price INNER JOIN artist ON artist.artist_id = item_price.artist_id INNER JOIN record_store ON record_store.record_store_id = item_price.record_store_id WHERE item_type = 4 AND media_format_id = 129 ORDER BY item_price_name ASC , artist_name ASC, item_event_date ASC, item_event_time ASC";
+    $query_result = db_query($sQuery, $aArgs );
+
+	while ( $o = $query_result_venue->fetchAssoc() ) {
+		$aAllRowsVenue[] = $o;
+		$aAllRowsVenueName[] = array ("venue_name" => $o["item_price_name"] , "record_store_id" => $o["record_store_id"]);
+    }
+	
+    while ( $o = $query_result->fetchAssoc() ) {
+		/*$aAllRowsFestivals[] = $o;
+		if (!in_array(mb_strtolower($o["artist_name"]), $aChange)) {
+			$aChange[] = mb_strtolower($o["artist_name"]);
+			$aAllRowsArtists[] = array( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"] );
+		}*/
+		
+		if ((isset($_GET["char"]) && strlen($_GET["char"]) == 1 && !is_numeric($_GET["char"])) ) {
+			if (substr($o["artist_name"], 0, 1) == $_GET["char"] && $_GET["char"] != "#") {
+				$aAllRowsFestivals[] = $o;
+				if (!in_array(mb_strtolower($o["artist_name"]), $aChange)) {
+					$aChange[] = mb_strtolower($o["artist_name"]);
+					$aAllRowsArtists[] = array( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"] );
+				}
+			} else if (substr($o["artist_name"], 0, 1) >= 0 && substr($o["artist_name"], 0, 1) < 10 && $_GET["char"] == "#") {
+				$aAllRowsFestivals[] = $o;
+				if (!in_array(mb_strtolower($o["artist_name"]), $aChange)) {
+					$aChange[] = mb_strtolower($o["artist_name"]);
+					$aAllRowsArtists[] = array( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"] );
+				}
+			}
+		} else {
+			$aAllRowsFestivals[] = $o;
+			if (!in_array(mb_strtolower($o["artist_name"]), $aChange)) {
+				$aChange[] = mb_strtolower($o["artist_name"]);
+				$aAllRowsArtists[] = array( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"] );
+			}
+		}
+		if (0 == (int)substr($o["artist_name"], 0, 1)) {
+			$aArtistBeginChar[] = mb_strtoupper(substr($o["artist_name"], 0, 1));
+		} else {
+			$aArtistBeginChar[] = "NUM";
+		}
+    } 
+
+    db_set_active($saveDB);
+	
+
+	/*
+		Sort section 
+	*/
+	foreach ($aAllRowsArtists as $key => $row) {
+		$artist_id[$key]  = $row['artist_id'];
+		$artist_name[$key] = $row['artist_name'];
+	}
+	array_multisort($artist_name, SORT_ASC, $aAllRowsArtists);
+	
+
+	foreach ($aAllRowsVenueName as $key => $row) {
+		$venue_name[$key] = $row['venue_name'];
+	}
+	array_multisort($venue_name, SORT_ASC, $aAllRowsVenueName);
+	
+
+	$sHtml .= "<div id='tabs'><h3>Musikfestival</h3></div>";
+	
+	$sHtml .= "<div id='festival_guide'>";
+	
+	$sHtml .= "<div id='filters_text'>";
+	$sHtml .= "<div><a class='artist selected' href='javascript:void(0);' onClick='ap_festival_show_artist_drop_down();'>Kunstner</a></div>";
+	$sHtml .= "<div><a class='festival' href='javascript:void(0);' onClick='ap_festival_show_festival_drop_down();'>Festivaler</a></div>";
+	//$sHtml .= "<div><a href='javascript:void(0);' class='festival_drop_down_link'>Dato</a></div>";
+	//$sHtml .= "<div><a href='javascript:void(0);' class='month_drop_down_link'>Område</a></div>";
+	$sHtml .= "</div>";
+	
+	$sHtml .= "<div id='filters'>";
+	$sHtml .= "<div id='artists_container'>";
+	$sHtml .= "<div id='artists'>";
+	$sHtml .= "<div class='items'>";
+	foreach ($aAllRowsArtists as $aArtist) {
+		$sHtml .= "<div class='item item_" . $aArtist["artist_id"] . "' onClick='ap_festival_select_artist(" . $aArtist["artist_id"] . ", this);' title='" . htmlspecialchars($aArtist["artist_name"], ENT_QUOTES) . "'>" . htmlspecialchars(substr($aArtist["artist_name"], 0, 32), ENT_QUOTES) . "</div>";
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	
+	$sHtml .= "<div class='alphabet'>";
+	$sHtml .= "<div class='items'>";
+	foreach(range('A','Z') as $i) {
+		if (in_array($i, $aArtistBeginChar)) {
+			(isset($_GET["char"]) && $_GET["char"] == $i)  ? $class = ' selected' : $class = '';
+			$sHtml .= "<div class='item$class'><a href='?char={$i}' rel='nofollow'>{$i}</a></div>";
+		} else {
+			$sHtml .= "<div class='item'>{$i}</div>";
+		}
+	}
+	// TODO Optimize with at loop
+	if (in_array("Æ", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Æ")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Æ' rel='nofollow'>Æ</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Æ</div>";
+	}
+	if (in_array("Ø", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Ø")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Ø' rel='nofollow'>Ø</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Ø</div>";
+	}
+	if (in_array("Å", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Å")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Å' rel='nofollow'>Å</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Å</div>";
+	}
+	if (in_array("NUM", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="NUM")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=NUM' rel='nofollow'>#</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>#</div>";
+	}
+	(isset($_GET["char"]) && $_GET["char"] =="ALL")  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div class='item$class'><a href='?char=ALL' rel='nofollow'>Alle</a></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	
+
+
+	$sHtml .= "<div id='festivals' style='display:none;'>";
+	$sHtml .= "<div class='items'>";
+	foreach ($aAllRowsVenueName as $aVenue) {
+		// Clean up venue names.
+		$festival_name = $aVenue["venue_name"];
+		$record_store_id = $aVenue["record_store_id"];
+		if (strstr($festival_name, " (")) {
+			$festival_name = substr($festival_name, 0, strpos($festival_name, " ("));
+		}
+		$sHtml .= "<div class='item item_{$record_store_id}' onClick='ap_festival_select_festival( {$record_store_id}, \"{$festival_name}\");'>{$festival_name}</div>";
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	
+	$sHtml .= "<div id='selected_filters'>";
+	$sHtml .= "<div class='artists' style='width:100%;float:left;'>";
+	$sHtml .= "<h3>Kunstner:</h3>";
+	$sHtml .= "<div class='items'><div class='item selected' onClick='ap_festival_remove_artist(0, this);'>Alle</div></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "<div class='festivals' style='width:100%;float:left;'>";
+	$sHtml .= "<h3>Festival:</h3>";
+	$sHtml .= "<div class='items'><div class='item selected'>Alle</div></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	
+
+	$sHtml .= "<div id='map_container'>";
+	$sHtml .= "<div class='close' onClick='ap_festival_hide_map();' title='Luk'></div>";
+	$sHtml .= "<div id='map-canvas'></div>";
+	$sHtml .= "</div>";
+	/*$sHtml .= "<div class='months'><div class='items'>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(1);'>Januar</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(2);'>Februar</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(3);'>Marts</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(4);'>April</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(5);'>Maj</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(6);'>Juni</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(7);'>Juli</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(8);'>August</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(9);'>September</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(10);'>Oktober</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(11);'>November</div>";
+	$sHtml .= "<div class='item' onClick='ap_festival_select_month(12);'>December</div>";
+	$sHtml .= "</div></div>";
+	$sHtml .= "</div>";*/
+	$sHtml .= "</div>";
+		
+	$sHtml .= "<div class='header_text'><h2>Festivaler</h2> <a href='javascript:void(0);' onClick='ap_festival_show_hide_map();'>(Vis festivaler på kort)</a></div>";
+	
+	// Festival items.
+	$sHtml .= "<div id='festivalcontainers'>";
+	$sHtml .= "<div id='containers'>";
+
+	foreach ($aAllRowsVenue as $a ) {
+		
+		$festival_name = $a["item_price_name"];
+		
+		if (strstr($festival_name, " (")) {
+			$festival_name = substr($festival_name, 0, strpos($festival_name, " ("));
+		}
+
+		$sHtml .= "<div id='container_{$festival_count}' class='list_container'>";
+		$sHtml .= "<div class='header' onClick='ap_festival_open_container({$festival_count});' title='Vis optrædende kunstnere'>";
+		//$sHtml .= "<div class='logo'><a href='" . $a["record_store_url"] . "' target='_blank'><img src='" . $a["record_store_logo"] . "' width='80' height='24' border='0' alt='{$festival_name}' title='{$festival_name}' /></a>";
+		//$sHtml .= "<div class='icons'>";
+		/*$sHtml .= "<div class='homepage'>";
+		$sHtml .= "<a href='" . $a["record_store_url"] . "' target='_blank''><img src='http://static.airplaymusic.dk/images/festival/homepage.png' width='20' height='20' border='0' alt=''  title='{$festival_name}' /></a>";
+		$sHtml .= "</div>";*/
+		/*$sHtml .= "<div class='map'>";
+		if ($a["latitude"] != 0 && $a["longitude"] != 0) {
+			$sHtml .= "<a href='javascript:void(0);' onClick='ap_festival_select_icon({$festival_on_map_count});' ><img src='http://www.airplaymusic.dk/images/festival/map.png' width='20' height='20' border='0' alt='' title='Vis på kort' /></a>";
+			$festival_on_map_count++;
+		} else {
+			$sHtml .= "";
+		}
+		$sHtml .= "</div>";*/
+		//$sHtml .= "</div></div>";
+
+		if ($a["record_store_event_date_text"] != "")  {
+			$concert_date_splitted = explode(" ", $a["record_store_event_date_text"]);
+			if (count($concert_date_splitted) == 2) {
+				$item_event_time_text = ap_format_date_festival($concert_date_splitted[0], $concert_date_splitted[1], $languageCode, 1);
+				//$sHtml .= "<div class='date'>" . $item_event_time_text . "</div>";
+				$sHtml .= "<div class='month' style='display:none;'>" . (int)substr($concert_date_splitted[0], 5, 2) . " " . (int)substr($concert_date_splitted[1], 5, 2) . "</div>";
+			}
+		} else {
+			$item_event_time_text = "&nbsp;";
+			//$sHtml .= "<div class='date'>&nbsp;</div>";
+			$sHtml .= "<div class='month' style='display:none;'>0 0</div>";
+		}
+
+		$sHtml .= "<div class='name'>{$festival_name}</div><div class='date'>{$item_event_time_text}</div>";
+		
+		$sHtml .= "<div class='icons'>";
+		$sHtml .= "<div class='homepage'><a href='" . $a["record_store_url"] . "' target='_blank'><img src='http://www.airplaymusic.dk/images/site/homepage_icon.png' width='17' height='15' border='0' alt=''  title='{$festival_name}' /></a></div>";
+		if ($a["latitude"] != 0 && $a["longitude"] != 0) {
+			$sHtml .= "<div class='map'><img src='http://www.airplaymusic.dk/images/site/map_icon.png' width='8' height='15' border='0' alt='' title='Vis på kort' onClick='ap_festival_select_icon({$festival_on_map_count});' /></div>";
+			$festival_on_map_count++;
+		} else {
+			$sHtml .= "<div class='map'>&nbsp;</div>";
+		}
+		$sHtml .= "<div class='toggle'><img src='http://www.airplaymusic.dk/images/site/dropdown_icon.png' width='11' height='10' border='0' alt=''  title='' /></div>";
+		$sHtml .= "</div>";
+		$sHtml .= "</div>";
+		
+		if ($festival_count == 0) {
+			$sHtml .= "<div class='theitems'>";
+		} else {
+			$sHtml .= "<div class='theitems' style='display:none;'>";
+		}
+		
+		$sHtml .= "<div class='items'>";
+	
+		foreach ($aAllRowsFestivals as $o ) {
+
+			if ($a["item_price_name"] == $o["item_price_name"]) {
+				$artist_name	= $o["artist_name"];
+				$artist_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+				$artist_name = htmlspecialchars($artist_name, ENT_QUOTES);
+				$sHtml .= "<div class='item artist_" . $o["artist_id"] . "'>";
+				$sHtml .= "<div class='artist'><a href=\"{$artist_link}\" title=\"{$artist_name}\">{$artist_name}</a></div>";
+				if ($o['item_event_date'] != '0000-00-00') {
+					if ($languageCode == "da") {
+						$item_event_time_text = ap_format_date_festival($o['item_event_date'], '', $languageCode, 0) . "&nbsp;";
+						if ($o['item_event_time'] != "00:00:00") {
+							$item_event_time_text .= "kl. " . $o['item_event_time'];
+						}
+					} else {
+						$item_event_time_text = ap_format_date_festival($o['item_event_date'], '', $languageCode, 0) . "&nbsp;";
+						if ($o['item_event_time'] != "00:00:00") {
+							$item_event_time_text .= "at " . $o['item_event_time'];
+						}
+					}
+				}
+				$sHtml .= "<div class='date'>" . $item_event_time_text  . "</div>";
+				$sHtml .= "</div>";
+			}
+			
+		}
+		$festival_count++;
+		$sHtml .= "</div>";
+		$sHtml .= "</div>";
+		$sHtml .= "</div>";
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	$sHtml .=
+<<<SCRIPT
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy7nKvz8BKh3jXmNuV6AeCqQRgDnxJa_s&sensor=true"></script>
+<script type='text/javascript'>
+	var iconBase = "http://www.airplaymusic.dk/images/site/";
+	var FestivalCount = {$festival_count};
+	var aContainers = new Array();
+	for (var i = 0; i < FestivalCount; i++) {
+		var arr = new Array(i, 0);
+		aContainers.push(arr);
+	}
+	var arrMarkers = [];
+	var arrInfowindow = [];
+	/* multi array for selected artists */
+	var aSelectedArtist  = [];
+	var aSelectedFestival  = [];
+</script>
+SCRIPT;
+	$sHtml .= "<script type='text/javascript'>";
+	
+	$sHtml .= "var aAllArtists = new Array();";
+	$i_count_record_store = 0;
+	foreach ($aAllRowsVenue as $a ) {
+		$record_store_id = $a["record_store_id"];
+		$i_count_artist = 0;
+		foreach ($aAllRowsFestivals as $o ) {
+			if ($a["item_price_name"] == $o["item_price_name"]) {
+				$artist_id = $o["artist_id"];
+				$sHtml .= "aAllArtists[{$i_count_artist}] = new Array ( {$artist_id},  '" . str_replace("'", "\'", $o["artist_name"]) . "', 0, {$i_count_record_store}, {$record_store_id} );\n";
+			}
+			$i_count_artist++;
+		}
+		$i_count_record_store++;
+	}
+	
+	$sHtml .= "var MapFestivals = new Array();";
+	$festival_on_map_count = 0;
+	for ($i = 0; $i < count($aAllRowsVenue); $i++) {
+		if ($aAllRowsVenue[$i]["latitude"] != 0 && $aAllRowsVenue[$i]["longitude"] != 0) {
+			$festival_name = $aAllRowsVenue[$i]["item_price_name"];
+			if (strstr($festival_name, " (")) {
+				$festival_name = substr($festival_name, 0, strpos($festival_name, " ("));
+			}
+			$item_event_time_text = "";
+			if ($aAllRowsVenue[$i]["record_store_event_date_text"] != "")  {
+				$concert_date_splitted = explode(" ", $aAllRowsVenue[$i]["record_store_event_date_text"]);
+				if (count($concert_date_splitted) == 2) {
+					$item_event_time_text = ap_format_date_festival($concert_date_splitted[0], $concert_date_splitted[1], $languageCode, 1);
+				}
+			}
+			$sHtml .= "MapFestivals[{$festival_on_map_count}] = new Array ( " . $aAllRowsVenue[$i]["latitude"] . ",  " . $aAllRowsVenue[$i]["longitude"] . ",  '" . $festival_name . "', '" . $aAllRowsVenue[$i]["record_store_url"] . "', '" .  $item_event_time_text . "', " . $i . ");";
+			$festival_on_map_count++;
+		}
+	}
+	$sHtml .= "google.maps.event.addDomListener(window, 'load', initialize);";
+	
+	if (isset($_GET["char"])) {
+		$sHtml .= "jQuery('#tabs')[0].scrollIntoView();";
+	}
+	$sHtml .= "</script>";
+    return $sHtml;
+}
+
+
+
+/**
+* Implements hook_block_info().
+*/
+function airplay_festival_block_info() {
+  $blocks['airplay_festival'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Airplay Festival'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE
+  );
+  return $blocks;
+}
+
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_festival_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_festival":
+		$output = '<p>Displays a list of artists from a list of festivals on /festival page.</p>';
+		break;
+	}
+	return $output;
+}

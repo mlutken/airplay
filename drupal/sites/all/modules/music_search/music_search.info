@@ -1,0 +1,5 @@
+; $Id$
+name = Music Search
+description = Airplay's 'Music Search Engine'.
+core = 6.x
+package = "Airplay"

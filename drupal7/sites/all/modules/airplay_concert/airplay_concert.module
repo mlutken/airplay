@@ -1,0 +1,569 @@
+<?php
+module_load_include('inc', 'airplay_base', 'airplay_base_locale_functions');
+
+/**
+* @file
+* A block module that displays a list of artists from a list of Concerts on /Concert page.
+*/
+
+function airplay_concert_perm() {
+	return array('access airplay_concert content');
+}
+
+function airplay_concert_permission() {
+  return array(
+    'access airplay_concert content' => array(
+      'title' => t('Acces permissions for airplay_concert'),
+    ),
+  );
+}
+
+/**
+* Page callback: Airplay Music Concert settings
+*
+* @see current_posts_menu()
+*/
+function airplay_concert_form($form, &$form_state) {
+  $form['airplay_concert_max'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum number of posts'),
+    '#default_value' => variable_get('airplay_concert_max', 3),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#description' => t('The maximum number of links to display in the block.'),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+/**
+* Implements hook_menu().
+*/
+function airplay_concert_menu() {
+	$items = array();
+	$items['admin/config/content/airplay_concert'] = array(
+		'title' => 'Airplay Concert',
+		'description' => 'Configuration for Airplay Music Concert module',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('airplay_concert_form'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['airplay_concert'] = array(
+		'title' => 'Airplay Concert',
+		'page callback' => '',
+		'access callback' => 'access content',
+		'access arguments' => array('access airplay_concert content'),
+		'type' => MENU_CALLBACK
+	);
+	$items['concert'] = array(
+		'title' => 'Airplay Concert',
+		'page callback' => '',
+		'access callback' => 'access content',
+		'access arguments' => array('access airplay_concert content'),
+		'type' => MENU_CALLBACK
+	);
+  return $items;
+}
+
+/**
+* Implements hook_block_view().
+*
+* Prepares the contents of the block.
+*/
+function airplay_concert_block_view($delta = '') {
+	/*switch ($delta) {
+		case 'airplay_concert':
+			if (user_access('access airplay_concert content')) {
+				$block['subject'] = "t('Current posts')";
+				$block['content'] = airplay_concert_display_contents();
+			}
+			return $block;
+	}*/
+}
+
+function airplay_concert_node_view($node, $view_mode) {
+	 if ($node->type=="page" && $node->title == "Koncert Guide"){
+        if ($view_mode == 'full'){
+            $node->content['content'] = array(
+                 "#markup"=> airplay_concert_display_contents(),
+                 "#weight"=> 100
+              );  
+           }
+         return $node;
+    }    
+}
+
+function airplay_concert_display_contents() {
+    
+	$sHtml = "";
+	$aUniqueVenues = array();
+	$aAllRowsConcerts = array();
+	$aAllRowsArtists = array();
+	$aChange = array();
+	$aChangeVenueName = array();
+	$aArgs = array( );
+	$concert_count = 0;
+	$mons = array(1 => "Jan", 2 => "Feb", 3 => "Mar", 4 => "Apr", 5 => "Maj", 6 => "Jun", 7 => "Jul", 8 => "Aug", 9 => "Sep", 10 => "Okt", 11 => "Nov", 12 => "Dec");
+
+	drupal_add_js( drupal_get_path('module', 'airplay_concert') . '/concert_js.js');
+	
+	$languageCode = ap_language_code();
+	
+	$where_days	= "";
+	$where_venue = "";
+	$where_months	= "";
+	$where_char		= "";
+	
+	if (isset($_GET["venue"]) && $_GET["venue"] != "") {
+		$where_venue = urldecode($_GET["venue"]);
+		$aArgs[] = $where_venue;
+	}
+	if (isset($_GET["months"]) && ($_GET["months"]  >= 1 && $_GET["months"] <= 12)) {
+		$where_months = $_GET["months"];
+		$aArgs[] = $where_months;
+	}
+	if (isset($_GET["char"]) && (strlen($_GET["char"]) == 1 || $_GET["char"] == "NUM"))  {
+		$where_char = $_GET["char"];
+		$aArgs[] = $where_char;
+	}
+	if (isset($_GET["days"])) {
+		$where_days = $_GET["days"];
+		$aArgs[] = $where_days;
+	}
+	if ($where_venue == "" && $where_months == "" && $where_char == "" && $where_days == "") {
+		$where_days	= 7;
+		$aArgs[] = $where_days;
+	}
+
+    $saveDB = db_set_active('airplay_music_v1');
+
+	$sQuery = "SELECT DISTINCT SUBSTRING(artist_name, 1, 1) AS artist_char
+	FROM item_price INNER JOIN artist ON artist.artist_id = item_price.artist_id 
+	INNER JOIN record_store ON record_store.record_store_id = item_price.record_store_id 
+	WHERE item_type = 4 AND media_format_id = 128 AND item_event_date > DATE_ADD(now(), INTERVAL -1 DAY)
+	AND record_store.record_store_id NOT IN (221, 183, 187)
+	ORDER BY artist_char ASC";
+	$query_distinct_result = db_query($sQuery, array() );
+	$added_non_number = false;
+	while ( $o = $query_distinct_result->fetchAssoc() ) {
+		if (0 == (int)$o["artist_char"]) {
+			$aArtistBeginChar[] = mb_strtoupper($o["artist_char"]);
+		} else {
+			if ($added_non_number == false) {
+				$aArtistBeginChar[] = "NUM";
+				$added_non_number = true;
+			}
+		}
+	}
+
+	$sQuery = "SELECT DISTINCT item_price_name AS venue_name
+	FROM item_price INNER JOIN artist ON artist.artist_id = item_price.artist_id 
+	INNER JOIN record_store ON record_store.record_store_id = item_price.record_store_id 
+	WHERE item_type = 4 AND media_format_id = 128 AND item_event_date > DATE_ADD(now(), INTERVAL -1 DAY)
+	AND record_store.record_store_id NOT IN (221, 183, 187)";
+	$query_distinct_result = db_query($sQuery, array() );
+	$added_non_number = false;
+	while ( $o = $query_distinct_result->fetchAssoc() ) {
+		if (!in_array($o["venue_name"], $aChangeVenueName)) {
+			$aUniqueVenues[] = array ("venue_name" => $o["venue_name"]);
+			$aChangeVenueName[] = $o["venue_name"];
+		}
+	}
+
+	$sQuery = "SELECT artist_name, item_price_name, item_event_date, item_event_time, record_store_event_date_text, artist.artist_id,
+	record_store_name, buy_at_url, use_affiliate, affiliate_link, affiliate_encode_times, item_price_delivery_status_id, price_local
+	FROM item_price INNER JOIN artist ON artist.artist_id = item_price.artist_id 
+	INNER JOIN record_store ON record_store.record_store_id = item_price.record_store_id 
+	WHERE item_type = 4 AND media_format_id = 128 AND item_event_date > DATE_ADD(now(), INTERVAL -1 DAY) ";
+	if ($where_char != "" && $where_char != "NUM") { $sQuery .= " AND SUBSTRING(artist_name, 1, 1) = ? "; }
+	if ($where_char == "NUM") { $sQuery .= " AND (SUBSTRING(artist_name, 1, 1) >= 1 AND SUBSTRING(artist_name, 1, 1) < 10)  "; }
+	if ($where_months != "") { $sQuery .= " AND MONTH(item_event_date) = ? "; }
+	if ($where_days != "") { $sQuery .= " AND item_event_date <= DATE_ADD(now(), INTERVAL ? DAY)  "; }
+	if ($where_venue != "") { $sQuery .= " AND item_price_name = ? "; }
+	$sQuery .= " AND record_store.record_store_id NOT IN (221, 183, 187)
+	ORDER BY item_event_date ASC, artist_name ASC";
+    $query_result = db_query($sQuery, $aArgs );
+
+    while ( $o = $query_result->fetchAssoc() ) {
+		// Get all data
+		$aAllRowsConcerts[] = $o;
+		// Get all unique artist_names
+		if (!in_array(mb_strtolower($o["artist_name"]), $aChange)) {
+			$aChange[] = mb_strtolower($o["artist_name"]);
+			$aAllRowsArtists[] = array( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"] );
+		}
+    } 
+
+    db_set_active($saveDB);
+
+	/*
+		Sort section 
+	*/
+	foreach ($aAllRowsArtists as $key => $row) {
+		$artist_id[$key]  = $row['artist_id'];
+		$artist_name[$key] = $row['artist_name'];
+	}
+	if (count($aAllRowsArtists) > 0) {
+		array_multisort($artist_name, SORT_ASC, $aAllRowsArtists);
+	}
+	
+	foreach ($aUniqueVenues as $key => $row) {
+		$venue_name[$key] = $row['venue_name'];
+	}
+	if (count($aUniqueVenues) > 0) {
+		array_multisort($venue_name, SORT_ASC, $aUniqueVenues);
+	}
+
+	$artist_display_style = "style='display:none;'";
+	$concert_display_style = "style='display:none;'";
+	$interval_display_style = "";
+
+	if (isset($_GET["venue"])) {
+		$artist_display_style = "style='display:none;'";
+		$concert_display_style = "";
+		$interval_display_style = "style='display:none;'";
+	}
+	if (isset($_GET["char"])) {
+		$artist_display_style = "";
+		$concert_display_style = "style='display:none;'";
+		$interval_display_style = "style='display:none;'";
+	}
+	
+	$sHtml .= "<div id='tabs'><h3>Koncerter</h3></div>";
+	
+	$sHtml .= "<div id='concert_guide'>";	
+	
+	$sHtml .= "<div id='filters_text'>";
+	(isset($_GET["char"])) ? $class = ' selected' : $class = '';
+	$sHtml .= "<div><a class='artist$class' href='?char=A' rel='nofollow'>Kunstner</a></div>";/*onClick='ap_concert_show_artist_drop_down();'*/
+	(isset($_GET["venue"]))  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div><a class='venue$class' href='javascript:void(0);' onClick='ap_concert_show_concert_drop_down();'>Spillested</a></div>";
+	(isset($_GET["days"]) || (!isset($_GET["days"]) && !isset($_GET["venue"]) && !isset($_GET["char"]))) ? $class = ' selected' : $class = '';
+	$sHtml .= "<div><a class='event_date$class' href='javascript:void(0);' onClick='ap_concert_show_interval_drop_down();'>Tidspunkt</a></div>";
+	$sHtml .= "</div>";
+	
+	$sHtml .= "<div id='filters'>";
+
+	// Artists
+	$sHtml .= "<div id='artists_container' {$artist_display_style}>";
+	$sHtml .= "<div id='artists'>";
+	$sHtml .= "<div class='items'>";
+	foreach ($aAllRowsArtists as $aArtist) {
+		$sHtml .= "<div class='item' onClick='ap_concert_select_artist(" . $aArtist["artist_id"] . ", this);' title='" . $aArtist["artist_name"] . "'>" . substr($aArtist["artist_name"], 0, 32) . "</div>";
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	
+	
+	$sHtml .= "<div class='alphabet'>";
+	$sHtml .= "<div class='items'>";
+	foreach(range('A','Z') as $i) {
+		if (in_array($i, $aArtistBeginChar)) {
+			(isset($_GET["char"]) && $_GET["char"] == $i)  ? $class = ' selected' : $class = '';
+			$sHtml .= "<div class='item$class'><a href='?char={$i}' rel='nofollow'>{$i}</a></div>";
+		} else {
+			$sHtml .= "<div class='item'>{$i}</div>";
+		}
+	}
+	// TODO Optimize with at loop
+	if (in_array("Æ", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Æ")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Æ' rel='nofollow'>Æ</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Æ</div>";
+	}
+	if (in_array("Ø", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Ø")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Ø' rel='nofollow'>Ø</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Ø</div>";
+	}
+	if (in_array("Å", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="Å")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=Å' rel='nofollow'>Å</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Å</div>";
+	}
+	if (in_array("NUM", $aArtistBeginChar)) {
+		(isset($_GET["char"]) && $_GET["char"] =="NUM")  ? $class = ' selected' : $class = '';
+		$sHtml .= "<div class='item$class'><a href='?char=NUM' rel='nofollow'>#</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>#</div>";
+	}
+	(isset($_GET["char"]) && $_GET["char"] =="ALL")  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div class='item$class'><a href='?char=ALL' rel='nofollow'>Alle</a></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	
+	
+	
+	// Venues
+	$sHtml .= "<div id='concerts' {$concert_display_style}>";
+	$sHtml .= "<div class='items'>";
+	foreach ($aUniqueVenues as $aVenue) {
+		$venue_name = $aVenue["venue_name"];
+		$venue_name_org = urlencode($aVenue["venue_name"]);
+		if (strstr($venue_name, " (")) {
+			$venue_name = substr($venue_name, 0, strpos($venue_name, " ("));
+		}
+		$sHtml .= "<div class='item'><a href='?venue={$venue_name_org}' rel='nofollow'>{$venue_name}</a></div>";
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";	
+
+	// Interval
+	$sHtml .= "<div id='intervals' {$interval_display_style}>";
+	$sHtml .= "<div class='items'>";
+	($where_days == 1)  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div class='item$class'><a href='?days=1' rel='nofollow'>1 dag</a></div>";
+	($where_days == 3)  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div class='item$class'><a href='?days=3' rel='nofollow'>3 dage</a></div>";
+	($where_days == 7)  ? $class = ' selected' : $class = '';
+	$sHtml .= "<div class='item$class'><a href='?days=7' rel='nofollow'>7 dage</a></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	// Filter end
+	$sHtml .= "</div>";
+
+
+
+
+/*****************************/	
+	//$sHtml .= "<div id='top'>";
+	
+	//$sHtml .= "<div id='artist_filter_container'><div class='header'><h2>Kunstnere</h2></div>";
+	
+	/*$sHtml .= "<div id='artist_filter'>";
+	foreach ($aAllRowsArtists as $aArtist) {
+		$sHtml .= "<div class='item' onClick='ap_concert_select_artist(" . $aArtist["artist_id"] . ", this);'>" . $aArtist["artist_name"] . "</div>";
+	}
+
+	$sHtml .= "</div>";*/
+	//$sHtml .= "</div></div>";
+	$sHtml .= "<div class='header_text'><h2>Koncerter</h2></div>";
+	
+	$sHtml .= "<div id='concertcontainers'>";
+	$sHtml .= "<div id='containers'>";
+	$sHtml .= "<div class='list_container'>";
+	
+	$sHtml .= "<div class='items_header'>";
+	$sHtml .= "<div class='artist'>Kunstner</div><div class='venue'>Spillested</div><div class='date'>Tidspunkt</div><div class='price'>Pris</div><div class='record_store'>Billeter</div>";
+	$sHtml .= "</div>";
+	
+	$sHtml .= "<div class='items'>";
+	
+	//$sHtml .= "<div id='filters'>"; // Filter start
+	
+	/*$sHtml .= "<div id='chars'>";
+	$sHtml .= "<div class='text'>KUNSTNER:</div>";
+	$sHtml .= "<div class='artist_name'><a href='javascript:void(0);' class='alphabet_drop_down_link'>Alfabet</a></div>";
+	$sHtml .= "</div>";*/
+	/*$sHtml .= "<div class='alphabet'>";
+	$sHtml .= "<div class='items'>";
+	foreach(range('A','Z') as $i) {
+		if (in_array($i, $aArtistBeginChar)) {
+			if (isset($_GET["char"]) && $_GET["char"] == $i) {	$class = " selected"; } else {	$class = ""; }
+			$sHtml .= "<div class='item$class'><a href='?char={$i}' rel='nofollow'>{$i}</a></div>";
+		} else {
+			$sHtml .= "<div class='item'>{$i}</div>";
+		}
+	}
+	// TODO Optimize with at loop
+	if (in_array("Æ", $aArtistBeginChar)) {
+		if (isset($_GET["char"]) && $_GET["char"] == "Æ") { $class = " selected"; } else { $class = ""; }
+		$sHtml .= "<div class='item$class'><a href='?char=Æ' rel='nofollow'>Æ</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Æ</div>";
+	}
+	if (in_array("Ø", $aArtistBeginChar)) {
+		if (isset($_GET["char"]) && $_GET["char"] == "Ø") { $class = " selected"; } else { $class = ""; }
+		$sHtml .= "<div class='item$class'><a href='?char=Ø' rel='nofollow'>Ø</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Ø</div>";
+	}
+	if (in_array("Å", $aArtistBeginChar)) {
+		if (isset($_GET["char"]) && $_GET["char"] == "Å") { $class = " selected"; } else { $class = ""; }
+		$sHtml .= "<div class='item$class'><a href='?char=Å' rel='nofollow'>Å</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>Å</div>";
+	}
+	if (in_array("NUM", $aArtistBeginChar)) {
+		if (isset($_GET["char"]) && $_GET["char"] == "NUM") { $class = " selected"; } else { $class = ""; }
+		$sHtml .= "<div class='item$class'><a href='?char=NUM' rel='nofollow'>#</a></div>";
+	} else {
+		$sHtml .= "<div class='item'>#</div>";
+	}
+	if (isset($_GET["char"]) && $_GET["char"] == "ALL") { $class = " selected"; } else { $class = ""; }
+	$sHtml .= "<div class='item$class'><a href='?char=ALL' rel='nofollow'>Alle</a></div>";
+	$sHtml .= "<div class='item'>&nbsp;</div>";
+	$sHtml .= "<div class='item'>&nbsp;</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";*/
+
+	
+	
+	/*$sHtml .= "<div id='venues'>";
+	$sHtml .= "<div class='text'>SPILLESTED:</div>";
+	$sHtml .= "<div class='venue_name'><a href='javascript:void(0);' class='concert_drop_down_link'>Navn</a></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "<div class='concerts'>";
+	$sHtml .= "<div class='items'>";
+	foreach ($aUniqueVenues as $aVenue) {
+		$venue_name = $aVenue["venue_name"];
+		$venue_name_org = urlencode($aVenue["venue_name"]);
+		if (strstr($venue_name, " (")) {
+			$venue_name = substr($venue_name, 0, strpos($venue_name, " ("));
+		}
+		$sHtml .= "<div class='item'><a href='?venue={$venue_name_org}' rel='nofollow'>{$venue_name}</a></div>";
+	}
+	$sHtml .= "</div></div>";*/
+	/*
+	$sHtml .= "<div id='intervals'>";
+	$sHtml .= "<div class='text'>TID:</div>";
+	$sHtml .= "<div class='days'>";
+	if ($where_days == 1) { $class = " selected"; } else { $class = ""; }
+	$sHtml .= "<div class='interval$class'><a href='?days=1' rel='nofollow'>1 dag</a></div>";
+	if ($where_days == 3) { $class = " selected"; } else { $class = ""; }
+	$sHtml .= "<div class='interval$class'><a href='?days=3' rel='nofollow'>3 dage</a></div>";
+	if ($where_days == 7) { $class = " selected"; } else { $class = ""; }
+	$sHtml .= "<div class='interval$class'><a href='?days=7' rel='nofollow'>7 dage</a></div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";*/
+	
+	
+	
+	//$sHtml .= "</div>"; // Filter end
+	
+	
+	foreach ($aAllRowsConcerts as $o ) {
+		$festival_name = $o["item_price_name"];
+		if (strstr($festival_name, " (")) {
+			$festival_name = substr($festival_name, 0, strpos($festival_name, " ("));
+		}
+
+		$artist_name	= $o["artist_name"];
+
+		$record_store_name = $o["record_store_name"];
+		$artist_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+
+		if (($concert_count%2) == 0) {
+			$sHtml .= "<div class='item artist_" . $o["artist_id"] . " even'>";
+		} else {
+			$sHtml .= "<div class='item artist_" . $o["artist_id"] . " odd'>";
+		}
+		
+		$sHtml .= "<div class='artist'><a href=\"{$artist_link}\" title=\"{$artist_name}\">{$artist_name}</a></div>";
+		
+		$sHtml .= "<div class='venue'>" . $o["item_price_name"]  . "</div>";
+		
+		if ($o['item_event_date'] != '0000-00-00') {
+			if ($languageCode == "da") {
+				$item_event_time_text = ap_format_date_festival($o['item_event_date'], '', $languageCode, 0);
+				if ($o['item_event_time'] != "00:00:00") {
+					$item_event_time_text .= "&nbsp;kl. " . $o['item_event_time'];
+				}
+			} else {
+				$item_event_time_text = ap_format_date_festival($o['item_event_date'], '', $languageCode, 0);
+				if ($o['item_event_time'] != "00:00:00") {
+					$item_event_time_text .= "&nbsp;at " . $o['item_event_time'];
+				}
+			}
+		} else {
+			$item_event_time_text = "&nbsp;";
+		}
+		if ($o["price_local"] == 1) {
+			$price_currency_text = t("See Venue");
+		} else {
+			$fPrice  = $o["price_local"];
+			$currency = 'DKK';
+			$iPrice  = airplay_format_price( $fPrice, $currency );
+			$price_currency_text = $iPrice . " " . $currency;
+		}
+		
+		if ($o["item_price_delivery_status_id"] == 3 || $o["item_price_delivery_status_id"] == 4) {
+			$item_event_time_text = "<del>{$item_event_time_text}</del>";
+			$price_currency_text = "<del>{$price_currency_text}</del>";
+		}
+		
+		$sHtml .= "<div class='date'>" . $item_event_time_text  . "</div>";
+		$sHtml .= "<div class='price'>" . $price_currency_text . "</div>";
+		
+		$buy_at_url = $o['buy_at_url'];
+		if ($o['use_affiliate'] == 1) {
+			$buy_at_url = ap_replace_affiliate_link($buy_at_url, $o['affiliate_link'], $o['affiliate_encode_times']);
+		}
+		$item_price_delivery_text = "";
+		if ($o["item_price_delivery_status_id"] == 2) {
+			$item_price_delivery_text = "&nbsp;&nbsp;<strong>(" . t("Few") . ")</strong>";
+		} else if ($o["item_price_delivery_status_id"] == 3) {
+			$item_price_delivery_text = "&nbsp;&nbsp;<strong>(" . t("Sold out") . ")</strong>";
+		} else if ($o["item_price_delivery_status_id"] == 4) {
+			$item_price_delivery_text = "&nbsp;&nbsp;<strong>(" . t("Cancelled") . ")</strong>";
+		}
+		$sHtml .= "<div class='record_store'><a href='{$buy_at_url}' title='{$record_store_name}' target='_blank'>{$record_store_name}</a>{$item_price_delivery_text}</div>";
+		
+		$sHtml .= "</div>";
+
+		$concert_count++;
+	}
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .= "</div>";
+	$sHtml .=
+<<<SCRIPT
+    <script type='text/javascript'>
+		var ConcertCount = {$concert_count};
+		var aContainers = new Array();
+		var aSelectedArtists  = [];
+		for (var i = 0; i < ConcertCount; i++) {
+			var arr = new Array(i, 0);
+			aContainers.push(arr);
+		}	
+		/*jQuery('#filters a.alphabet_drop_down_link').click(function(event) { ap_concert_show_alphabet_drop_down(); event.stopPropagation(); });*/
+		/*jQuery("html").click(function() { ap_concert_hide_concert_drop_down(); ap_concert_hide_alphabet_drop_down(); });*/
+
+	</script>
+SCRIPT;
+
+    return $sHtml;
+}
+
+
+
+/**
+* Implements hook_block_info().
+*/
+function airplay_concert_block_info() {
+  $blocks['airplay_concert'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Airplay Concert'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE
+  );
+  return $blocks;
+}
+
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_concert_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_concert":
+		$output = '<p>Displays a list of artists from a list of Concerts on /Concert page.</p>';
+		break;
+	}
+	return $output;
+}

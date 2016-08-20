@@ -1,0 +1,234 @@
+.pageDiscreteTitle { 
+    font-size:120%;
+    float:left;
+    font-style:italic;
+}
+
+.newLine 
+{
+    clear: both; 
+    float: left; 
+}
+
+.spaceRight { margin-right:10px; }
+
+.textVeryLarge { 
+    font-size:200%;
+    float:left;
+}
+
+.textLarge { 
+    font-size:150%;
+    float:left;
+}
+
+.textNormal { 
+    font-size:100%;
+    float:left;
+}
+
+.textNormalValue { 
+    font-size:100%;
+    float:left;
+    font-weight: bold;
+    
+}
+
+/* Music Quiz styling */
+.ui-grid-a > .ui-block-a.mainQuizCreate { width: 35% }
+.ui-grid-a > .ui-block-b.sideQuizCreate { width: 65%; } 
+
+
+.stretchImage {
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+
+.defaultBackground {
+    background: url(/css/img/quiz_bg2.png) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+
+
+img.center { 
+    display:block ;
+    margin-left:auto ;
+    margin-right:auto ;
+}
+.quizTextOptionInput { 
+    cursor: pointer;
+}
+
+
+ul.bullet li {
+    list-style-type: none;
+    color:#FFFFFF;    
+    font-weight: bold;
+    text-align: center left;
+    text-shadow: 0 -1px 1px #000000 !important;
+    background: #333333; 
+    background-image: url(img/cocacola_bullet.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+    /*   background-image: url(img/ap_bullet.png); */
+
+ul.bullet li:hover {
+    color:#EFEFEF;    
+    background: #444444; 
+    background-image: url(img/cocacola_bullet.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+    
+}
+
+ul.bullet {
+    background: #333333; 
+     list-style: none outside none; 
+    padding: 0;
+/*     margin: 0; */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ap-corner-all {
+    -webkit-border-radius:              .6em /*{global-radii-blocks}*/;
+    border-radius:                      .6em /*{global-radii-blocks}*/;
+}
+
+.ap-shadow {
+    -moz-box-shadow: 0 1px 3px /*{global-box-shadow-size}*/         rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
+    -webkit-box-shadow: 0 1px 3px /*{global-box-shadow-size}*/      rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
+    box-shadow: 0 1px 3px /*{global-box-shadow-size}*/              rgba(0,0,0,.2) /*{global-box-shadow-color}*/
+}
+
+.ap-bullet-text {
+    font-family: Helvetica,Arial,sans-serif;
+    cursor: pointer;
+    padding: 1.0em 0 1.0em 2.5em; 
+/*     padding: 2.0em 0 2.0em 5.0em;  */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+    white-space: nowrap;    
+}
+
+.ap-corner-btn {
+    border-radius: 1em 1em 1em 1em;
+}
+
+.ap-btn-outer {
+    background: #333333; 
+    border-radius: inherit;
+    display: block;
+    font-size: 16px;
+    min-width: 0.75em;
+    overflow: hidden;
+    padding: 0.6em 20px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+ 
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);    
+    
+    cursor: pointer;
+    text-align: center;    
+    font-family: Helvetica,Arial,sans-serif;
+    
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #111111;
+    text-decoration: none;
+     
+}
+
+.ap-btn-text {
+    -moz-user-select: none;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    font-size: 16px;
+    white-space: nowrap;   
+}
+
+/** To align text correctly in footers when combined with buttons*/
+.ap-jqm-footer-text {
+    vertical-align:middle !important;
+/*     padding-top:2.5em !important;  */
+    padding-bottom:2.5em !important; 
+}
+/* Music DB Autocomplete styling */
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; width: 700px; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+
+/* Social media share sharre jquery plugin */
+
+
+/*.sharrre .box{
+	float:left;
+}
+
+.sharrre .count {
+	color:#444444;
+	display:block;
+	font-size:17px;
+	line-height:34px;
+	height:34px;
+	padding:4px 0;
+	position:relative;
+	text-align:center;
+	text-decoration:none;
+	width:50px;
+	background-color:#eee;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+
+.sharrre .share {
+	color:#FFFFFF;
+	display:block;
+	font-size:11px;
+	height:16px;
+	line-height:16px;
+	margin-top:3px;
+	padding:0;
+	text-align:center;
+	text-decoration:none;
+	width:50px;
+	background-color:#9CCE39;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+
+.sharrre .buttons {
+	display:none;
+	position:absolute;
+	margin-left:50px;
+	z-index:10;
+	background-color:#fff;
+}
+
+.sharrre .button {
+	float:left;
+	max-width:50px;
+	margin-left:10px;
+}*/
+
+#example5{
+	float:left;
+	margin:68px 25% 0 25%;
+}
+.sharrre .button{
+	float:left;
+	width:60px;
+}

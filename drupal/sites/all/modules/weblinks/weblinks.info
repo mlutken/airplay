@@ -1,0 +1,13 @@
+name = Web Links
+description = Web Links provides a comprehensive way to post weblinks to your site. All links are nodes, which can be put into taxonomies/categories and administered.
+core = 6.x
+dependencies[] = menu
+dependencies[] = filter
+package = Weblinks
+
+; Information added by drupal.org packaging script on 2012-04-16
+version = "6.x-2.5"
+core = "6.x"
+project = "weblinks"
+datestamp = "1334583407"
+

@@ -1,0 +1,38 @@
+<?php
+// $Id: translation_status.module,v 1.1 2008/09/05 19:07:42 nedjo Exp $
+
+/**
+ * @file
+ * The "Translation status" module displays the availability of translations for
+ * installed modules.
+ */
+ 
+/**
+ * Implementation of hook_menu().
+ */
+function translation_status_menu() {
+  $items = array();
+
+  $items['admin/reports/translation-status'] = array(
+    'title' => 'Available module translations',
+    'description' => 'Get a report about which of your installed modules have translations present in each of your enabled site languages.',
+    'page callback' => 'translation_status_report',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'translation_status.report.inc',
+    'weight' => 12,
+  );
+  
+  return $items;
+}
+
+/**
+ * Implementation of the hook_theme() registry.
+ */
+function translation_status_theme() {
+  return array(
+    'translation_status_report' => array(
+      'arguments' => array('data' => NULL),
+    ),
+  );
+}
+

@@ -1,0 +1,13 @@
+-----------------
+--- bpm sites ---
+-----------------
+http://songbpm.com
+
+
+-------------
+--- Songs ---
+-------------
+bpm  artist - song name 
+114/118      Modern Talking - Cheri Cheri Lady (http://songbpm.com/modern-talking/cheri-cheri-lady)
+118          Modern Talking - You're My Heart, You're My Soul (http://songbpm.com/modern-talking/cheri-cheri-lady)
+

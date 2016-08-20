@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+	ServerAdmin airplaysite@airplaymusic.dk
+	ServerName admin.airplaymusic.dk
+	ServerAlias www.admin.airplaymusic.dk
+	DocumentRoot /home/sleipner/airplay/disable_vhost
+
+	<Directory /home/sleipner/airplay/disable_vhost>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/ssl_access.log combined
+
+</VirtualHost>

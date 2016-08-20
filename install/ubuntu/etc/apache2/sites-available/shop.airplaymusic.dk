@@ -1,0 +1,26 @@
+<VirtualHost *:80>
+
+	ServerAdmin airplaysite@airplaymusic.dk
+	ServerName shop.airplaymusic.dk
+	ServerAlias shop.airplaymusic.dk
+	DocumentRoot /home/sleipner/airplay/prestashop
+	AccessFileName .htaccess
+
+	<Directory /home/sleipner/airplay/prestashop/>
+		AllowOverride All
+		Order allow,deny
+		allow from all
+		AuthType Basic
+		AuthName "Restricted Files"
+		AuthUserFile /home/htaccess/passwords
+		Require user sleipner admin root
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel error
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

@@ -1,0 +1,6 @@
+; $Id$
+name = Prices
+description = Module for displaying and comparing prices on music.
+core = 7.x
+package = "Airplay"
+scripts[] = prices_js.js

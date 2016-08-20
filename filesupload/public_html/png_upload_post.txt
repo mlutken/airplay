@@ -1,0 +1,10 @@
+Content-Type: multipart/form-data; boundary=---------------------------1343597715785183624282612484
+Content-Length: 386114
+
+-----------------------------1343597715785183624282612484
+Content-Disposition: form-data; name="uploadedfile"; filename="shot_0_2014.03.22_08.43.14.png"
+Content-Type: image/png
+
+‰PNG
+....DATA...
+-----------------------------1343597715785183624282612484--

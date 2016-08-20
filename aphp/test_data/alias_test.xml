@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<TIME_SCANNING_START_UTC>20130321T124358</TIME_SCANNING_START_UTC>
+	<TIME_SCANNING_START_LOCAL>2013-Mar-21 13:43:58</TIME_SCANNING_START_LOCAL>
+	<miner_name>VinylPladenDk</miner_name>
+	<URL_SITE>http://www.vinylpladen.dk</URL_SITE>
+	<scanMode>quick</scanMode>
+	<title>
+		<data_record_type>record_store</data_record_type>
+		<record_store_name>VinylPladen</record_store_name>
+		<record_store_url>http://www.vinylpladen.dk</record_store_url>
+		<country_name>Denmark</country_name>
+		<do_insert>record_store</do_insert>
+		<do_update>record_store:record_store_url,country_name</do_update>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.vinylpladen.dk/1816:AC-DC-Black-Ice-lp-plade.html]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<genre_name>Hard Rock</genre_name>
+		<album_name><![CDATA[Black Ice]]></album_name>
+		<artist_name><![CDATA[Lis Sørensen]]></artist_name>
+		<small_cover_image_url><![CDATA[http://www.vinylpladen.dk/covers/1816.png]]></small_cover_image_url>
+		<price_local>220</price_local>
+		<currency_name>DKK</currency_name>
+		<album_year>2008</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>VinylPladen</record_store_name>
+		<record_store_url>http://www.vinylpladen.dk</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(1): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.vinylpladen.dk/582:AC-DC-For-Those-About-To-Rock-lp-plade.html]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<genre_name>Rock</genre_name>
+		<album_name><![CDATA[For Those About To Rock]]></album_name>
+		<artist_name><![CDATA[Sørensen, Lis]]></artist_name>
+		<small_cover_image_url><![CDATA[http://www.vinylpladen.dk/covers/acdcforthoseabouttorock.jpg]]></small_cover_image_url>
+		<price_local>167</price_local>
+		<currency_name>DKK</currency_name>
+		<album_year>1981</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>VinylPladen</record_store_name>
+		<record_store_url>http://www.vinylpladen.dk</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(2): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.vinylpladen.dk/787:AC-DC-High-Voltage-lp-plade.html]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<genre_name>Hard Rock</genre_name>
+		<album_name><![CDATA[High Voltage]]></album_name>
+		<artist_name><![CDATA[Sørensen,Lis]]></artist_name>
+		<small_cover_image_url><![CDATA[http://www.vinylpladen.dk/covers/acdchighvoltage.jpg]]></small_cover_image_url>
+		<price_local>167</price_local>
+		<currency_name>DKK</currency_name>
+		<album_year>1976</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>VinylPladen</record_store_name>
+		<record_store_url>http://www.vinylpladen.dk</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(3): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+    <title>
+		<buy_at_url><![CDATA[http://www.vinylpladen.dk/787:AC-DC-High-Voltage-lp-plade.html]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<genre_name>Hard Rock</genre_name>
+		<album_name><![CDATA[High Voltage]]></album_name>
+		<artist_name><![CDATA[Lis Sørensen]]></artist_name>
+		<small_cover_image_url><![CDATA[http://www.vinylpladen.dk/covers/acdchighvoltage.jpg]]></small_cover_image_url>
+		<price_local>167</price_local>
+		<currency_name>DKK</currency_name>
+		<album_year>1976</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>VinylPladen</record_store_name>
+		<record_store_url>http://www.vinylpladen.dk</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(3): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<total_items>248</total_items>
+	<TIME_SCANNING_END_UTC>20130321T124414</TIME_SCANNING_END_UTC>
+	<TIME_SCANNING_END_LOCAL>2013-Mar-21 13:44:14</TIME_SCANNING_END_LOCAL>
+	<TIME_SCANNING_ELAPSED>000016</TIME_SCANNING_ELAPSED>
+	<TIME_SCANNING_ELAPSED>00:00:16</TIME_SCANNING_ELAPSED>
+</ROOT>

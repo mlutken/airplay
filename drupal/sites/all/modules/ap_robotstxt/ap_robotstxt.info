@@ -1,0 +1,5 @@
+; $Id$
+name = Airplay RobotsTxt
+description = "Generates the robots.txt file dynamically from Airplays settings table on a per site basis."
+core = 6.x
+package = "Airplay"

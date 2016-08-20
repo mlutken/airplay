@@ -1,0 +1,42 @@
+#ap_container  {
+	width:310px;
+}
+#ap_container .ap_artist_name {
+	font-size:30px;
+	font-family:Verdana;
+	color:#FFB248;
+	font-weight:bold;
+	line-height:35px;
+	height:40px;
+	text-align:center;
+}
+#ap_container .item_name {
+	font-size:10px;
+	font-family:Verdana;
+	color:#CDCDCD;
+	overflow: hidden;
+	line-height: 18px;
+	height: 18px;
+	float: left;
+}
+#ap_container .ap_items {
+	width:310px;
+	float:left;
+}
+#ap_container .item_name a {
+	font-size:12px;
+	font-family:Verdana;
+	color:#000000;
+	float:left;
+	width:250px;
+	line-height:16px;
+}
+#ap_container .item_price a {
+	font-size:12px;
+	font-family:Verdana;
+	color:#FFB248;
+	float:left;
+	width:60px;
+	text-align:right;
+	line-height:16px;
+}

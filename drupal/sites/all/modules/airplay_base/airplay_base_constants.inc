@@ -1,0 +1,7 @@
+<?php 
+// $Id$
+
+global $G_DEFAULT_RESULTS_PER_PAGE;
+
+$G_DEFAULT_RESULTS_PER_PAGE =  100;
+

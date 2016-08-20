@@ -1,0 +1,5 @@
+; $Id$
+name = Airplay Base
+description = A module with base functionality for Airplay Music.
+core = 6.x
+package = "Airplay"

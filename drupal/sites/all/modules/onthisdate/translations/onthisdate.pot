@@ -1,0 +1,102 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  onthisdate.module: n/a
+#  onthisdate.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2010-05-30 19:40+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: onthisdate.module:16
+msgid "Displays links to nodes created on this date"
+msgstr ""
+
+#: onthisdate.module:37 onthisdate.info:0
+msgid "On This Date"
+msgstr ""
+
+#: onthisdate.module:71
+msgid "more"
+msgstr ""
+
+#: onthisdate.module:74
+msgid "More events on this day."
+msgstr ""
+
+#: onthisdate.module:89
+msgid "Maximum number of links"
+msgstr ""
+
+#: onthisdate.module:93
+msgid "The maximum number of links to display in the block."
+msgstr ""
+
+#: onthisdate.module:128
+msgid "You must select a number for the maximum number of links."
+msgstr ""
+
+#: onthisdate.module:131
+msgid "Maximum number of links must be positive."
+msgstr ""
+
+#: onthisdate.module:141
+msgid "No events occurred on this site on this date in history."
+msgstr ""
+
+#: onthisdate.module:25
+msgid "access onthisdate content"
+msgstr ""
+
+#: onthisdate.module:106
+msgid "On this date module settings"
+msgstr ""
+
+#: onthisdate.module:107
+msgid "Description of your On this date settings control"
+msgstr ""
+
+#: onthisdate.module:116
+msgid "On this date"
+msgstr ""
+
+#: onthisdate.info:0
+msgid "Simple testing module playground."
+msgstr ""
+
+#: onthisdate.info:0
+msgid "Airplay"
+msgstr ""
+

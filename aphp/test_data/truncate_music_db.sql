@@ -1,0 +1,11 @@
+TRUNCATE `artist`;
+TRUNCATE `artist_synonym`;
+TRUNCATE `artist_text`;
+TRUNCATE `info_artist`;
+TRUNCATE `item_base`;
+TRUNCATE `item_price`;
+TRUNCATE `record_store`;
+TRUNCATE `unknown_genre`;
+TRUNCATE `unknown_media_format`;
+TRUNCATE `unknown_media_type`;
+TRUNCATE `item_base_correction`;

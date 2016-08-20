@@ -1,0 +1,18 @@
+<title>
+	<record_store_name>TPMUSIK</record_store_name>
+	<buy_at_url><![CDATA[http://www.tpmusik.dk/detail.asp?bar=02894780146]]></buy_at_url>
+	<artist_url><![CDATA[http://www.hesten.dk]]></artist_url>
+	<subgenre_name><![CDATA[Hestemusik]]></subgenre_name>
+	<genre_name><![CDATA[Pop/Rock]]></genre_name>
+	<artist_status>1</artist_status>
+	<artist_name><![CDATA[Hest]]></artist_name>
+	<album_name><![CDATA[Heste]]></album_name>
+	<price_local>169.95</price_local>
+	<currency_name>DKK</currency_name>
+	<data_record_type>album</data_record_type>
+	<media_format_name>CD</media_format_name>
+	<album_status>1</album_status>
+	<do_insert>record_store,artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+</title>
+
+<do_update_on_empty>artist;album</do_update_on_empty>

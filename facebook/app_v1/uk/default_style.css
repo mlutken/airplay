@@ -1,0 +1,41 @@
+* { margin:0px;padding:0px; }
+body { font-family: 'Open Sans',sans-serif,Arial,Helvetica; font-size:14px; background-color:#EFEFEF; }
+a { color: #E65E08; }
+.list-album-price-value,
+.list-song-price-value { display:none; }
+.page-wrapper { float:left; width:810px; clear:both; }
+.content { float:left;  }
+
+.content .list-price-table { width:100%; border:0px; margin:0px; padding: 0px; }
+
+.content .list-price-table tbody td { padding: 4px 0px 4px 0px; }
+
+#tabs { float: left; background-color: #EFEFEF; }
+    
+
+#tabs .album, #tabs .song, #tabs .merchandise, #tabs .concert { float:left; width:201px; margin: 0px 1px 0px 0px; height:35px; line-height:35px;  border-color:#EFEFEF; background-color: #E65E08; border-radius: 10px 10px 0px 0px; text-align:center; }
+#tabs .concert { margin:0px; width:204px; }
+#tabs a { color:#FFFFFF; font-size:150%; text-decoration:none; }
+#tabs .selected { background-color: #272221; }
+
+thead { width:100%; background-color: #272221; color: #FFFFFF; font-weight: bold; }
+thead .title { width:324px; font-size:110%; line-height:35px; height:35px; }
+thead .media_format, 
+thead .date_time { width:141px; font-size:110%; line-height:35px; height:35px; }
+thead .price { width:102px; font-size:110%; line-height:35px; height:35px; }
+thead .buy_at, thead .streaming, thead .venue { width:243px; font-size:110%; line-height:35px; height:35px; }
+thead .selected { color:#FFFFFF; }
+
+
+tbody .title { width:324px; }
+tbody .media_format,
+tbody .date_time { width:141px; }
+tbody .price { width:102px; }
+tbody .buy_at, 
+tbody .streaming, .venue { width:243px; }
+
+tbody .odd { background-color: #FFFFFF; }
+tbody .even {  background-color: #EEEEEE; border-bottom: 1px solid #CCCCCC; }
+
+tbody .spotify, tbody .wimp, tbody .rdio, tbody .napster {	float: left;	height: 18px;	padding-right: 6px;	width: 18px;	padding-top: 4px;	display:none;}
+tbody .deezer { float: left;	height: 18px;	padding-right: 6px;	width: 32px;	padding-top: 4px;	display:none;}

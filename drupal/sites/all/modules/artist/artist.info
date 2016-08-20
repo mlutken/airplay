@@ -1,0 +1,5 @@
+; $Id$
+name = Artist
+description = A module that displays the artist's page.
+core = 6.x
+package = "Airplay"

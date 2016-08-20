@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+	ServerAdmin airplaysite@airplaymusic.dk
+	ServerName adminairplay.airplaymusic.dk
+	DocumentRoot /home/sleipner/airplay/aphp/admin_site
+
+	<Directory /home/sleipner/airplay/aphp/admin_site>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+		AuthType Basic
+		AuthName "Restricted Files"
+		AuthUserFile /home/htaccess/passwords
+		Require user sleipner admin root
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/ssl_access.log combined
+
+</VirtualHost>

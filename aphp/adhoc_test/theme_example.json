@@ -1,0 +1,118 @@
+{     
+    "quiz_theme_name": "ANR Hitstream Top 20",     
+    "author_name": "Martin",     
+    "songs": [         
+        {             
+            "artist_name": "Medina",             
+            "item_base_name": "Jalousi"         
+        },         
+        {             
+            "artist_name": "Pharrell Williams",             
+            "item_base_name": "Happy"         
+        },         
+        {             
+            "artist_name": "L.O.C.",             
+            "item_base_name": "Marquis"         
+        },         
+        {             
+            "artist_name": "Ed Sheeran",             
+            "item_base_name": "I See Fire"         
+        },         
+        {             
+            "artist_name": "Shaka Loveless",             
+            "item_base_name": "2 Mon Verden"         
+        },         
+        {             
+            "artist_name": "Katy Perry feat. Juicy J",             
+            "item_base_name": "Dark Horse"         
+        },         
+        {             
+            "artist_name": "Jason Derulo",             
+            "item_base_name": "Trumpets"         
+        },         
+        {             
+            "artist_name": "Pitbull feat. Kesha",             
+            "item_base_name": "Timber"         
+        },         
+        {             
+            "artist_name": "Eminem feat. Rihanna",             
+            "item_base_name": "The Monster"         
+        },         
+        {             
+            "artist_name": "Babou",             
+            "item_base_name": "Supernova"         
+        },         
+        {             
+            "artist_name": "Nabiha",             
+            "item_base_name": "Bang That Drum"         
+        },         
+        {             
+            "artist_name": "OneRepublic",             
+            "item_base_name": "Counting Stars"         
+        },         
+        {             
+            "artist_name": "Nico & Vinz",             
+            "item_base_name": "In Your Arms"         
+        },         
+        {             
+            "artist_name": "Rasmus Seebach",             
+            "item_base_name": "Øde Ø"         
+        },         
+        {             
+            "artist_name": "Kid Ink feat. Chris Brown",             
+            "item_base_name": "Show Me"         
+        },         
+        {             
+            "artist_name": "DVBBS & Borgeous",             
+            "item_base_name": "Tsunami"         
+        },         
+        {             
+            "artist_name": "Avicii",             
+            "item_base_name": "Hey Brother"         
+        },         
+        {             
+            "artist_name": "L.O.C.",             
+            "item_base_name": "V.S.S.B."         
+        },         
+        {             
+            "artist_name": "Christopher",             
+            "item_base_name": "Crazy"         
+        },         
+        {             
+            "artist_name": "Lorde",             
+            "item_base_name": "Royals"         
+        },         
+        {             
+            "artist_name": "Zedd feat. Hayley Williams ",             
+            "item_base_name": "Stay The Night"         
+        },         
+        {             
+            "artist_name": "Stine Bramsen",             
+            "item_base_name": "Prototypical"         
+        },         
+        {             
+            "artist_name": "Sam Smith",             
+            "item_base_name": "Money On My Mind"         
+        },         
+        {             
+            "artist_name": "Kligande",             
+            "item_base_name": "Jubel"         
+        },         
+        {             
+            "artist_name": "Bruno Mars",             
+            "item_base_name": "Young Girls"         
+        },         
+        {             
+            "artist_name": "Lorde",             
+            "item_base_name": "Team"         
+        },         
+        {             
+            "artist_name": "L.I.G.A",             
+            "item_base_name": "Julia"         
+        },         
+        {             
+            "artist_name": "Burhan G",             
+            "item_base_name": "Ikke I Nat, Ikke Endnu"         
+        }
+    ] 
+}

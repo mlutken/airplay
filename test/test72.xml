@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<TIME_SCANNING_START_UTC>20120624T213523</TIME_SCANNING_START_UTC>
+	<TIME_SCANNING_START_LOCAL>2012-Jun-24 23:35:23</TIME_SCANNING_START_LOCAL>
+	<miner_name>AmazonCoUk</miner_name>
+	<URL_SITE>http://www.amazon.co.uk/</URL_SITE>
+	<scanMode>quick</scanMode>
+	<title>
+		<data_record_type>record_store</data_record_type>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<country_name>UK</country_name>
+		<do_insert>record_store</do_insert>
+		<do_update>record_store:record_store_url,country_name</do_update>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Schlager-V-l-10-Survivors/dp/B000024V49/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573745&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Schlager (1995)]]></album_name>
+		<artist_name><![CDATA[V.a.l.10 Survivors]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(1): 'L10', OptionIndex: 1</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/10-Meter-Ohne-Kopf/dp/B00000APVX/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573745&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[10 Meter Ohne Kopf]]></album_name>
+		<artist_name><![CDATA[10 Meter Ohne Kopf, Hafenstraße Bleibt, Vernon Walters and L.U.l.l.]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/6128lCwQp6L._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(2): 'L10', OptionIndex: 1</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Schlager-record-Vinyl-LP-V-A-L-Survivors/dp/B004JJGN22/ref=sr_1_cc_3?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573745&sr=1-3-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Schlager / Vinyl record [Vinyl-LP]]]></album_name>
+		<artist_name><![CDATA[V.A.L. 10 Survivors]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(3): 'L10', OptionIndex: 1</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Nouvelle-Marque-Ghetto-Youss-LSkadrille/dp/B008C1IBOG/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573746&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Nouvelle Marque]]></album_name>
+		<artist_name><![CDATA[Ghetto Youss 13or De L'Skadrille]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51X7YW4YtZL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(4): 'L13', OptionIndex: 2</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/1993-13-Pour-Instant-Ai-L/dp/B0086UEBFG/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573746&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[1993-13 Pour L Instant J Ai]]></album_name>
+		<artist_name><![CDATA[1993-13 Pour L Instant J Ai]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2012</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(5): 'L13', OptionIndex: 2</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Phlogistone-L14-16/dp/B000MX7TR2/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573746&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Phlogistone]]></album_name>
+		<artist_name><![CDATA[L14,16]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51Zi%2B68iCUL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>18.73</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(6): 'L14', OptionIndex: 3</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<data_record_type>album</data_record_type>
+		<artist_name><![CDATA[L 14,16]]></artist_name>
+		<price_local>23.02</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(7): 'L14', OptionIndex: 3</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Origin-L20-Concept/dp/B00123C9VM/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573751&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Origin]]></album_name>
+		<artist_name><![CDATA[L-20 Concept]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(8): 'L20', OptionIndex: 8</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/100-ANS-DE-SUCCES-VOL4/dp/B0006TNVAG/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573753&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[100 ANS DE SUCCES VOL4]]></album_name>
+		<artist_name><![CDATA[Les 25 champions de l'accordéon]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/61AMS5QTJ9L._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(9): 'L25', OptionIndex: 9</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/100-ans-succ%C3%A8s-laccord%C3%A9on-vol/dp/B0006TNV9M/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573753&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[100 ans de succès à l'accordéon vol. 1]]></album_name>
+		<artist_name><![CDATA[Les 25 champions de l'accordéon]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/61WZSC5DCZL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(10): 'L25', OptionIndex: 9</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/100-ANS-DE-SUCCES-5CD/dp/B0006TNU6G/ref=sr_1_cc_3?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573753&sr=1-3-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[100 ANS DE SUCCES AC 5CD]]></album_name>
+		<artist_name><![CDATA[Les 25 champions de l'accordéon]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(11): 'L25', OptionIndex: 9</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Autre-Chanson-L2r-Toto-Cutugno/dp/B00029MM96/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573756&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Autre Chanson]]></album_name>
+		<artist_name><![CDATA[Toto Cutugno]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51gYocn%2BM5L._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2004</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(12): 'L2R', OptionIndex: 13</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Autre-Chanson-L2r-Vs-Toto/dp/B0001BD9UG/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573756&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Autre Chanson]]></album_name>
+		<artist_name><![CDATA[L2r Vs.Toto]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(13): 'L2R', OptionIndex: 13</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/L33tstr33t-Boys/dp/B001UDXXFA/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573759&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[L33tstr33t Boys]]></album_name>
+		<artist_name><![CDATA[L33tstr33t Boys]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2009</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(14): 'L33tstr33t', OptionIndex: 16</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Firstime-L3s-Last-3-Standing/dp/B0002X47M2/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573766&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Firstime]]></album_name>
+		<artist_name><![CDATA[Last Three Standing]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51onNkHy2nL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2004</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(15): 'L3s', OptionIndex: 24</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Last-Ones-First-L3s/dp/B000I5YIXM/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573766&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Last Ones First]]></album_name>
+		<artist_name><![CDATA[L3S]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(16): 'L3s', OptionIndex: 24</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Petites-Pastorals-Music-Chamber-Orchestra/dp/B0020E7HZA/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573769&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Petites Pastorals - Music for Chamber Orchestra]]></album_name>
+		<artist_name><![CDATA[Orquestra de Cambre Terrassa 48, R.L.de GRIGNON and A.Pla]]></artist_name>
+		<price_local>13.76</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2009</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(17): 'L48', OptionIndex: 27</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Love-4-Ladies-L4l/dp/B001UXJKR0/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573771&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Love 4 Ladies]]></album_name>
+		<artist_name><![CDATA[L4L]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(18): 'L4L', OptionIndex: 29</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Atomic-G-Funk-L7square/dp/B000M4RGZG/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573778&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Atomic G Funk]]></album_name>
+		<artist_name><![CDATA[Brian Keith]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/517mu%2B%2Bi%2BFL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(19): 'L7square', OptionIndex: 37</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Beats-Under-Pressure-L7square/dp/B000M4RGZQ/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573778&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Beats Under Pressure]]></album_name>
+		<artist_name><![CDATA[Brian Keith]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(20): 'L7square', OptionIndex: 37</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Absolutely-Brilliant-L8knight-at-Thedoktors/dp/B004VMXAFK/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573782&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Absolutely Brilliant]]></album_name>
+		<artist_name><![CDATA[L8knight at Thedoktors]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2011</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(21): 'L8knight', OptionIndex: 41</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Die-Walk%C3%BCre-Act-1-Treptow-Rohr-Konetzni/dp/B0027YUKNY/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573784&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Die Walküre Act 1]]></album_name>
+		<artist_name><![CDATA[Treptow-Rohr-Konetzni, RAI Roma l952, WAGNER and W.Furtwangler]]></artist_name>
+		<price_local>7.85</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2009</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(22): 'l952', OptionIndex: 43</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Images-J-Garon-Jerome-Superstars-Chanson/dp/B00003G9VD/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573785&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Images, J.Garon,Jerome a.O.]]></album_name>
+		<artist_name><![CDATA[Superstars de la Chanson 19]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(23): 'LA19', OptionIndex: 44</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Bayou-Music-La56/dp/B000IMV0YA/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573786&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Bayou Music]]></album_name>
+		<artist_name><![CDATA[LA56]]></artist_name>
+		<price_local>21.94</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(24): 'La56', OptionIndex: 46</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Backpack-Inferno-Laas-Unltd/dp/B0044ANMNY/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573788&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Backpack Inferno]]></album_name>
+		<artist_name><![CDATA[Laas Unltd.]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/41j2f1ipBjL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>29.56</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(25): 'Laa', OptionIndex: 48</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Blackbook-Laas-Unltd/dp/B0057JWVU6/ref=sr_1_2?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573788&sr=1-2]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Blackbook]]></album_name>
+		<artist_name><![CDATA[Laas Unltd.]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/510OnwujahL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>14.84</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2011</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(26): 'Laa', OptionIndex: 48</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/2-0-Action-Rap-Laas-Unltd/dp/B001Q8IQ4C/ref=sr_1_3?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573788&sr=1-3]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[2.0 Action Rap]]></album_name>
+		<artist_name><![CDATA[Laas Unltd.]]></artist_name>
+		<price_local>13.78</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2009</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(27): 'Laa', OptionIndex: 48</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Reggae-Grandson-Naakunta-Laab/dp/B0063TX702/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573789&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Reggae Grandson]]></album_name>
+		<artist_name><![CDATA[Naakunta Laab]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2011</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(28): 'Laab', OptionIndex: 49</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Hypothetical-Moments-Stockholm-Elektronmusikfestival-Kristine/dp/B005SS4MYO/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573790&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Primes for piano and tape, Rite of Passage, The Dogs, Chien d'absolu, Hypothetical Moments. Stockholm Elektronmusikfestival 1982. Kristine Scholz Stereo]]></album_name>
+		<artist_name><![CDATA[Hillborg, Karkoff, Laaban, Amirkhanian Haynes and Kristine Scholz]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(29): 'Laaban', OptionIndex: 50</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/El-Madad-Ya-Rassoul-allah/dp/B001JJDX3C/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573792&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[El Madad Ya Rassoul allah]]></album_name>
+		<artist_name><![CDATA[Orchestre Laabi]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51-DmR7gN-L._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(30): 'laabi', OptionIndex: 52</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Kijat-aalik-Jellaba-Orchestre-Laabi/dp/B001JJ6DPM/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573792&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Kijat aalik Jellaba]]></album_name>
+		<artist_name><![CDATA[Orchestre Laabi]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/61-2G%2BHfBdL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(31): 'laabi', OptionIndex: 52</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Soiree-Andalous-Orchestre-Laabi/dp/B001JJ4M0U/ref=sr_1_cc_3?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573792&sr=1-3-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Soiree Andalous]]></album_name>
+		<artist_name><![CDATA[Orchestre Laabi]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(32): 'laabi', OptionIndex: 52</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Reggae-Grandson-Naakunta-Laab/dp/B0063TX702/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573793&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Reggae Grandson]]></album_name>
+		<artist_name><![CDATA[Naakunta Laab]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2011</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(33): 'Laabs', OptionIndex: 53</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Fantasien-Organ-Abteikirirche-Maria-Laach/dp/B0006A9GAE/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573794&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Fantasien the Organ of Abteikirirche Maria Laach]]></album_name>
+		<artist_name><![CDATA[Fantasien the Organ of Abteikirirche Maria Laach]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2004</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(34): 'Laach', OptionIndex: 55</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Gregorian-Vespers-Chant-Maria-Benedictine/dp/B0000018JR/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573794&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Gregorian Vespers & Chant for]]></album_name>
+		<artist_name><![CDATA[Maria Laach Benedictine Choir]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/518aWtmaGpL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>1994</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(35): 'Laach', OptionIndex: 55</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Gregorian-Chants-Maria-Laach-Benedictine/dp/5550572826/ref=sr_1_cc_3?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573794&sr=1-3-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Gregorian Chants]]></album_name>
+		<artist_name><![CDATA[Maria Laach Benedictine Choir and Choir of the Bendictine Monastery Maria]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(36): 'Laach', OptionIndex: 55</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Corsica-Traditional-Songs-Various-aufn-w-laade/dp/B000024P48/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573797&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Corsica: Traditional Songs and Music]]></album_name>
+		<artist_name><![CDATA[Various(aufn.w.laade)]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>1990</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(37): 'Laade', OptionIndex: 58</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Now-Or-Never-LaAerial/dp/B000FTAGXW/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573800&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Now Or Never]]></album_name>
+		<artist_name><![CDATA[La'Aerial]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51SqRDTIggL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(38): 'Laaerial', OptionIndex: 61</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Laid-Bare-Laaerial-Justin-West/dp/B000WW1SSO/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573800&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Laid Bare: Acoustic Collection]]></album_name>
+		<artist_name><![CDATA[Laaerial & Justin West]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(39): 'Laaerial', OptionIndex: 61</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/LAAG-VS-COMMUTER-ELECTROSTATE-MIND/dp/B003UUHAFU/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573801&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[LAAG VS COMMUTER / ELECTROSTATE OF MIND EP]]></album_name>
+		<artist_name><![CDATA[LAAG VS COMMUTER]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(40): 'Laag', OptionIndex: 62</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Playground-Laah-Kline/dp/B000TUWF0Y/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573806&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Playground]]></album_name>
+		<artist_name><![CDATA[Laah Kline]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/41%2B0wNqKDZL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2004</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(41): 'laah', OptionIndex: 68</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Wings-Shekhinah-Rabbi-Novick-Desert/dp/B0021CDCQ4/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573806&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[On Wings of Shekhinah]]></album_name>
+		<artist_name><![CDATA[Laah Rabbi Novick & Desert Wind]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2009</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(42): 'laah', OptionIndex: 68</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Zoenen-Met-De-Koningin-2/dp/B0002NBVOE/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573808&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Zoenen Met De Koningin 2]]></album_name>
+		<artist_name><![CDATA[Lichter Laaie]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(43): 'Laaie', OptionIndex: 69</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Pieces-Viole-Juliane-Laake/dp/B0053UCR4O/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573810&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Pieces de Viole]]></album_name>
+		<artist_name><![CDATA[Juliane Laake, Art d'Echo, VARIOUS and -]]></artist_name>
+		<price_local>14.12</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2011</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(44): 'Laake', OptionIndex: 71</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Step-By-Universe-VINYL/dp/B0014E99FS/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573813&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Step By Step to Universe [VINYL]]]></album_name>
+		<artist_name><![CDATA[Kenny Laakkinen]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51haTU9c6iL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(45): 'Laakkinen', OptionIndex: 73</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Bakerman-Musikkassette-Feat-Kenny-Laakkinen/dp/B000H4VUZI/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573813&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Bakerman 2005 [Musikkassette]]]></album_name>
+		<artist_name><![CDATA[Pate de Lane Feat. Kenny Laakkinen]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>MC</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(46): 'Laakkinen', OptionIndex: 73</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Merikanto-Juha-Aarre/dp/B00000378Z/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573815&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Merikanto: Juha]]></album_name>
+		<artist_name><![CDATA[Aarre Merikanto, Jukka-Pekka Saraste, Tapiola Chamber Choir and Finnish Chamber Singers]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>1999</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(47): 'Laakkonen', OptionIndex: 75</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/My-Gods-Laakso/dp/B000B7ARIW/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573817&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[My Gods]]></album_name>
+		<artist_name><![CDATA[Laakso]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51UlBwfcVIL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>7.38</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(48): 'Laakso', OptionIndex: 77</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Mother-Am-I-Good-Looking/dp/B000PMLHQ4/ref=sr_1_2?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573817&sr=1-2]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Mother, Am I Good Looking?]]></album_name>
+		<artist_name><![CDATA[Laakso]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51fAe-H4IHL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>18.43</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(49): 'Laakso', OptionIndex: 77</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Vasterbron-Ep-Laakso/dp/B000VRXNQK/ref=sr_1_3?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573817&sr=1-3]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Vasterbron Ep]]></album_name>
+		<artist_name><![CDATA[Laakso]]></artist_name>
+		<price_local>9.7</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(50): 'Laakso', OptionIndex: 77</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Italy-Vs-Helsinki-Laakso/dp/B000TLYS1W/ref=sr_1_4?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573817&sr=1-4]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Italy Vs Helsinki]]></album_name>
+		<artist_name><![CDATA[Laakso]]></artist_name>
+		<price_local>15.56</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(51): 'Laakso', OptionIndex: 77</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Linnanneito-Merja-Laaksonen/dp/B003Q58YPE/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573818&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Linnanneito]]></album_name>
+		<artist_name><![CDATA[Merja Laaksonen]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(52): 'Laaksonen', OptionIndex: 78</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Kokkonen-Temptations-Joonas-Sderblom-Ulf/dp/B0000263V0/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573818&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Kokkonen - The Last Temptations [Audio CD] Kokkonen, Joonas; Sderblom, Ulf...]]></album_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(53): 'Laaksonen', OptionIndex: 78</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Jot-Mandiran-Cho-Aayi-Ae/dp/B001H9MQFA/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573819&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Jot Mandiran Cho Aayi Ae]]></album_name>
+		<artist_name><![CDATA[Laal-Kamal]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/61FnJcOP2hL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(54): 'Laal', OptionIndex: 79</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Kalli-Badli-Aei-Toon-Laal-Kamal/dp/B001HBIA26/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573819&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Kalli Badli Aei Toon]]></album_name>
+		<artist_name><![CDATA[Laal-Kamal]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51-v2fSuDnL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(55): 'Laal', OptionIndex: 79</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Shagna-Di-Wang-Tut-Jau/dp/B001HZY2TM/ref=sr_1_cc_3?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573819&sr=1-3-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Shagna Di Wang Tut Jau]]></album_name>
+		<artist_name><![CDATA[Laal-Kamal]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(56): 'Laal', OptionIndex: 79</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Like-Someone-Love-Doug-Laalo/dp/B000IFSK9A/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573823&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Like Someone in Love]]></album_name>
+		<artist_name><![CDATA[Doug Laalo]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(57): 'Laalo', OptionIndex: 84</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Pour-Etre-Libre-Laam/dp/B00181GGXU/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Pour Etre Libre]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/41KBNbOJ4XL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>24.11</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(58): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Le-Sang-Chaud-Laam/dp/B00181GGY4/ref=sr_1_2?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-2]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Le Sang Chaud]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51WRIBeXkPL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>23.15</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(59): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Face-Live-Lolympia-Laam/dp/B00181GGXK/ref=sr_1_3?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-3]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Face a Face/Live a L'olympia]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<price_local>23.68</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(60): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/On-Tous-Quelque-Chose-Laam/dp/B001LJL5KI/ref=sr_1_4?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-4]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[On a Tous Quelque Chose De Laam]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/41nKkSqzlmL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>24.11</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(61): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Pers%C3%A9v%C3%A9rance-Laam/dp/B00181GGX0/ref=sr_1_5?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-5]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Persévérance]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/419i2crAdRL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>11.86</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(62): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Une-Vie-Ne-Suffit-Pas/dp/B00181GGXA/ref=sr_1_6?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-6]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Une Vie Ne Suffit Pas]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<price_local>24.11</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(63): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Au-Coeur-Des-Hommes-Laam/dp/B004WP1UW6/ref=sr_1_7?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573825&sr=1-7]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Au Coeur Des Hommes]]></album_name>
+		<artist_name><![CDATA[Laam]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/31iLwesvfHL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>38.12</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2012</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(64): 'Laam', OptionIndex: 86</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Live-12-VINYL-Matti-Laamanen/dp/B0004ODZ4K/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573826&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Live [12" VINYL]]]></album_name>
+		<artist_name><![CDATA[Matti Laamanen]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/41V9eaLULlL._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2004</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(65): 'Laamanen', OptionIndex: 87</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Flakes-12-VINYL-Matti-Laamanen/dp/B0000A0C6Y/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573826&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Flakes [12" VINYL]]]></album_name>
+		<artist_name><![CDATA[Matti Laamanen]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2003</album_year>
+		<media_format_name>Vinyl</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(66): 'Laamanen', OptionIndex: 87</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Oregano-Ana-Laan/dp/B000N4RB46/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573830&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Oregano]]></album_name>
+		<artist_name><![CDATA[Ana Laan]]></artist_name>
+		<price_local>32.14</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2007</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(67): 'Laan', OptionIndex: 91</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Chopin-f%C3%BCr-Mein-Baby-Alwin-B%C3%A4r/dp/B0018RRAJI/ref=sr_1_1?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573833&sr=1-1]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Chopin-für Mein Baby]]></album_name>
+		<artist_name><![CDATA[Alwin Bär, Martijn Van Den Hoek, Pieter Van Winkel, Frank Van De Laar and Paolo Giacometti]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/51H28WFTuhL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>6.83</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(68): 'Laar', OptionIndex: 95</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Krebs-Organ-Works-Johann-Ludwig/dp/B000026E8I/ref=sr_1_2?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573833&sr=1-2]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Krebs - Organ Works]]></album_name>
+		<artist_name><![CDATA[Johann Ludwig Krebs and Jan van de Laar]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/516pV9hARuL._AA115_.jpg]]></medium_cover_image_url>
+		<price_local>13.74</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2006</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(69): 'Laar', OptionIndex: 95</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Silent-Koskinen-Oostenrijk-Iancovici-Eschkenazy/dp/B000M06GEC/ref=sr_1_3?m=A3P5ROKL5A1OLE&s=music&ie=UTF8&qid=1340573833&sr=1-3]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[The Silent Cry]]></album_name>
+		<artist_name><![CDATA[Koskinen/Oostenrijk/Iancovici/vd Laar/Eschkenazy/, KOX and -]]></artist_name>
+		<price_local>14.68</price_local>
+		<currency_name>GBP</currency_name>
+		<album_year>2000</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(70): 'Laar', OptionIndex: 95</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Doulce-Memoire-Various/dp/B00004YMIY/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573837&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Doulce Memoire]]></album_name>
+		<artist_name><![CDATA[Various]]></artist_name>
+		<medium_cover_image_url><![CDATA[http://ecx.images-amazon.com/images/I/61Q-FVmvL4L._AA160_.jpg]]></medium_cover_image_url>
+		<currency_name>GBP</currency_name>
+		<album_year>2000</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(71): 'Laarhoven', OptionIndex: 99</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Piccinni-Il-concerto-dei-Fratelli/dp/B000005WC4/ref=sr_1_cc_2?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573837&sr=1-2-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Piccinni: Il concerto dei Fratelli]]></album_name>
+		<artist_name><![CDATA[Alessandro Piccinini, Christina Pluhar, Matthias Spaeter and Jean-Marc Aymes]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year>2005</album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(72): 'Laarhoven', OptionIndex: 99</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<total_items>72</total_items>
+	<TIME_SCANNING_END_UTC>20120624T213718</TIME_SCANNING_END_UTC>
+	<TIME_SCANNING_END_LOCAL>2012-Jun-24 23:37:18</TIME_SCANNING_END_LOCAL>
+	<TIME_SCANNING_ELAPSED>000155</TIME_SCANNING_ELAPSED>
+	<TIME_SCANNING_ELAPSED>00:01:55</TIME_SCANNING_ELAPSED>
+</ROOT>

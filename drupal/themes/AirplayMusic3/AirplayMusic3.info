@@ -1,0 +1,24 @@
+name = AirplayMusic3
+description = Theme based on Blue Masters PSD template
+version = VERSION
+core = 6.x
+engine = phptemplate
+regions[right] = Right sidebar
+regions[header] = Header
+regions[intro_right] = Intro Right
+regions[left_banner] = Left Banner
+regions[home_area_1] = Home area 1
+regions[home_area_2] = Home area 2
+regions[home_area_3] = Home area 3
+regions[footer_left] = Footer left
+regions[footer_center] = Footer center
+regions[footer_right] = Footer right
+regions[footer] = Footer
+
+
+; Information added by drupal.org packaging script on January 1, 1970 - 00:00
+version = "6.x-1.3"
+core = "6.x"
+project = "AirplayMusic3"
+datestamp = "1297187527"
+

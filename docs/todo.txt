@@ -1,0 +1,8 @@
+*** Google analytics and target="_blank" problems ***
+See: http://drupal.org/node/1057914
+I have temporarly disabled tracking of outbound links. 
+Re-enable when next release of the Drupal Google Analytics module, which should fix the problem.
+
+
+
+

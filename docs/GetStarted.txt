@@ -1,0 +1,15 @@
+
+**********************************************************
+*** Create Databases and users - Database GRANT rights ***
+**********************************************************
+CREATE DATABASE airplay_music_v1;
+CREATE DATABASE airplay_drupal7;
+
+GRANT ALL PRIVILEGES ON airplay_music_v1.* TO airplay_user@'localhost' IDENTIFIED BY 'Deeyl1819';
+GRANT ALL PRIVILEGES ON airplay_drupal7.* TO airplay_user@'localhost' IDENTIFIED BY 'Deeyl1819';
+
+
+
+--- Nginx : Ubuntu 13.10 ---
+Missing json encode: sudo apt-get install php5-json
+

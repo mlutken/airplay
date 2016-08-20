@@ -1,0 +1,9 @@
+
+[{shop_url}] 
+
+Hej {firstname} {lastname}, 
+
+{message} 
+
+Webshop platform: PrestaShop(tm) [http://www.prestashop.com/] 
+

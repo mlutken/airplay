@@ -1,0 +1,66 @@
+
+****************************
+*** Database API general ***
+****************************
+http://www.lullabot.com/articles/simplify-your-code-with-drupal-7s-database-api
+
+****************************************
+*** db_fetch_object / db_fetch_array ***
+****************************************
+http://drupal.org/node/1251174
+$obj = db_fetch_object ($result);  => $result->fetchObject();
+
+
+**********************
+*** db_query_range ***
+**********************
+http://api.drupal.org/api/drupal/includes!database.pgsql.inc/function/db_query_range/6
+Please note the order of arguments in Drupal 6 is switched around from what it is in Drupal 7
+D6: db_query_range($query, $args, $from, $count);
+D7: db_query_range($query, $from, $count, $args, $options);
+
+
+****************
+*** db_query ***
+****************
+http://drupal.org/node/224333#dbtng
+http://stackoverflow.com/questions/11369447/drupal-7-db-query
+http://api.drupal.org/api/drupal/includes!database!database.inc/function/db_query/7
+http://benbuckman.net/tech/11/05/three-quirks-drupal-database-syntax
+http://mikkel.hoegh.org/blog/2008/11/16/preparing_for_drupal_7_by_changing_the_way_to_make_parameters_for_db_query/
+
+
+<?php
+  $sql = "select form_key,extra,type from {webform_component} where nid = %d";
+        $result = db_query($sql,$nid);
+?>
+
+to:
+<?php
+$sql = "select form_key,extra,type from {webform_component} where nid = :nid";
+        $result = db_query($sql,array(':nid' => $nid));
+?>
+SELECT artist.artist_id, artist.artist_name, album.album_name, album.album_year, album.album_year as year, album_simple_name, album_simple_name as name, currency_to_euro.to_euro, COUNT(*) as album_prices_count, MIN(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MIN, MAX(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MAX FROM artist INNER JOIN album ON album.artist_id=artist.artist_id INNER JOIN buy_album ON album.album_id=buy_album.album_id INNER JOIN album_simple ON album_simple.album_simple_id=album.album_simple_id INNER JOIN media_format ON media_format.media_format_id=buy_album.media_format_id INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_album.currency_id INNER JOIN currency ON currency.currency_name='DKK' WHERE artist.artist_name = 'Der Tod Und Das Madchen' GROUP BY album_simple.album_simple_name LIMIT 0, 10000
+
+
+********************
+*** theme tables ***
+********************
+http://alvinalexander.com/drupal/drupal-theme-table-example-theme_table-function
+
+**************
+*** themes ***
+**************
+http://stackoverflow.com/questions/13944904/drupal-upgrade-from-6-to-7-undefined-veriables
+
+Here is the solution. Custom regions must be printed differently in page.tpl.php
+In Drupal 6, when you wanted to print a region you had just made, you just put this into your page.tpl.php:
+
+D6: print $foo_sidebar;
+
+In Drupal 7, all of the regions you wish to add must be printed using render and the page variable:
+
+D7: print render($page['foo_sidebar']);
+
+
+

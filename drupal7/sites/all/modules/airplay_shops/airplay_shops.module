@@ -1,0 +1,217 @@
+<?php 
+
+module_load_include('inc', 'airplay_shops', 'airplay_shops_db');  
+module_load_include('inc', 'airplay_shops', 'airplay_shops_functions');
+module_load_include('inc', 'airplay_base', 'airplay_base_url_functions');
+
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the airplay_shops module
+*/
+function airplay_shops_perm() {
+	return array('access airplay_shops content');
+} // function airplay_shops_perm()
+
+function airplay_shops_permission() {
+  return array(
+    'access airplay_shops content' => array(
+      'title' => t('Acces permissions for airplay_shops'),
+    ),
+  );
+}
+
+/**
+* Page callback: Airplay Music festival settings
+*
+* @see current_posts_menu()
+*/
+function airplay_shops_form($form, &$form_state) {
+  $form['airplay_shops_max'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum number of posts'),
+    '#default_value' => variable_get('airplay_shops_max', 3),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#description' => t('The maximum number of links to display in the block.'),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+
+/**
+* Implements hook_menu().
+*/
+function airplay_shops_menu() 
+{
+	$items = array();
+	
+	$items['admin/settings/airplay_shops'] = array(
+		'title' => 'Airplay shops module settings',
+		'description' => 'Setup display settings for Airplay shops pages',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('airplay_shops_admin'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+    $items['airplay_shops'] = array(
+        'title' => '',
+        'page callback' => 'airplay_shops_list',
+		'access callback' => 'access content',
+        'access arguments' => array('access airplay_shops content'),
+        'type' => MENU_CALLBACK
+    );
+	// "List-page" for shops - UK
+	$items['pladeforretning-guide'] = array(
+        'title' => '',
+        'page callback' => 'airplay_shops_list',
+		'access callback' => 'access content',
+        'access arguments' => array('access airplay_shops content'),
+        'type' => MENU_CALLBACK
+    );
+	// "List-page" for shops - DK
+	$items['pladeforretninger'] = array(
+        'title' => '',
+        'page callback' => 'airplay_shops_list',
+		'access callback' => 'access content',
+        'access arguments' => array('access airplay_shops content'),
+        'type' => MENU_CALLBACK
+    );
+	// "Product-page" for shops - UK
+	$items['shop'] = array(
+        'title' => '',
+        'page callback' => 'airplay_shop',
+		'access callback' => 'access content',
+        'access arguments' => array('access airplay_shops content'),
+        'type' => MENU_CALLBACK
+    );
+	// "Product-page" for shops - DK
+	$items['pladeforretning'] = array(
+        'title' => '',
+        'page callback' => 'airplay_shop',
+		'access callback' => 'access content',
+        'access arguments' => array('access airplay_shops content'),
+        'type' => MENU_CALLBACK
+    );
+	return $items;
+}
+
+
+
+/**
+* Implements hook_block_view().
+*
+* Prepares the contents of the block.
+*/
+function airplay_shops_block_view($delta = '') {
+	/*switch ($delta) {
+		case 'airplay_festival':
+			if (user_access('access airplay_festival content')) {
+				$block['subject'] = "t('Current posts')";
+				$block['content'] = airplay_festival_display_contents();
+			}
+			return $block;
+	}*/
+}
+
+
+/**
+* Implementation of hook_block
+* @param string $op one of "list", "view", "save" and "configure"
+* @param integer $delta code to identify the block
+* @param array $edit only for "save" operation
+**/
+/*
+function airplay_shops_block($op = 'list', $delta = 0, $edit = array()) 
+{ 
+	if ($op == "list") {
+		// Generate listing of blocks from this module, for the admin/block page
+		$block = array();
+		$block[0]["info"] = 'Artist';
+		return $block;
+	  }
+	else if ($op == 'view') {
+		// Generate our block content
+		
+		// content variable that will be returned for display
+		$block_content = '';
+		
+		// set up the block
+		$block['subject'] = 'Artist';
+		$block['content'] = $block_content;
+		
+		return $block;
+	}
+} // function airplay_shops_block*/
+
+/* used to show the node text */
+function airplay_shops_node_view($node, $view_mode) {
+	if ($node->type=="page" && $node->title == "Pladeforretning Guide"){
+		if ($view_mode == 'full'){
+			$node->content['content'] = array(
+				 "#markup"=> airplay_shops_list(),
+				 "#weight"=> 100
+			  );  
+		   }
+		 return $node;
+	}
+}
+
+function airplay_shops_admin() 
+{
+	$form = array();
+	
+	$form['airplay_shops_maxdisp'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Maximum number of links'),
+		'#default_value' => variable_get('airplay_shops_maxdisp', 3),
+		'#size' => 2,
+		'#maxlength' => 2,
+		'#description' => t("The maximum number of links to display in the block."),
+		'#required' => TRUE,
+	);
+	return system_settings_form($form);
+}
+
+function airplay_shops_admin_validate($form, &$form_state) {
+	$maxdisp = $form_state['values']['airplay_shops_maxdisp'];
+	if (!is_numeric($maxdisp)) {
+		form_set_error('airplay_shops_maxdisp', t('You must enter an integer for the maximum number of links.'));
+	}
+	else if ($maxdisp <= 0) {
+		form_set_error('airplay_shops_maxdisp', t('Maximum number of links must be positive.'));
+	}
+}
+
+/**
+* Implements hook_block_info().
+*/
+function airplay_shops_block_info() {
+  $blocks['airplay_shops'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Airplay Shop'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE
+  );
+  return $blocks;
+}
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_shops_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_shops":
+		$output = '<p>'.  t("Displays the airplay_shops page in AirplayMusic Drupal CMS") .'</p>';
+		break;
+	}
+	return $output;
+} // function airplay_shops_help
+
+
+

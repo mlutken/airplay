@@ -1,0 +1,129 @@
+<script>
+
+    <?php print htmlForSelect(supportedLanguages(), getCurrentArticleLanguage(), array('id' => 'artist_text_languageID', 'onclick' => 'artistTextLanguageChanged(g_artist_id);'  ) ); ?>
+
+<!--     <input id=artist_text_reloadID type=button value=Reload onclick="ckArtistTextReload( g_artist_id );" ></input> -->
+
+// //     g_artist_text_ckEditor.setData( <?php print '"' . $dbArtist->textGet( $artist_id, getCurrentArticleLanguage() ) . '"' ; ?>);
+
+
+function makeJeditable()
+{
+
+    $(function() {
+         $( "#artistTabsID" ).tabs();
+    });
+    
+    CKEDITOR.replace( 'artist_text' );
+
+    $('.edit').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+        indicator   : 'Saving...',
+        tooltip     : 'artist_name',
+        submitdata  : {artist_id: 12}
+
+    });
+
+// //     $('#artist_name').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator   : 'Saving...',
+// //         tooltip     : 'artist_name',
+// //         submitdata  : {artist_id: 12}
+// // 
+// //     });
+// //     $('#artist_reliability').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'artist_reliability'
+// //     });
+// //     $('#info_artist_reliability').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'info_artist_reliability'
+// //     });
+// //     $('#artist_real_name').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'artist_real_name'
+// //     });
+
+    $('#genre_id').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', { 
+        data      : <?php print json_encode($genreConvert->arrayForSelect(2)); ?>,
+        type      : 'select',
+        tooltip   : 'genre_id',
+        submit    : 'OK'
+    });
+    $('#country_id').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', { 
+        data      : <?php print json_encode($countryConvert->arrayForSelect(2)); ?>,
+        type      : 'select',
+        tooltip   : 'genre_id',
+        submit    : 'OK'
+    });
+    $('#artist_type').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', { 
+        data      : { 0 : '', 'P': 'Person', 'G':'Group', 'selected': 'P' },
+        type      : 'select',
+        tooltip   : 'artist_type',
+        submit    : 'OK'
+    });
+    $('#gender').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', { 
+        data      : { 0 : '', 'M': 'Male', 'F':'Female', 'selected': 'F' },
+        type      : 'select',
+        tooltip   : 'gender',
+        submit    : 'OK'
+    });
+    
+// //     $('#year_born').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'year_born'
+// //     });
+// //     $('#year_died').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'year_died'
+// //     });
+// //     $('#year_start').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'year_start'
+// //     });
+// //     $('#year_end').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'year_end'
+// //     });
+// //     $('#url_artist_official').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_artist_official'
+// //     });
+// // 
+// //     $('#url_fanpage').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_fanpage'
+// //     });
+// //     $('#url_wikipedia').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_wikipedia'
+// //     });
+// //     $('#url_allmusic').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_allmusic'
+// //     });
+// //     $('#url_musicbrainz').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_musicbrainz'
+// //     });
+// //     $('#url_discogs').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'url_discogs'
+// //     });
+// //     
+// //     
+// //     $('#bing_score').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'bing_score'
+// //     });
+// //     $('#google_score').editable('ajax_handlers/ArtistPage_SaveSingleValue_handler.php', {
+// //         indicator : 'Saving...',
+// //         tooltip   : 'google_score'
+// //     });
+
+    
+}
+
+$(document).ready(function() {
+     makeJeditable();
+});
+
+</script>

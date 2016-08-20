@@ -1,0 +1,27 @@
+#artist_wiki .streaming_dropdown .streaming_wimp,
+#artist_wiki .streaming_dropdown .streaming_deezer,
+#artist_wiki .streaming_dropdown .streaming_rdio,
+#artist_wiki .streaming_dropdown .streaming_spotify,
+#artist_wiki .streaming_dropdown .streaming_napster,
+#album_wiki .streaming_dropdown .streaming_wimp,
+#album_wiki .streaming_dropdown .streaming_deezer,
+#album_wiki .streaming_dropdown .streaming_rdio,
+#album_wiki .streaming_dropdown .streaming_spotify,
+#album_wiki .streaming_dropdown .streaming_napster,
+#song_wiki .streaming_dropdown .streaming_wimp,
+#song_wiki .streaming_dropdown .streaming_deezer,
+#song_wiki .streaming_dropdown .streaming_rdio,
+#song_wiki .streaming_dropdown .streaming_spotify,
+#song_wiki .streaming_dropdown .streaming_napster {
+    width:45px;
+    float:left;
+    text-align:center;
+    font-weight: normal;
+}
+
+.row-fluid .span4 {
+    width: 23%;
+}
+.row-fluid [class*="span"] {
+    margin-left: 2%;
+}

@@ -1,0 +1,12 @@
+name = Currency
+description = Provides currency exchange rates.
+dependencies[] = currency_api
+package = Currency 
+core = 6.x
+
+; Information added by drupal.org packaging script on 2012-12-12
+version = "6.x-1.4"
+core = "6.x"
+project = "currency"
+datestamp = "1355323610"
+

@@ -1,0 +1,76 @@
+# xmcd CD database file
+#
+# Track frame offsets:
+#	150
+#	15632
+#	32461
+#	47490
+#	66035
+#	84345
+#	99244
+#	115069
+#	135741
+#	157887
+#	174368
+#	193434
+#	209912
+#	227954
+#	245843
+#	261699
+#	274598
+#	292678
+#	310449
+#	325244
+#
+# Disc length: 4526 seconds
+#
+# Revision: 8
+# Processed by: cddbd v1.5.2PL0 Copyright (c) Steve Scherf et al.
+# Submitted via: CDex 1.51
+#
+DISCID=1f11ac14
+DTITLE=Various / Just The Best 4/99 - CD1
+DYEAR=1999
+DGENRE=Rock
+TTITLE0=Stefan Raab - Maschen-Draht-Zaun
+TTITLE1=A-Teens - Mamma Mia
+TTITLE2=Die Allianz - Boys
+TTITLE3=Sabrina Setlur feat. Cora E. & Brixx - Hija
+TTITLE4=Aleksey - Millennium (Der Countdown läuft)
+TTITLE5=Five - Keep On Movin'
+TTITLE6=Das System - Ohne Dich
+TTITLE7=Steps - After The Love Has Gone
+TTITLE8=Piero Mazzocchetti - L'Eternita
+TTITLE9=Udo Lindenberg - Seid willkommen in Berlin
+TTITLE10=In-Mood feat. Juliette - Tief in der Nacht
+TTITLE11=Jamiroquai - King For A Day
+TTITLE12=Passion Fruit - Do You Remember (Shangri-La)
+TTITLE13=Missy "Misdemeanor" Elliott feat. Big Boi Of Outkast & Nicole Ray - All'n My Grill
+TTITLE14=Destiny's Child - Bug A Boo
+TTITLE15=Touché - Dinner In Heaven
+TTITLE16=Christian Wunderlich - Real Good Moments (I Wanna Thank You)
+TTITLE17=Backstreet Boys - Larger Than Life
+TTITLE18=Britney Spears - (You Drive Me) Crazy
+TTITLE19=Oli. P - So bist Du
+EXTD=1999\n\n\n YEAR: 1999
+EXTT0=Stefan Raab
+EXTT1=A'Teens
+EXTT2=Die Allianz
+EXTT3=Sabrina Setlur feat. Cora E. & Brixx
+EXTT4=Aleksey
+EXTT5=Five
+EXTT6=Das System
+EXTT7=Steps
+EXTT8=Piero Mazzocchetti
+EXTT9=Udo Lindenberg
+EXTT10=In-Mood feat Juliette
+EXTT11=Jamiroquai
+EXTT12=Passion Fruit
+EXTT13=Missy Elliott feat. Big Boi of Outcast & Nicole Ray
+EXTT14=Destiny's child
+EXTT15=Touché
+EXTT16=Christian Wunderlich
+EXTT17=Backstreet Boys
+EXTT18=Britney Spears
+EXTT19=Oli. P
+PLAYORDER=

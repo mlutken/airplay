@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+	p, ul, li { font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<h1>Airplaymusic Partner Setup</h1>
+
+<p>
+	For at gøre brug af vores service skal du kun tilføje disse 2 ting på din side:<br/><br/>
+	1. Lave et link til vores site - dette kunne fx være<br/> <b>&lt;a href="http://www.airplaymusic.dk/kunstner/Pink_Floyd"&gt;Airplaymusic.dk&lt;/a&gt;</b><br/><br/>
+	2. Lave en iframe, hvor du ønsker at vise vores priser. (Se evt under <b>"URL Parametre"</b> -  da dette er minimum af parametre der skal bruges)<br/>
+	<b>&lt;iframe src="http://public.airplaymusic.dk/partners/partner.php?search_for=Pink_Floyd" width="350" height="450" frameborder="0" /&gt;</b><br/><br/>
+	3. Ønsker du dit eget layout til visning af priser, så kontakt os <a href="http://www.airplaymusic.dk/contact" target="_blank">her</a><br/><br/>
+	
+	Er du i tvivl om hvordan "search_for" skal skrives, så kan du evt lave en søgning på en kunstner på <a href="http://www.airplaymusic.dk/" target="_blank">airplaymusic.dk</a> og det er det som står efter /kunstner/ i URL'en - ligesom dette
+	http://www.airplaymusic.dk/kunstner/<b>Pink_Floyd</b>
+	
+
+</p>
+
+<p><b>URL Parametre</b></p>
+<ul>
+	<li><b>partner_name</b> - dit udleverede partnernavn, som kan bruges til at skifte layout.</li>
+	<li><b>partner_market</b> - marked du sendes til - UK og DK er muligt.</li>
+	<li><b>search_for</b> - navn for den kunstner du ønsker at vise priser for.</li>
+	<li><b>search_for_type</b> - type der søges efter - pt er kun "album" muligt.</li>
+	<li><b>search_for_media</b> - medietype der søges efter - pt er kun "Vinyl", "MP3" og "CD" muligt eller tom for at søge alle typer. Eller slet ikke med.</li>
+	<li><b>search_for_currency</b> - hvilken valuta priserne skal vises i - pt er "DKK", "GBP" og "EUR" muligt.</li>
+	<li><b>search_for_type_limit</b> - antal priser der skal vises - 10 priser er standard og dog max 50 priser muligt.</li>
+	<li><b>search_for_currency</b> - hvilken valuta priserne skal vises i - pt er "DKK", "GBP" og "EUR" muligt.</li>
+</ul>
+
+
+<iframe src="http://public.airplaymusic.dk/partners/partner.php?search_for=Pink_Floyd" width="335" height="420" frameborder="0"></iframe>
+</body>
+
+</html>

@@ -1,0 +1,688 @@
+<?php
+
+	module_load_include('inc', 'airplay_user_settings', 'airplay_user_settings_db_views');
+
+/**
+* @file
+* A block module for setting and changing settings for Airplay Music Users.
+*/
+
+function airplay_user_settings_perm() {
+	return array('access airplay_user_settings content');
+}
+
+function airplay_user_settings_permission() {
+  return array(
+    'access airplay_user_settings content' => array(
+      'title' => t('Acces permissions for airplay_user_settings'),
+    ),
+  );
+}
+
+/**
+* Page callback: Airplay Music User settings
+*
+* @see current_posts_menu()
+*/
+function airplay_user_settings_form($form, &$form_state) {
+  $form['airplay_user_settings_max'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum number of posts'),
+    '#default_value' => variable_get('airplay_user_settings_max', 3),
+    '#size' => 2,
+    '#maxlength' => 2,
+    '#description' => t('The maximum number of links to display in the block.'),
+    '#required' => TRUE,
+  );
+  return system_settings_form($form);
+}
+
+/**
+* Implements hook_menu().
+*/
+function airplay_user_settings_menu() {
+	$items = array();
+	$items['admin/config/content/airplay_user_settings'] = array(
+		'title' => 'Airplay Music User settings',
+		'description' => 'Configuration for Airplay Music Users settings module',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('airplay_user_settings_form'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['airplay_user_settings'] = array(
+		'title' => 'Airplay Music User settings',
+		'page callback' => '',
+		'access callback' => 'access content',
+		'access arguments' => array('access airplay_user_settings content'),
+		'type' => MENU_CALLBACK
+	);
+	$items['airplay_user_settings/user_settings_ajax'] = array(
+		'title' => 'Save User Settings',
+		'page callback' => 'airplay_user_settings_ajax',
+		'access arguments' => array('access airplay_user_settings content'),
+		'type' => MENU_CALLBACK,
+		);
+  return $items;
+}
+
+function airplay_user_settings_ajax() {
+	global $user;
+
+	if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["newsletter"]) && ($_REQUEST["newsletter"] == 0 || $_REQUEST["newsletter"] == 1)) {
+		ap_user_settings_update_user_agents_has_news_letter($user->uid, $_REQUEST["newsletter"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["email"])) {
+		ap_user_settings_update_user_agents_mail($user->uid, $_REQUEST["email"]);
+		airplay_price_agent_send_validate_mail($user->uid);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["gender"]) && ($_REQUEST["gender"] == 1 || $_REQUEST["gender"] == 2)) {
+		ap_user_settings_update_user_agents_gender($user->uid, $_REQUEST["gender"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["firstname"]) && $_REQUEST["firstname"] != "") {
+		ap_user_settings_update_user_agents_firstname($user->uid, $_REQUEST["firstname"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["lastname"]) && $_REQUEST["lastname"] != "") {
+		ap_user_settings_update_user_agents_lastname($user->uid, $_REQUEST["lastname"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["user_country"]) && is_numeric($_REQUEST["user_country"])) {
+		ap_user_settings_update_user_agents_country($user->uid, $_REQUEST["user_country"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["birthday"]) && strlen($_REQUEST["birthday"]) == 10) {
+		ap_user_settings_update_user_agents_birthday($user->uid, $_REQUEST["birthday"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["aid"]) && is_numeric($_REQUEST["aid"]) && isset($_REQUEST["fan"]) && ( $_REQUEST["fan"] == 1 || $_REQUEST["fan"] == 2 || $_REQUEST["fan"] == 3)) {
+		// delete fan
+		if ($_REQUEST["fan"] == 3) {
+			ap_user_settings_delete_user_agents_fan($user->uid, $_REQUEST["aid"]);
+		// Update dan type
+		} else {
+			ap_user_settings_update_user_agents_fan($user->uid, $_REQUEST["aid"], $_REQUEST["fan"]);
+		}
+	//} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["remove"]) && $_REQUEST["remove"] == "fan" ) {
+		//ap_user_settings_delete_user_agents_fan($user->uid, $_REQUEST["aid"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["search"]) ) {
+		$sQueryArtists = "SELECT DISTINCT Res.artist_name, artist_id FROM ( SELECT artist_name, item_price_count, artist_id FROM artist WHERE artist_name LIKE :artist_name_like
+		UNION SELECT artist_synonym_name, item_price_count, artist.artist_id FROM artist_synonym INNER JOIN artist ON artist.artist_id = artist_synonym.artist_id WHERE artist_synonym_name = :artist_name ) AS Res ORDER BY Res.item_price_count DESC";
+		$aMatches = array();
+		$aArtists = array();
+		$iMaxResults = 15;
+		db_set_active('airplay_music_v1');
+		$result = db_query_range( $sQueryArtists, 0, $iMaxResults, array(':artist_name_like' => $_REQUEST["search"] ."%", ':artist_name' => $_REQUEST["search"]) );
+		while ($o = $result->fetchObject()) {
+			$artist_name = $o->artist_name;
+			$aArtists[] = array ( "artist_id" => $o->artist_id, "artist_name" => $artist_name);
+		}
+		db_set_active('default');
+		$test = array( "artists" => $aArtists);
+		print drupal_json_encode($test);
+		
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["create_artist_element"]) && $_REQUEST["create_artist_element"] != "") {
+		print ap_user_settings_create_artist_element_html($_REQUEST["create_artist_element"], $_REQUEST["artist_name"]);
+	} else if (ap_agent_is_user_logged_in() == true && isset($_REQUEST["report_error"]) && isset($_REQUEST["type"]) && isset($_REQUEST["artist_id"])) {
+		db_set_active('airplay_music_v1');
+		db_insert('error_report')->fields(array( 'type' => 'artist_image', 'artist_id' => $_REQUEST["artist_id"] ))->execute();
+		db_set_active('default');
+	}
+}
+/**
+* Implements hook_block_view().
+*
+* Prepares the contents of the block.
+*/
+/*
+function airplay_user_settings_block_view($delta = '') {
+	switch ($delta) {
+		case 'user_settings':
+			if (user_access('access airplay_user_settings content')) {
+				$block['subject'] = "t('Current posts')";
+				$block['content'] = airplay_user_settings_display_contents();
+			}
+			return $block;
+	}
+}*/
+
+function airplay_user_settings_node_view($node, $view_mode) {
+
+	 if ($node->type=="page" && $node->title == "Bruger indstillinger"){
+        if ($view_mode == 'full'){
+            $node->content['content'] = array(
+                 "#markup"=> airplay_user_settings_display_contents(),
+                 "#weight"=> 100
+              );  
+           }
+         return $node;
+    }    
+}
+
+
+
+function airplay_user_settings_get_music_likes($social_provider) {
+	$likes = array();
+	
+	$config = __DIR__ . '/../../libraries/hybridauth/config.php';
+	require_once( __DIR__ . '/../../libraries/hybridauth/Hybrid/Auth.php' );
+	// call back the requested provider adapter instance 
+	$hybridauth = new Hybrid_Auth( $config );
+	
+	$adapter = $hybridauth->getAdapter( strtolower($social_provider) );
+
+	// grab the user contacts list
+	$likes = $adapter->getUserMusic();
+	
+	return $likes;
+}
+
+function airplay_user_settings_get_ap_artist_from_fans($user_id) {
+	$artist_names = array();
+	
+	$sQuery = "SELECT user_fan.artist_id, artist_name, fan_type_id FROM user_fan INNER JOIN artist ON artist.artist_id = user_fan.artist_id WHERE user_id = :user_id";
+	$aArgs = array ( ':user_id' => $user_id);
+	$saveDB = db_set_active('airplay_music_v1');
+	$query_result = db_query($sQuery, $aArgs );
+	while ( $o = $query_result->fetchAssoc() ) {
+		$artist_names[] = array ( "artist_id" => $o["artist_id"], "artist_name" => $o["artist_name"], "fan_type_id" => $o["fan_type_id"]);
+	}
+	db_set_active($saveDB);
+	
+	return $artist_names;
+}
+
+function airplay_user_settings_get_ap_artist_from_likes($aUserMusicLikesNames) {
+	$artist_names = array();
+	
+	$sQuery = "SELECT artist_id, artist_name FROM artist WHERE artist_name IN ( :artist_name )";
+	$aArgs = array ( ':artist_name' => $aUserMusicLikesNames);
+	$saveDB = db_set_active('airplay_music_v1');
+	$query_result = db_query($sQuery, $aArgs );
+	while ( $o = $query_result->fetchAssoc() ) {
+		$artist_names[] = array ( "artist_id" => $o["artist_id"] , "artist_name" => $o["artist_name"]);
+	}
+	db_set_active($saveDB);
+	
+	return $artist_names;
+}
+
+
+function airplay_user_settings_get_artist_name_index_in_array($aArray, $artist_name) {
+	$is_in_array = -1;
+	foreach($aArray AS $key => $val) {
+		if ($val["artist_name"] == $artist_name) {
+			$is_in_array = $key;
+		}
+	}
+	return $is_in_array;
+}
+
+function airplay_user_settings_get_artist_image_tag($artist_id, $artist_name, $caller) {
+    $chars_to_remove = array("-", "_", "é", "æ", "ø", "å");
+    $chars__remove_to = array("", "", "e", "a", "o", "a");
+    $chars_to_remove_filename = array("é", "æ", "ø", "å");
+    $chars__remove_to_filename = array("e", "a", "o", "a");
+    $image_path_name = str_replace($chars_to_remove, $chars__remove_to, airplay_name_to_url(strtolower($artist_name)));
+    $image_name = airplay_name_to_url(strtolower(str_replace($chars_to_remove_filename, $chars__remove_to_filename, $artist_name)));
+    $image_name_length = strlen($image_path_name);
+    $image_path = "/images/artists/";
+    /* Make sure that we get correct directory if artist_name lower then 3 chars */
+    for ($i = 0; $i < 3; $i++) {
+        if ($i < $image_name_length) {
+            $image_path .= $image_path_name[$i] . "/";
+        } else {
+            break;
+        }
+    }
+	$sHtml = "";
+	$sHtml .= "<img id='artist_image_id_{$artist_id}' onError='ap_user_settings_artist_image_error({$artist_id}, \"{$artist_name}\", \"{$caller}\");' src='" . $image_path . $image_name . ".png' alt='{$artist_name}' title='{$artist_name}' border='0' />";
+	return $sHtml;
+}
+
+
+function airplay_user_settings_display_contents() {
+	
+	global $user;
+	
+	$aArgs = array();
+	$sHtml = "";
+	$gender = 1; // 1 = male, 2 = female
+	$receive_newsletter = 0;
+	$user_country = 0;
+	$aUserSettings = array();
+	$aUserAgents = array();
+	$aUserMusicLikes = array();
+	$aUserMusicLikesNames = array();
+	$aUserAgentsFans = array();
+	$aProfileArtistOutputted = array();
+	$aCountryName = array();
+	$user_age = 0;
+	$user_action_validated_mail = false; // Variable used to see if an user has clicked on link to validate email.
+	
+	drupal_add_js( drupal_get_path('module', 'airplay_user_settings') . '/user_settings_js.js');
+	drupal_add_js( '//code.jquery.com/ui/1.10.4/jquery-ui.js', 'external');
+	drupal_add_js('//www.google.com/jsapi', 'external' );
+	drupal_add_css( '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css', 'external');
+	
+	if (ap_agent_is_user_logged_in() == true) {
+
+		$aUser = (array)$user; // Convert user object to array for Getting values later.
+
+		$user_id = $user->uid;
+		// Social users - facebook, linkedin, twitter .....
+		if (isset($aUser["data"]["hybridauth"]["emailVerified"])) {
+			$email = $aUser["data"]["hybridauth"]["emailVerified"];
+		} else if (isset($aUser["data"]["hybridauth"]["email"])) {
+			$email = $aUser["data"]["hybridauth"]["email"];
+		// Normal user
+		} else {
+			$email = $aUser["mail"];
+		}
+		$gender = $aUser["data"]["hybridauth"]["gender"];
+		// Social users - facebook, linkedin, twitter .....
+		if (isset($aUser["data"]["hybridauth"]["firstName"])) {
+			$firstname = $aUser["data"]["hybridauth"]["firstName"];
+		// Normal user
+		} else {
+			$firstname = substr($aUser["name"], 0, strpos($aUser["name"], ' '));
+		}
+		// Social users - facebook, linkedin, twitter .....
+		if (isset($aUser["data"]["hybridauth"]["lastName"])) {
+			$lastname = $aUser["data"]["hybridauth"]["lastName"];
+		// Normal user
+		} else {
+			$lastname = substr(strrchr($aUser["name"], ' '), 1);
+		}
+		$social_provider = $aUser["data"]["hybridauth"]["provider"];	
+		$birth_day = (int)$aUser["data"]["hybridauth"]["birthDay"];
+		$birth_month = (int)$aUser["data"]["hybridauth"]["birthMonth"];
+		$birth_year = (int)$aUser["data"]["hybridauth"]["birthYear"];
+		( $birth_day == 0 ? $birth_day = "00" : $birth_day = $birth_day );
+		( $birth_month == 0 ? $birth_month = "00" : $birth_month = $birth_month );
+		( $birth_year == 0 ? $birth_year = "0000" : $birth_year = $birth_year );
+		$birthday = $birth_year . "-" . $birth_month . "-" . $birth_day;
+
+		/* Convert user values to AP values */
+		if ($gender == "male") { $gender = 1; }
+		else if ($gender == "female") { $gender = 2; }
+		else { $gender = 1; }
+		
+		// Used for validate mail......
+		if (isset($_REQUEST["validatemail"]) && $_REQUEST["validatemail"] == "true" && isset($_REQUEST["email"]) && isset($_REQUEST["hash"]) && $_REQUEST["hash"] != "") {
+			airplay_user_settings_validate_mail($user_id, $_REQUEST["email"], $_REQUEST["hash"]);
+			$user_action_validated_mail = true;
+		}
+
+		// Get user settings or create one - if needed...
+		$aUserSettings = ap_user_settings_get_user_settings($user_id, $email, $gender, $birthday, $firstname, $lastname);
+		
+		$aUserAgents = ap_user_settings_get_user_agents($user_id);
+		$aUserAgentsFans = ap_user_settings_get_user_agents_fan($user_id);
+		$aCountryName = ap_user_settings_get_country_data();
+
+		$user_country = (int)$aUserSettings[0]["user_country"];
+		$fan_count = count($aUserAgentsFans);
+		$agent_count = count($aUserAgents);
+
+		
+		// The user has not updated his/her settings yet - then values like birthday, newletter are default and maybe from the social media used.
+		if (count($aUserSettings) == 0) {
+			$birth_day = 0;
+			$birth_month = 0;
+			$birth_year = 0;
+		// Get values from settings table.
+		} else {
+			$receive_newsletter = $aUserSettings[0]["recieve_newsletter"];
+			$mail_approved = $aUserSettings[0]["mail_approved"];
+			$gender = $aUserSettings[0]["gender"];
+			$birth_day = substr($aUserSettings[0]["birthday"], 8, 2);
+			$birth_month = substr($aUserSettings[0]["birthday"], 5, 2);
+			$birth_year = substr($aUserSettings[0]["birthday"], 0, 4);
+			$firstname = $aUserSettings[0]["firstname"];
+			$lastname = $aUserSettings[0]["lastname"];
+			$email = $aUserSettings[0]["mail"];
+		}
+		
+		$sHtml .= ( $mail_approved == 1 ? '' : '<div class="info_box"><div><img src="http://static.airplay-music.dk/images/site/error_icon.png" width="18" height="18" border="" />Din mail-adresse mangler at bliver valideret.</div></div>');
+		$sHtml .= ( $user_action_validated_mail == true ? '<div class="info_box"><div><img src="http://static.airplay-music.dk/images/site/checked_icon.png" width="26" height="18" border="" />Din mail-adresse er nu valideret og godkendt.</div></div>' : '' );
+		
+		$sHtml .= "<h1>{$firstname} {$lastname}</h1>";
+				
+		$sHtml .= "<div class='user_settings'>";
+		$sHtml .= "<div class='left'>";
+		$sHtml .= "<h2>Person oplysninger</h2>";
+		$sHtml .= "<div><div class='input_label'>Fornavn</div><div class='input_form'><input type='text' id='firstname' value='{$firstname}' size='16'></div><div class='status status_firstname'><div class='no'>&nbsp;</div></div></div>";
+		$sHtml .= "<div><div class='input_label'>Efternavn</div><div class='input_form'><input type='text' id='lastname' value='{$lastname}' size='16'></div><div class='status status_lastname'><div class='no'>&nbsp;</div></div></div>";
+		$sHtml .= "<div><div class='input_label'>Fødselsdato</div><div class='input_form'><input type='text' id='birthday' value='{$birth_day}/{$birth_month}/{$birth_year}' size='16'></div><div class='status status_birthday'><div class='no'>&nbsp;</div></div></div>";
+
+		$sHtml .= "<div><div class='input_label'>Køn</div>";
+		$sHtml .= "<div class='input_form'>";
+		$sHtml .= "<div class='gender_male " . ( $gender == "male" || $gender == 1 ? 'selected' : 'unselected') . "' onClick='ap_user_settings_change_gender_layout(1);'>&nbsp;</div><div class='input_label' onClick='ap_user_settings_change_gender_layout(1);'>Mand</div>";
+		$sHtml .= "<div class='gender_female " . ( $gender == "female" || $gender == 2 ? 'selected' : 'unselected') . "' onClick='ap_user_settings_change_gender_layout(2);'>&nbsp;</div><div class='input_label' onClick='ap_user_settings_change_gender_layout(2);'>Kvinde</div>";
+		$sHtml .= "</div><div class='status'><div class='no'>&nbsp;</div></div></div>";
+	
+		$sHtml .= "<div><div class='input_label'>Land</div><div class='input_form'>" . airplay_user_settings_get_country_form_html($aCountryName, $user_country) . "</div><div class='status status_country'><div class='no'>&nbsp;</div></div></div>";
+		
+		$sHtml .= "<div><div class='input_label'>Nyhedsbrev</div>";
+		$sHtml .= "<div class='input_form'>";
+		$sHtml .= "<div class='newsletter_yes " . ( $receive_newsletter == 1 ? 'selected' : 'unselected') . "' onClick='ap_user_settings_update_newsletter(1);'>&nbsp;</div><div class='input_label' onClick='ap_user_settings_update_newsletter(1);'>Ja</div>";
+		$sHtml .= "<div class='newsletter_no " . ( $receive_newsletter == 0 ? 'selected' : 'unselected') . "' onClick='ap_user_settings_update_newsletter(0);'>&nbsp;</div><div class='input_label' onClick='ap_user_settings_update_newsletter(0);'>Nej</div>";
+		$sHtml .= "</div><div class='status'><div class='no'>&nbsp;</div></div></div>";
+		
+		$sHtml .= "<div><div class='input_label'>Email</div>";
+		$sHtml .= "<div class='input_form'>";
+		$sHtml .= "<div class='input'><input type='text' id='email' value='{$email}' size='35' onChange='ap_user_settings_update_email();'></div>";
+		$sHtml .= "</div><div class='status status_email'><div class='no'>&nbsp;</div></div></div>";
+		
+		$sHtml .= "<div class='input_label'></div>";
+		$sHtml .= "<div>";
+		$sHtml .= ( $mail_approved == 1 ? '<div><font color="green">Du er godkendt og registreret som bruger.</font></div>' : '<div class="user_setting_info"><a href=\'javascript:void(0);\' onClick=\'ap_price_agent_send_validate_mail();jQuery("div.user_setting_info").html("Mail sendt.");\'>Klik her for at validere mail-adresse.</a></div>');
+		$sHtml .= "</div>";
+		
+		$sHtml .= "</div>";	
+		$sHtml .= "<div class='right'>";
+		$sHtml .= "<h2 class='user_bg'>Airplay Music Bruger</h2>";
+		$sHtml .= "Som registreret bruger på Airplay Music opnår du det fulde udbytte af musiksøgemaskinens indhold af informationer, produkter og priser.<br/><br/>Her og nu tilbydes du følgende fordele:<br/><strong>Agenter</strong> - du kan oprette agenter og få besked om koncerter, tilbud på albums.<br/><strong>Konkurrencer</strong> - du kan deltage i konkurrencer om flotte præmier.<br/><br/>På sigt kan du forvente meget mere, og ikke mindst flere målrettede informationer og tilbud der matcher netop \"Din Musikprofil\". Dette kræver blot at du bruger 2 minutter på at angive dine favorit-artister i \"Din Musikprofil\" nedenfor.<br/><br/>Vi takker for din brugeroprettelse på Airplay Music, og glæder os til at guide dig hurtigere og nemmere gennem den store musikjungle.";
+		$sHtml .= "<br/><div style='text-align:right;'><a href='http://www.airplaymusic.dk/datapolitik' target='_blank'>Airplay Music datapolitik</a></div>";
+		$sHtml .= "<hr>";
+		$sHtml .= "<h2>Brugerstatus</h2>";
+		$sHtml .= ( $mail_approved == 1 ? '<div class="user_setting_info">Du er godkendt og registreret som bruger.</div>' : '<div class="user_setting_info">Din mail-adresse mangler at bliver valideret - <a href=\'javascript:void(0);\' onClick=\'ap_price_agent_send_validate_mail();jQuery("div.user_setting_info").html("Mail sendt.");\'>klik her for at sende valideringen.</a></div>');
+		//$sHtml .= ( $receive_newsletter == 1 ? '<br/>- du har valgt at vi må sende dig nyhedsbreve.' : '<br/>- du har valgt at vi ikke må sende dig nyhedsbreve.');
+		// User has clicked on the link in the mail or not
+		$sHtml .= ( $user_action_validated_mail == true ? '<div class="user_setting_info">Din mail-adresse er nu valideret og godkendt.</div>' : '' );
+		$sHtml .= ( $user_country == 0 ? '<div><strong>- du mangler at angive land</strong></div>' : '' );
+		$sHtml .= ( $user_country == 0 ? '<div><strong>- du mangler at angive fødselsdato</strong></div>' : '' );
+		$sHtml .= "<div>- du har angivet <strong>{$fan_count}</strong> favorit-artister</div>";
+		$sHtml .= "<div>- du har oprette <strong>{$agent_count}</strong> agenter</div>";
+		$sHtml .= "</div>";			
+		$sHtml .= "</div>";
+		
+
+		$sHtml .= "<div class='music_profile'>";
+		$sHtml .= "<h1>Din musikprofil</h1>";
+		
+		$sHtml .= "<div>Angiv dine favorit-artister og vi vil belønne dig med målrettede informationer og tilbud.</div>";
+
+		// Get Fans for the user.
+		$aUserMusicFans = airplay_user_settings_get_ap_artist_from_fans($user_id);
+		
+		$sHtml .= "<div id='profile_artists_ap'>";
+		$sHtml .= "<div class='subtab' style='position:relative;'><div class='input_label'>Fan&nbsp;&nbsp;<font style='font-size:70%;'>(dine farvorit-artister)</font></div>";
+		$form_text = "Tilføj kunstner til din musikprofil ...";
+		$sHtml .= "<div class='input_form'><input type='text' id='add_artist_to_profile' onFocus='if (this.value == \"{$form_text}\") { this.value = \"\"; }' onBlur='if (this.value == \"\") { this.value = \"{$form_text}\"; }' onkeyup='ap_user_settings_autocomplete();' value='{$form_text}' /></div>";
+		$sHtml .= "<div id='user_settings_artist_autocomplete'>&nbsp;</div>";
+		$sHtml .= "</div>";
+		$sHtml .= "<div class='profile_artists'>";
+		
+		if (count($aUserAgentsFans)) {
+			foreach ($aUserAgentsFans AS $items) {
+				$ap_artist_id = $items["artist_id"];
+				$aProfileArtistOutputted[] = $ap_artist_id;
+				$artist_name = $items["artist_name"];
+				
+				(strlen($artist_name) > 30 ? $display_name = substr($artist_name, 0, 30) : $display_name = $artist_name );
+				$index2 = airplay_user_settings_get_artist_name_index_in_array($aUserMusicFans, $artist_name);
+				$artist_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+				$ap_artist_link = "<a href=\"{$artist_link}\" title=\"{$artist_name}\" target='_blank'>Airplay Music</a>";
+				$sHtml .= "<div id='profile_artist_{$ap_artist_id}' class='profile_artist'>";
+				$sHtml .= "<div class='header'><h2>{$display_name}</h2></div>";
+				$sHtml .= "<div class='image'>";
+				$sHtml .= airplay_user_settings_get_artist_image_tag($ap_artist_id, $artist_name, "");
+//				$sHtml .= "<br/><a href='javascript:void(0);' onClick='ap_user_settings_report_error_in_image(\"artist\", {$ap_artist_id});jQuery(this).hide();'><img src='http://static.airplay-music.dk/images/site/bug.png' width='10' height='10' border='0' title='Rapporter fejl i billede' /></a>";
+				$sHtml .= "</div>";
+				$sHtml .= "<div class='text'>Kunstnerside på ";
+				$sHtml .= "{$ap_artist_link}";
+				$sHtml .= "</div>";
+				$sHtml .= airplay_user_settings_profile_item_menuitem_block($ap_artist_id, $aUserMusicFans[$index2]["fan_type_id"], "");
+				$sHtml .= "</div>";
+			}
+		} else {
+			$sHtml .= "<div class='profile_artists_text'>Du har endnu ikke angivet dine favorit-artister.</div>";
+		}
+		$sHtml .= "</div>";
+		$sHtml .= "</div>";
+		
+		// Fjerne linkedin?? 
+		if (strtolower($social_provider) == "facebook" || strtolower($social_provider) == "twitter" || strtolower($social_provider) == "linkedin" || strtolower($social_provider) == "google") {
+			$sHtml .= "<div id='profile_artists_sm'>";
+			if (strtolower($social_provider) == "facebook") {
+				$sHtml .= "<div class='subtab'>Like&nbsp;&nbsp;<font style='font-size:70%;'>(indhentet fra din facebook-konto)</font></div>";
+			} else if (strtolower($social_provider) == "twitter") {
+				$sHtml .= "<div class='subtab'>Follower&nbsp;&nbsp;<font style='font-size:70%;'>(indhentet fra din Twitter-konto)</font></div>";
+			} else if (strtolower($social_provider) == "twitter") {
+				$sHtml .= "<div class='subtab'>Follower&nbsp;&nbsp;<font style='font-size:70%;'>(indhentet fra din Google-konto)</font></div>";
+			} else {
+				$sHtml .= "<div class='subtab'>Hentet fra dit social login</div>";
+			}
+
+			$aUserMusicLikes = airplay_user_settings_get_music_likes($social_provider);
+
+			if (count($aUserMusicLikes) > 0) {
+				foreach( $aUserMusicLikes as $item ) {
+					$aUserMusicLikesNames[] = $item->displayName;
+				}
+				$aAPArtists = airplay_user_settings_get_ap_artist_from_likes($aUserMusicLikesNames);
+			}
+			if (count( $aUserMusicLikes )) {
+				$sHtml .= "<div class='profile_artists'>";
+				foreach( $aUserMusicLikes as $UserMusicLike ) {
+					$artist_name = $UserMusicLike->displayName;
+					$index = airplay_user_settings_get_artist_name_index_in_array($aAPArtists, $artist_name);
+					if ($index != -1) {
+						$ap_artist_id = $aAPArtists[$index]["artist_id"];
+						if (!in_array($ap_artist_id, $aProfileArtistOutputted)) {
+							(strlen($UserMusicLike->displayName) > 30 ? $display_name = substr($UserMusicLike->displayName, 0, 30) : $display_name = $UserMusicLike->displayName );
+							$artist_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+							$ap_artist_link = "<a href=\"{$artist_link}\" title=\"{$artist_name}\" target='_blank'>Airplay Music</a>";
+							$sHtml .= "<div id='profile_artist_{$ap_artist_id}' class='profile_artist'>";
+							$sHtml .= "<div class='header'><h2>{$display_name}</h2></div>";
+							$sHtml .= "<div class='image'><img src='{$UserMusicLike->photoURL}' width='100' border='0' /></div>";
+							$sHtml .= "<div class='text'>Kunstnerside på ";
+							$sHtml .= "<a href='{$UserMusicLike->profileURL}' target='_blank'>{$social_provider}</a><br />Kunstnerside på {$ap_artist_link}";
+							$index2 = airplay_user_settings_get_artist_name_index_in_array($aUserMusicFans, $artist_name);
+							$sHtml .= "</div>";
+							$sHtml .= airplay_user_settings_profile_item_menuitem_block($ap_artist_id, $aUserMusicFans[$index2]["fan_type_id"], $social_provider);
+							$sHtml .= "</div>";
+						}
+					// Ikke med i Airplay Music database
+					} else {
+						(strlen($UserMusicLike->displayName) > 30 ? $display_name = substr($UserMusicLike->displayName, 0, 30) : $display_name = $UserMusicLike->displayName );
+						$sHtml .= "<div class='profile_artist'>";
+						$sHtml .= "<div class='header'><h2>{$display_name}</h2></div>";
+						$sHtml .= "<div class='image'><img src='{$UserMusicLike->photoURL}' width='100' border='0' /></div>";
+						$sHtml .= "<div class='text'>Kunstnerside på <a href='{$UserMusicLike->profileURL}' target='_blank'>{$social_provider}</a></div>";
+						$sHtml .= airplay_user_settings_profile_item_menuitem_block("", $aUserMusicFans[$index2]["fan_type_id"], $social_provider);
+						$sHtml .= "</div>";
+					}
+				}
+				$sHtml .= "</div>";
+			} else {
+				if (strtolower($social_provider) == "facebook") {
+					$sHtml .= "<div class='profile_artists_text'>Vi fandt ikke nogen musik likes.</div>";
+				} else if (strtolower($social_provider) == "twitter") {
+					$sHtml .= "<div class='profile_artists_text'>Vi fandt ikke nogen musik Followers.</div>";
+				} else {
+					$sHtml .= "<div class='profile_artists_text'>Vi fandt ikke nogen musik profiler</div>";
+				}
+			}
+			$sHtml .= "</div>";
+		}
+
+		$sHtml .= "</div>";
+		$sHtml .= "</div>";
+		
+		// If user has any agents
+		if (count($aUserAgents) > 0) {	
+			$sHtml .= "<div class='music_agents'>";
+			$sHtml .= airplay_user_settings_get_agents_html($aUserAgents);
+			$sHtml .= "</div>";	
+		}		
+
+		$sHtml .= "</div>";
+
+		$sHtml .=
+<<<SCRIPT
+<script type='text/javascript'>
+	google.load('search', '1'); /* Used for loading google images */
+	jQuery("input[id=firstname]:text").change(function () {
+		ap_user_settings_change_firstname(this.value);
+	});
+	jQuery("input[id=lastname]:text").change(function () {
+		ap_user_settings_change_lastname(this.value);
+	});
+	/* User country change */
+	jQuery("#user_country").change(function () {
+		ap_user_settings_change_user_country();
+	});
+	/* Birthday change - call function to validate */
+	jQuery(function() {
+		jQuery("#birthday").datepicker({ firstDay: 1, maxDate: '-10Y', changeMonth: true,  changeYear: true, dateFormat: 'dd/mm/yy', yearRange: "-100:+0", monthNames: ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "Augusts", "September", "Oktober", "November", "December"],
+		monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"], dayNames: ["Søn","Man", "Tirs", "Ons", "Tors", "Fre", "Lør"], 
+		dayNamesShort: ["Søn","Man", "Tirs", "Ons", "Tors", "Fre", "Lør"], dayNamesMin: ["Sø", "Ma", "Ti", "On", "To", "Fr", "Lø"], onSelect: function(dateText, inst) { ap_user_settings_change_birthday(); }});
+	});
+</script>
+SCRIPT;
+	}
+	return $sHtml;
+}
+
+/**
+*	Function used to get bottom menu for an artist_profile_item.
+*/
+
+function airplay_user_settings_profile_item_menuitem_block($artist_id, $fan_type, $social_media_name) {
+	$s = "";
+	
+	if ($social_media_name == "" || $artist_id == "") {
+		$item_width = "width:100%;";
+	} else {
+		$item_width = "width:50%;";
+	}
+	$item_width = "width:100%;";
+	$s .="<div class='menu_items'>";
+	
+	if ($social_media_name == "") {
+		$s .= "<div class='delete' style='{$item_width}' onClick='ap_user_settings_change_fan({$artist_id}, 3)'>Slet</div>";
+	} else {
+		if ($fan_type == 1 && $artist_id != "") {
+			$s .= "<div class='fan' style='{$item_width}' onClick='ap_user_settings_change_fan({$artist_id}, 2)'>Opgradere til fan</div>";
+		} else if ($fan_type == 2 && $artist_id != "") {
+			$s .= "<div class='fan' style='{$item_width}' onClick='ap_user_settings_change_fan({$artist_id}, 1)'>Nedgradere til ikke-fan</div>";
+		} else if ($artist_id != "") {
+			$s .= "<div class='fan' style='{$item_width}' onClick='ap_user_settings_change_fan({$artist_id}, 2)'>Opgradere til fan</div>";
+		}
+		//$s .= "<div class='social_media' style='{$item_width}'>{$social_media_name}</div>";
+	}
+	$s .= "</div>";
+	return $s;
+}
+
+/**
+* Implements hook_block_info().
+*/
+function airplay_user_settings_block_info() {
+  $blocks['airplay_user_settings'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Airplay Music User Settings'),
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE
+  );
+  return $blocks;
+}
+
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function airplay_user_settings_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#airplay_user_settings":
+		$output = '<p>Page for setting and changing settings for Airplay Music Users.</p>';
+		break;
+	}
+	return $output;
+}
+
+
+ /* HTML Layout functions */
+ 
+ function ap_user_settings_create_artist_element_html($artist_id, $artist_name) {
+ 	$sHtml .= "";
+	$display_name = "";
+	(strlen($artist_name) > 30 ? $display_name = substr($artist_name, 0, 30) : $display_name = $artist_name );
+	$artist_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+	$ap_artist_link = "<a href=\"{$artist_link}\" title=\"{$artist_name}\" target='_blank'>Airplay Music</a>";
+	$sHtml .= "<div id='profile_artist_{$artist_id}' class='profile_artist'>";
+	$sHtml .= "<div class='header'><h2>{$display_name}</h2></div>";
+	$sHtml .= "<div class='image'>";
+	$sHtml .= airplay_user_settings_get_artist_image_tag($artist_id, $artist_name, "JS");
+//				$sHtml .= "<br/><a href='javascript:void(0);' onClick='ap_user_settings_report_error_in_image(\"artist\", {$artist_id});jQuery(this).hide();'><img src='http://static.airplay-music.dk/images/site/bug.png' width='10' height='10' border='0' title='Rapporter fejl i billede' /></a>";
+	$sHtml .= "</div>";
+	$sHtml .= "<div class='text'>Kunstnerside på ";
+	$sHtml .= "{$ap_artist_link}";
+	$sHtml .= "</div>";
+	$sHtml .= airplay_user_settings_profile_item_menuitem_block($artist_id, 1, "");
+	$sHtml .= "</div>";
+	return $sHtml;
+ }
+ 
+ 
+ function airplay_user_settings_get_country_form_html($aData, $user_country) {
+
+	$sHtml .= "<select id='user_country'>";
+	$sHtml .= "<option value='0' " . ( $user_country == 0 ? 'selected="selected"' : '') . "  >Vælg land</option>";
+	foreach ($aData AS $country) {
+		$sHtml .= "<option value='" . $country["country_id"] . "' " . ( $user_country == $country["country_id"] ? 'selected="selected"' : '') . "  >" . $country["country_name"] . "</option>";
+	}
+	$sHtml .= "</select>";
+
+	return $sHtml;
+ }
+ 
+
+
+function airplay_user_settings_get_agents_html($aUserAgents) {
+	$sHtml = "<h1>Dine agenter</h1>";
+	$last_item_type = "";
+	$item_text = "";
+	$item_count = 1;
+	foreach( $aUserAgents as $item ) {
+		$artist_name = $item["artist_name"];
+		$item_type_text = ( $item["item_type"]  == 1 ? "Album" : "Koncert" );
+		
+		if ($last_item_type != $item_type_text) {
+			$item_count = 1;
+			$sHtml .= "<div class='subtab'>{$item_type_text}</div>";
+			$last_item_type = $item_type_text;
+		}
+		
+		$class = ( $item_count % 2  == 1 ? "odd" : "even" );
+
+		//$ap_link 	= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name );
+
+		if ($item["item_type"] == 1) {
+			$item_base_name = $item["item_base_name"];
+			//$ap_link .= "/" . ap_artist_suburl() . "/" . airplay_name_to_url( $artist_name ) . "/" . ap_album_suburl() . "/" . airplay_name_to_url( $item_base_name );
+			$item_text = $artist_name . " - " . $item_base_name;
+			$js_edit_function = "ap_user_settings_price_agent_edit_album_agent(" . $item["agent_id"] . ", " . $item["item_base_id"] . ");";
+		} else if ($item["item_type"] == 4) {
+			$item_text = $artist_name;
+			$js_edit_function = "ap_user_settings_price_agent_edit_concert_agent(" . $item["agent_id"] . ");";
+		}
+		//- <a href='{$ap_link}'>Link</a>
+		$sHtml .= "<div class='item $class' id='agent_" . $item["agent_id"] . "'>";
+		$sHtml .= "<div class='text'>{$item_text}</div>";
+//		$sHtml .= "<div class='delete inactive' onClick='ap_user_settings_price_agent_delete_agent(" . $item["agent_id"] . ");'>&nbsp;</div>";
+//		$sHtml .= "<div class='edit inactive' onClick='{$js_edit_function}'>&nbsp;</div>";
+		$sHtml .= "<div class='delete' onClick='ap_user_settings_price_agent_delete_agent(" . $item["agent_id"] . ");'><div class='inactive'>&nbsp;</div></div>";
+		$sHtml .= "<div class='edit' onClick='{$js_edit_function}'><div class='inactive'>&nbsp;</div></div>";
+		
+		$sHtml .= "</div>";
+		$item_count++;
+	}
+	$sHtml .= "<div id='tabs' style='border-bottom: 0px solid #E55D09;'><div id='price_agent_container'>&nbsp;</div></div>";
+	$sHtml .=
+<<<SCRIPT
+<script type="text/javascript">
+	jQuery('div.item div.edit,#price_agent_container').click(function(event) { jQuery('#price_agent_container').show(); event.stopPropagation(); });
+	jQuery('div.item div.delete,#price_agent_container').click(function(event) { jQuery('#price_agent_container').show(); event.stopPropagation(); });
+	/* Close autocomplete modal, edit and delete modal */
+ 	jQuery("html").click(function() { jQuery("#user_settings_artist_autocomplete").hide(); ap_user_settings_price_agent_reset_delete_agents(); ap_user_settings_price_agent_reset_edit_agents(); jQuery("#price_agent_container").hide(); });
+</script>
+SCRIPT;
+	return $sHtml;
+}

@@ -1,0 +1,94 @@
+----------------------------------------------
+--- Airplay Version 1.0 / 1.5 : Forår 2010 ---
+----------------------------------------------
+lør 20/3 : 6	# Møde med Ulrik i Odense
+søn 21/3 : 10	# Valuta omreging
+man 22/3 : 4	# Valuta omreging + Moduler Google analytics etc.
+tir 23/3 : 4	# Cron kode til automatisk upload og indlæsning af skannede filer.
+fre 26/3 : 1	# Cron kode til automatisk upload og indlæsning af skannede filer.
+lør 27/3 : 6	# Cron kode til automatisk upload og indlæsning af skannede filer.
+søn 27/3 : 2	# Sitemap, captha moduler mv. "RunAll"-skripts til vores 4 foreløbige skripts.
+Tir 30/3 : 0	# nodewords lagt op på server
+Søn 11/4 : 2	# Skripts: Overblik indtastning af sværheds grader på GoogleDocs. 
+Man 12/4 : 4	# Skript: CD WOW (DK). 
+Tir 13/4 : 4	# Skript: CD WOW (DK). 
+Fre 16/4 : 8	# Skript: CD WOW (DK), Stereo Studio. 
+Søn 18/4 : 4	# Skript: Stereo Studio, CdBang, + Generisk SELECT state klasse. 
+Tir 20/4 : 5	# Drupal: Opdatering af drupal og moduler til nyeste versioner. tømning af watchdog og sessions tabeller
+Ons 21/4 : 3	# Drupal: Søgning og undersøgelse af forms-API
+Tor 22/4 : 10	# Møde + oprydning i DB og fix af autocomplete popup på forside der efter "de vandrette radioknapper" var forkert placeret
+Fre 23/4 : 6	# Cron priser til euro omregning
+Lør 24/4 : 2	# Skript: Crothet (klassisk musik England).
+Søn 25/4 : 2	# Skript: Crothet (klassisk musik England).
+Man 26/4 : 2	# Skript: Crothet (klassisk musik England).
+Ons 5/5  : 4	# Miner: Klasse 'CounterState' opdateret så den kan tage tegn/bogstav sekvenser også via 'CharsState' .
+Tor 6/5  : 8	# Skript: Ginza (Sverige), HigwayMusic (Danmark) + diverse småting.
+Lør 8/5  : 5	# Skript: iMusic  + crawler forbedring med ncontains og lignende streng sammemligninger negeret.
+Søn 9/5  : 8	# Skript: Musikonline.no
+Man 10/5 : 2	# Skript: Musikonline.no + diverse upload til server
+Tir 11/5 : 1	# Skript: Sneglen + diverse upload til server
+Man 17/5 : 3	# Skript: SneglenDk, GuccaDk
+Tir 18/5 : 6	# Skript: GuccaDk
+Ons 19/5 : 5	# Skript: BoxDk
+Fre 20/5 : 10	# Skript: BoxDk, GuccaDk, AmazonCoUk + diverse feljsøgning på crawler (SELECT + mouseclick)
+Fre 21/5 : 7	# Skript: GuccaDk, AmazonCoUk + diverse feljsøgning på crawler (page loaded nu kun en gang selvom IFRAMES. Gav problemer på Amazon)
+Ons 26/5 : 3	# Skript: AmazonCoUk
+Fre 28/5 : 4	# Drupal: Valuta omregning direkte i DB
+Lør 29/5 : 4	# Drupal: Valuta valg på websiden.
+Søn 30/5 : 12	# Drupal: Media format valg og sortering af album på søgeliste. Oversættelse basal forståelse pyha :-( . 
+Man 31/5 : 8	# Drupal: Oversættelse af vores egne moduler til dansk. 
+Tir 1/6  : 1	# Drupal: Diverse smårettelser. 
+Tor 3/6  : 6	# Drupal: Autocomplete problemer + ny løsning som burde være stabil og uden fejl. 
+Søn 4/7  : 6	# Møde: I Odense. 
+Søn 11/7 : 2	# Drupal: "Slå sammen": album (der ligner hinanden). 
+Man 12/7 : 2	# Drupal: "Slå sammen": album (der ligner hinanden). 
+Tir 13/7 : 5	# Drupal: "Slå sammen": album (der ligner hinanden). 
+Ons 13/7 : 3	# Drupal: "Slå sammen": album (der ligner hinanden). Springboard forslag. 
+Tor 14/7 :  	# Drupal: "Slå sammen": album (der ligner hinanden) + priser på kunstner URL. 
+
+I alt      xx timer
+
+
+
+
+
+
+
+
+--------------------------------------
+--- Crawler code : Forår 2010 ---
+--------------------------------------
+Tir 30/3 : 4	# Opgradering til Firefox 3.6.2
+Tor 1/4  : 8	# Miner creator opstart af projekt
+Fre 2/4  : 8	# Miner creator 
+Lør 3/4  : 4	# Miner creator: Løsning af problem med tastatur input
+Søn 4/4  : 2	# Miner creator: DOM træ visning
+Man 5/4  : 6	# Miner creator: DOM træ visning
+Tir 6/4  : 6	# Miner creator: DOM træ visning
+Ons 7/4  : 8	# Miner creator: Søgning på text 
+Tor 8/4  : 5	# Miner creator: Søgning på text, NotebookCtrl klasse. 
+Tir 13/4 : 2	# Crawler: CommandLineParser class. 
+Tor 15/4 : 8	# Crawler: Forbedring af DomSeq. Nu kan man oprette dem på et ID (navn) man kan refere til i domFind og også angive steps efter match samt '?'-tegn i match, som betyder at man matcher domknude med vilkårlig værdi 
+Lør 24/4 : 10	# Crawler: Implementering af domSetStopPos  ; Miner: Generisk SELECT state klasse i php.
+Søn 25/4 : 2	# Crawler: trimRegex, trimFindYear.
+Man 26/4 : 4	# Crawler: trimming stuff, Miner creator: &nbsp;.
+Man 24/5 : 7	# Crawler: Understøttelse af '*' (wildcards) i DOM sekvenser. Alternativer i DOM sekvenser med '#' i domSeqCreate() og med '?' i outputValueFindNext().
+Tir 25/5 : 7	# Crawler: outputValueFindNext() understøttelse af kald af php funktioner istedet for en af de indbyggede som 'trimNumber', 'prepend' ...  
+Fre 4/6  : 5	# Crawler: Kompilering a PHP selv med henblik på integration med PHP's "embed" SAPI.
+Fre 5/6  : 4	# Crawler: Kompilering a PHP selv med henblik på integration med PHP's "embed" SAPI.
+Lør 26/6 : 4	# Crawler: Kompilering a PHP selv med henblik på integration med PHP's "embed" SAPI.
+Søn 27/6 : 4	# Crawler: Forberedelse integration med PHP's "embed" SAPI.
+Man 28/6 : 6	# Crawler: Forberedelse integration med PHP's "embed" SAPI. String compare callbacks
+Ons 30/6 : 4	# Crawler: Forberedelse integration med PHP's "embed" SAPI. String manipulation callbacks
+Tor 1/7  : 8	# Crawler: Forberedelse integration med PHP's "embed" SAPI. String manipulation callbacks
+Lør 3/7  : 12	# Crawler: Forberedelse integration med PHP's "embed" SAPI. Windows kompilering af PHP og crawler
+Tir 6/7  : 2	# Crawler: Integration med PHP's "embed" SAPI. Linux miners opdatering + tilretning af eksisterende skripts
+Ons 7/7  : ??	# Crawler: 
+
+
+ 
+
+Ialt xx timer
+
+
+

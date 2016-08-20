@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>HTML5 MediaElement - YouTube ML</title>	
+	
+	<script src="../build/jquery.js"></script>	
+	<script src="../build/mediaelement-and-player.min.js"></script>
+<!-- 	<script src="testforfiles.js"></script>	 -->
+	<link rel="stylesheet" href="../build/mediaelementplayer.min.css" />
+</head>
+<body>
+
+<h2>YouTube Wrapper</h2>
+
+
+<video width="300" height="200" id="player">
+    <!-- Pseudo HTML5 -->
+    <source type="video/youtube" src="http://www.youtube.com/watch?v=nOEw9iiopwI" />
+</video>
+	
+<span id="player-mode"></span>
+<br>
+<button id="play-button" >Play</button><br>
+<button id="stop-button" >Stop</button><br>
+
+
+<script>
+
+var myVideo=document.getElementById("player"); 
+
+$('#player').mediaelementplayer({
+	success: function(media, node, player) {
+		console.log("created");
+		$('#' + node.id + '-mode').html('mode: ' + media.pluginType);
+		myVideo=document.getElementById("player");
+	}
+});
+
+$('#stop-button').click(function() {
+    $('video, audio').each(function() {
+          $(this)[0].player.pause();		  
+    });
+});
+
+$('#play-button').click(function() {
+    $('video, audio').each(function() {
+          $(this)[0].player.play();		  
+    });
+});
+
+// function stopVideo() 
+// {
+// 	console.log("stopVideo");
+// }
+// 
+// function playVideo() 
+// {
+// 	console.log("playVideo");
+// 	myVideo.play(); 
+// }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<?php 
+// $Id$
+
+/*
+SELECT DISTINCT (
+song_simple_name
+) 
+FROM song 
+    INNER JOIN song_simple ON song_simple.song_simple_id=song.song_simple_id 
+    INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+
+*/
+
+
+//	ROUND(buy_album.price_local,2) as price_local, 
+function airplay_view_buy_album( $bDoCreateView = false ) 
+{
+	$sViewCreateSQL = "";
+	if ( $bDoCreateView ) $sViewCreateSQL = "CREATE OR REPLACE VIEW view_buy_album AS ";
+	return "$sViewCreateSQL
+	SELECT artist.artist_name, album.album_name, album_simple_name, 
+	(price_local * currency_to_euro.to_euro * currency.from_euro * 0.01) as price,
+	record_store.record_store_name, currency.currency_name, 
+	media_format.media_format_name, buy_album.buy_at_url, record_store.use_affiliate, record_store.affiliate_link, record_store.affiliate_encode_times
+	FROM artist
+	INNER JOIN album ON album.artist_id=artist.artist_id 
+	INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+	INNER JOIN album_simple ON album_simple.album_simple_id=album.album_simple_id 
+	INNER JOIN record_store ON buy_album.record_store_id=record_store.record_store_id 
+	INNER JOIN media_format ON media_format.media_format_id=buy_album.media_format_id
+	INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_album.currency_id   
+	INNER JOIN currency ON currency.currency_name='%s'   
+	";
+}
+
+function airplay_view_buy_song( $bDoCreateView = false ) 
+{
+	$sViewCreateSQL = "";
+	if ( $bDoCreateView ) $sViewCreateSQL = "CREATE OR REPLACE VIEW view_buy_song AS ";
+	return "$sViewCreateSQL
+    SELECT artist.artist_name, song.song_name, song_simple_name, 
+    (price_local * currency_to_euro.to_euro * currency.from_euro * 0.01) as price,
+    record_store.record_store_name, currency.currency_name, 
+    media_format.media_format_name, buy_song.buy_at_url, record_store.use_affiliate, record_store.affiliate_link, record_store.affiliate_encode_times
+    FROM artist
+    INNER JOIN song ON song.artist_id=artist.artist_id 
+    INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+    INNER JOIN song_simple ON song_simple.song_simple_id=song.song_simple_id 
+    INNER JOIN record_store ON buy_song.record_store_id=record_store.record_store_id 
+    INNER JOIN media_format ON media_format.media_format_id=buy_song.media_format_id
+    INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_song.currency_id   
+    INNER JOIN currency ON currency.currency_name='%s'   
+";
+}
+/*
+TODO: ML: Jacob kan du se om ovenstående er fint nok stadig mht. affiliate? Her er den oprindelige.
+    SELECT artist.artist_name, song.song_name, 
+    (price_local * currency_to_euro.to_euro * currency.from_euro * 0.01) as price,
+    record_store.record_store_name, currency.currency_name, 
+    media_format.media_format_name, buy_song.buy_at_url, record_store.use_affiliate, record_store.affiliate_link, record_store.affiliate_encode_times
+    FROM artist
+    INNER JOIN song ON song.artist_id=artist.artist_id 
+    INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+    INNER JOIN record_store ON buy_song.record_store_id=record_store.record_store_id 
+    INNER JOIN media_format ON media_format.media_format_id=buy_song.media_format_id
+    INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_song.currency_id   
+    INNER JOIN currency ON currency.currency_name='%s'   
+*/
+
+
+/**
+
+\see LEFT JOIN and limiting the JOIN'd rows displayed
+\see http://forums.mysql.com/read.php?52,211954,211954#msg-211954
+\see http://forums.mysql.com/read.php?97,206159,206194#msg-206194 */
+function airplay_view_buy_artist_album( $bDoCreateView = false ) 
+{
+	$sViewCreateSQL = "";
+	if ( $bDoCreateView ) $sViewCreateSQL = "CREATE OR REPLACE VIEW view_buy_artist AS ";
+	return "$sViewCreateSQL
+	SELECT artist.artist_name, album.album_name, album.album_year, album_simple_name, 
+	currency_to_euro.to_euro,  
+	COUNT(*) as album_prices_count, 
+	MIN(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MIN,  	
+	MAX(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MAX
+	FROM artist
+	INNER JOIN album ON album.artist_id=artist.artist_id 
+	INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+	INNER JOIN album_simple ON album_simple.album_simple_id=album.album_simple_id 
+    INNER JOIN media_format ON media_format.media_format_id=buy_album.media_format_id
+	INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_album.currency_id   
+	INNER JOIN currency ON currency.currency_name='%s'   
+	";
+}
+
+
+
+/**
+
+\see LEFT JOIN and limiting the JOIN'd rows displayed
+\see http://forums.mysql.com/read.php?52,211954,211954#msg-211954
+\see http://forums.mysql.com/read.php?97,206159,206194#msg-206194 */
+function airplay_view_buy_artist_song( $bDoCreateView = false ) 
+{
+	$sViewCreateSQL = "";
+	if ( $bDoCreateView ) $sViewCreateSQL = "CREATE OR REPLACE VIEW view_buy_artist AS ";
+	return "$sViewCreateSQL
+    SELECT artist.artist_name, song.song_name, song.song_year, song_simple_name, 
+    currency_to_euro.to_euro,  
+    COUNT(*) as song_prices_count, 
+    MIN(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MIN,   
+    MAX(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MAX
+    FROM artist
+    INNER JOIN song ON song.artist_id=artist.artist_id 
+    INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+    INNER JOIN song_simple ON song_simple.song_simple_id=song.song_simple_id 
+    INNER JOIN media_format ON media_format.media_format_id=buy_song.media_format_id
+    INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_song.currency_id   
+    INNER JOIN currency ON currency.currency_name='%s'   
+    ";
+}
+
+/*
+    SELECT artist.artist_name, song.song_name, song.song_year, 
+    currency_to_euro.to_euro,  
+    COUNT(*) as song_prices_count, 
+    MIN(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MIN,   
+    MAX(price_local * currency_to_euro.to_euro * currency.from_euro) * 0.01 as price_MAX
+    FROM artist
+    INNER JOIN song ON song.artist_id=artist.artist_id
+    INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+    INNER JOIN currency_to_euro ON currency_to_euro.currency_id=buy_song.currency_id   
+    INNER JOIN currency ON currency.currency_name='%s'   
+
+*/
+
+/*
+
+SELECT artist.artist_name, album.album_name, buy_album.price_local, record_store.record_store_name, currency.currency_name, media_format.media_format_name
+FROM artist
+INNER JOIN album ON album.artist_id=artist.artist_id 
+INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+INNER JOIN record_store ON buy_album.record_store_id=record_store.record_store_id 
+INNER JOIN currency ON currency.currency_id=buy_album.currency_id 
+INNER JOIN media_format ON media_format.media_format_id=buy_album.media_format_id 
+
+*/
+
+/*
+CREATE OR REPLACE VIEW view_buy_album AS 
+SELECT artist.artist_name, album.album_name, buy_album.price_local, 
+record_store.record_store_name, currency.currency_name, media_format.media_format_name,
+buy_album.buy_at_url
+FROM artist
+INNER JOIN album ON album.artist_id=artist.artist_id 
+INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+INNER JOIN record_store ON buy_album.record_store_id=record_store.record_store_id 
+INNER JOIN currency ON currency.currency_id=buy_album.currency_id 
+INNER JOIN media_format ON media_format.media_format_id=buy_album.media_format_id
+*/
+
+/*
+CREATE OR REPLACE VIEW view_buy_song AS 
+SELECT artist.artist_name, song.song_name, album.album_name, 
+buy_song.price_local, record_store.record_store_name, 
+currency.currency_name, media_format.media_format_name,
+buy_song.buy_at_url
+FROM artist
+INNER JOIN song ON song.artist_id=artist.artist_id 
+INNER JOIN buy_song ON song.song_id=buy_song.song_id 
+INNER JOIN album ON album.album_id=song.album_id 
+INNER JOIN record_store ON buy_song.record_store_id=record_store.record_store_id 
+INNER JOIN currency ON currency.currency_id=buy_song.currency_id 
+INNER JOIN media_format ON media_format.media_format_id=buy_song.media_format_id
+
+-----------------------------------------------------------------
+
+SELECT artist.artist_name, album.album_name, album.album_year, 
+COUNT(*) as album_prices_count, 
+MIN(price_local) as price_local_MIN,  	
+MAX(price_local) as price_local_MAX,
+currency.currency_name  	
+FROM artist
+INNER JOIN album ON album.artist_id=artist.artist_id
+INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+INNER JOIN currency ON currency.currency_id=buy_album.currency_id 
+WHERE artist.artist_name = 'ZZ Top' 
+GROUP BY album.album_name
+
+
+
+SELECT artist.artist_name, album.album_name, album.album_year, 
+price_local, currency.currency_name  	
+FROM artist
+INNER JOIN album ON album.artist_id=artist.artist_id
+INNER JOIN buy_album ON album.album_id=buy_album.album_id 
+INNER JOIN currency ON currency.currency_id=buy_album.currency_id 
+WHERE artist.artist_name = 'ZZ Top' 
+ORDER BY album.album_name ASC
+
+
+// Get latest price update for every record store
+SELECT 
+buy_album_id,
+buy_album.record_store_id,
+record_store.record_store_name,
+max(timestamp_updated)
+FROM buy_album
+INNER JOIN record_store ON buy_album.record_store_id=record_store.record_store_id
+GROUP BY record_store_id
+
+*/
+
+
+

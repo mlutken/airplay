@@ -1,0 +1,1 @@
+DELETE FROM buy_song WHERE timestamp_updated < DATE_ADD(now(), INTERVAL -6 MONTH);

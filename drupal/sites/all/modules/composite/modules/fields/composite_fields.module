@@ -1,0 +1,198 @@
+<?php
+// $Id: composite_fields.module,v 1.1.2.1 2009/09/22 02:14:28 bengtan Exp $
+
+/**
+ * Helper function to gather composite field subtypes information
+ */
+function composite_fields_get_field_types($type = '') {
+  static $field_types = null;
+
+  if (empty($field_types)) {
+    $field_types = array();
+    foreach (module_implements('composite_field_types') as $module) {
+      $data = module_invoke($module, 'composite_field_types');
+      
+      foreach ($data as $k => $field_type) {
+        // Either 'potentials' or 'potentials callback' must be defined
+        //   else we ignore this field_type
+        if (!isset($field_type['potentials']) && !isset($field_type['potentials callback'])) {
+          unset($data[$k]);
+          continue;
+        }
+        
+        // Fill in 'module' if not specified
+        if (!$data[$k]['module']) {
+          $data[$k]['module'] = $module;
+        }
+        
+        // Generate some defaults if not defined: 'field api'
+        if (!isset($field_type['field api'])) {
+          $data[$k]['field api'] = $module . '_composite_field_' . $k . '_api';
+        }
+
+        // Sanity check: If 'field api' doesn't exist, we ignore this field subtype
+        if (!function_exists($data[$k]['field api'])) {
+          unset($data[$k]);
+          continue;          
+        }
+      }
+      $field_types = array_merge_recursive($field_types, $data);
+    }
+
+    // Sort by weight
+    uasort($field_types, "element_sort");
+
+    // Allow other modules to alter 
+    drupal_alter('composite_field_types', $field_types);
+  }
+  
+  if ($type == '')
+    return $field_types;
+  else if (array_key_exists($type, $field_types))
+    return $field_types[$type];
+}
+
+/***********************************************************
+*             Interface with Composite Layout              *
+************************************************************/
+
+function composite_fields_composite_types() {
+  $types = array(
+    'field' => array(
+      'type' => 'field',
+      'label' => array('singular' => t('Field'), 'plural' => t('Fields')),
+      'local task' => TRUE,
+      'potentials callback' => 'composite_fields_potentials', 
+    ),
+  );
+  return $types;
+}
+
+/**
+ * Composite Layout composite reference type api function which just dispatches to the relevant composite field api function
+ */
+function composite_fields_composite_field_api(&$reference, $op, $node = NULL, $a4 = NULL) {
+  $field_types = composite_fields_get_field_types();
+
+  foreach ($field_types as $field_type) {
+    // Find a field subtype by matching the prefix
+    if (strpos($reference['id'], $field_type['prefix']) === 0) {
+      return $field_type['field api']($reference, $op, $node, $a4);
+    }
+  }
+}
+
+/**
+ * Composite Layout composite reference potentials function which gathers information from the composite field subtypes
+ */
+function composite_fields_potentials($node) {
+  $field_types = composite_fields_get_field_types();
+  $options = array();
+
+  foreach ($field_types as $field_type) {
+    $data = isset($field_type['potentials callback']) ? $field_type['potentials callback']($node) : $field_type['potentials'];
+    $options = array_merge_recursive($options, $data);
+  }
+
+  return $options;
+}
+
+/***********************************************************
+*                      Inbuilt fields                      *
+************************************************************/
+
+function composite_fields_composite_field_types() {
+  $field_types = array(
+    // 'body' is an inbuilt field. It also serves as a reference composite field. 
+    // So, this is an example field serving as 'documentation', sort of ... 
+    // A commented out option indicates a default value. 
+    'body' => array(
+      // 'module' is optional and is used in the conventional Drupal-ish way
+      // 'module' => 'composite_fields',
+
+      // 'prefix' is used to match those reference items that this field subtype enables.
+      //   Conversely, all reference items defined by this field subtype must begin with prefix.
+      //   This must be declared.
+      'prefix' => 'body',
+      
+      // Declare the field api callback function. This defaults to 'module' _ 'composite_field' _ <field_type> _ 'api'
+      // 'field api' => 'composite_fields_composite_field_body_api',
+
+      // Declare the potential composite reference items this field subtype enables
+      //   'potentials' is an array listing the reference items that this field subtype enables.
+      //   ie 'potentials' => array('body' => t('Node: Body')),
+      // If the available potentials are dynamically defined, then 'potentials callback'
+      //   is called instead. If defined, this overrides 'potentials'.
+      // Either 'potentials' or 'potentials callback' must be declared.
+      'potentials callback' => 'composite_fields_composite_field_body_potentials',
+
+      // 'weight' is an optional weighting factor
+      // 'weight' => 0,
+    ),
+  );
+
+  // Add upload field if upload.module is enabled
+  if (module_exists('upload')) {
+    module_load_include('inc', 'composite_fields', 'composite_fields.upload');
+    $field_types['upload'] = array(
+      'prefix' => 'upload',
+      'potentials callback' => 'composite_fields_composite_field_upload_potentials',
+    );    
+  }
+
+  return $field_types;
+}
+
+/**
+ * Field subtype api function for 'body' field
+ */
+function composite_fields_composite_field_body_api(&$reference, $op, $node = NULL, $a4 = NULL) {
+  switch ($op) {
+    // Generate and insert an informative human-readable string into ['info']
+    case 'info':
+      $reference['info'] = t('Node: Body');
+      // We cheat here and use composite_cck's preview function if it exists
+      //   to generate a body preview. 
+      if (function_exists('_composite_cck_preview_element')) {
+        $element['value'] = strip_tags($node->body);
+        $preview = _composite_cck_preview_element($element);
+        if (!empty($preview)) {
+          $reference['info'] = '<em>' . $preview . '</em><br />' . $reference['info'];
+        }
+      }
+      break;
+
+    // Return a rendering of the reference item
+    case 'view':
+      // Have to reload this node because, at this point, $node->body
+      //   has been assembled and may include other stuff ie. cck fields
+      $new = node_load($node->nid);
+      node_prepare($new);      
+      return $new->body;
+      break;
+  }
+}
+
+/**
+ * Potentials callback function for 'body' field
+ */
+function composite_fields_composite_field_body_potentials($node) {
+  $options = array();
+
+  $node_content_type = node_get_types('type', $node);
+  if ($node_content_type->has_body) {
+    $options['body'] = t('Node: Body');
+    
+    // We cheat here and use composite_cck's preview function if it exists
+    //   to generate a body preview. 
+    if (function_exists('_composite_cck_preview_element')) {
+      $element['value'] = strip_tags($node->body);
+      $preview = _composite_cck_preview_element($element);
+      if (!empty($preview)) {
+        $options ['body'] = '<em>' . $preview . '</em><br />' . $options ['body'];
+      }
+    }
+  }
+  return $options;
+}
+

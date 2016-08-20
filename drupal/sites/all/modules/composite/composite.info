@@ -1,0 +1,15 @@
+; $Id: composite.info,v 1.1.2.1 2009/09/22 02:14:28 bengtan Exp $
+
+name = "Composite Layout"
+description = "Provides a composite layout for nodes and can also display other nodes and blocks."
+package = "Composite Layout"
+core = 6.x
+
+
+
+; Information added by drupal.org packaging script on 2009-09-22
+version = "6.x-1.0-beta8"
+core = "6.x"
+project = "composite"
+datestamp = "1253586621"
+

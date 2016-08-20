@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<TIME_SCANNING_START_UTC>20131208T122457</TIME_SCANNING_START_UTC>
+	<TIME_SCANNING_START_LOCAL>2013-Dec-08 13:24:57</TIME_SCANNING_START_LOCAL>
+	<miner_name></miner_name>
+	<URL_SITE>http://roskilde-festival.dk/</URL_SITE>
+	<scanMode>quick</scanMode>
+	<title>
+		<data_record_type>record_store</data_record_type>
+		<record_store_name>Roskilde Festival (Roskilde)</record_store_name>
+		<record_store_url>http://roskilde-festival.dk/</record_store_url>
+		<country_name>Denmark</country_name>
+		<do_insert>record_store</do_insert>
+		<do_update>record_store:record_store_url,country_name</do_update>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://roskilde-festival.dk/dk/ticket_link/]]></buy_at_url>
+		<data_record_type>concert</data_record_type>
+		<concert_name><![CDATA[Roskilde Festival (Roskilde)]]></concert_name>
+		<artist_name><![CDATA[Pusha T]]></artist_name>
+		<concert_date_time><![CDATA[0000-00-00 00:00:00]]></concert_date_time>
+		<price_local>1910</price_local>
+		<currency_name>DKK</currency_name>
+		<item_master>0</item_master>
+		<language_code></language_code>
+		<item_base_reliability>0</item_base_reliability>
+		<media_format_name>Festival</media_format_name>
+		<media_type_name>concert</media_type_name>
+		<record_store_name>Roskilde Festival (Roskilde)</record_store_name>
+		<record_store_url>http://roskilde-festival.dk/</record_store_url>
+		<dbg_state>SearchListing(8): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://roskilde-festival.dk/dk/ticket_link/]]></buy_at_url>
+		<data_record_type>concert</data_record_type>
+		<concert_name><![CDATA[Roskilde Festival (Roskilde)]]></concert_name>
+		<artist_name><![CDATA[Trentemøller]]></artist_name>
+		<concert_date_time><![CDATA[0000-00-00 00:00:00]]></concert_date_time>
+		<price_local>1910</price_local>
+		<currency_name>DKK</currency_name>
+		<item_master>0</item_master>
+		<language_code></language_code>
+		<item_base_reliability>0</item_base_reliability>
+		<media_format_name>Festival</media_format_name>
+		<media_type_name>concert</media_type_name>
+		<record_store_name>Roskilde Festival (Roskilde)</record_store_name>
+		<record_store_url>http://roskilde-festival.dk/</record_store_url>
+		<dbg_state>SearchListing(9): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://roskilde-festival.dk/dk/ticket_link/]]></buy_at_url>
+		<data_record_type>concert</data_record_type>
+		<concert_name><![CDATA[Roskilde Festival (Roskilde)]]></concert_name>
+		<artist_name><![CDATA[Trentemøller]]></artist_name>
+		<concert_date_time><![CDATA[2014-08-09 10:00:00]]></concert_date_time>
+		<price_local>1910</price_local>
+		<currency_name>DKK</currency_name>
+		<item_master>0</item_master>
+		<language_code></language_code>
+		<item_base_reliability>0</item_base_reliability>
+		<media_format_name>Festival</media_format_name>
+		<media_type_name>concert</media_type_name>
+		<record_store_name>Roskilde Festival (Roskilde)</record_store_name>
+		<record_store_url>http://roskilde-festival.dk/</record_store_url>
+		<dbg_state>SearchListing(9): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://roskilde-festival.dk/dk/ticket_link/]]></buy_at_url>
+		<data_record_type>concert</data_record_type>
+		<concert_name><![CDATA[Roskilde Festival (Roskilde)]]></concert_name>
+		<artist_name><![CDATA[Trentemøller]]></artist_name>
+		<concert_date_time><![CDATA[2014-08-10 10:00:00]]></concert_date_time>
+		<price_local>1910</price_local>
+		<currency_name>DKK</currency_name>
+		<item_master>0</item_master>
+		<language_code></language_code>
+		<item_base_reliability>0</item_base_reliability>
+		<media_format_name>Festival</media_format_name>
+		<media_type_name>concert</media_type_name>
+		<record_store_name>Roskilde Festival (Roskilde)</record_store_name>
+		<record_store_url>http://roskilde-festival.dk/</record_store_url>
+		<dbg_state>SearchListing(9): '', OptionIndex: -1</dbg_state>
+		<dbg_navigation_done>'1'</dbg_navigation_done>
+	</title>
+	<total_items>9</total_items>
+	<TIME_SCANNING_END_UTC>20131208T122500</TIME_SCANNING_END_UTC>
+	<TIME_SCANNING_END_LOCAL>2013-Dec-08 13:25:00</TIME_SCANNING_END_LOCAL>
+	<TIME_SCANNING_ELAPSED>000003</TIME_SCANNING_ELAPSED>
+	<TIME_SCANNING_ELAPSED>00:00:03</TIME_SCANNING_ELAPSED>
+</ROOT>

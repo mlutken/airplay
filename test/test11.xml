@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<TIME_SCANNING_START_UTC>20120624T213523</TIME_SCANNING_START_UTC>
+	<TIME_SCANNING_START_LOCAL>2012-Jun-24 23:35:23</TIME_SCANNING_START_LOCAL>
+	<miner_name>AmazonCoUk</miner_name>
+	<URL_SITE>http://www.amazon.co.uk/</URL_SITE>
+	<scanMode>quick</scanMode>
+	<title>
+		<data_record_type>record_store</data_record_type>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<country_name>UK</country_name>
+		<do_insert>record_store</do_insert>
+		<do_update>record_store:record_store_url,country_name</do_update>
+	</title>
+	<title>
+		<buy_at_url><![CDATA[http://www.amazon.co.uk/Schlager-V-l-10-Survivors/dp/B000024V49/ref=sr_1_cc_1?m=A3P5ROKL5A1OLE&s=aps&ie=UTF8&qid=1340573745&sr=1-1-catcorr]]></buy_at_url>
+		<data_record_type>album</data_record_type>
+		<album_name><![CDATA[Schlager (1995)]]></album_name>
+		<artist_name><![CDATA[V.a.l.10 Survivors]]></artist_name>
+		<currency_name>GBP</currency_name>
+		<album_year></album_year>
+		<media_format_name>CD</media_format_name>
+		<media_type_name>audio</media_type_name>
+		<record_store_name>Amazon UK</record_store_name>
+		<record_store_url>http://www.amazon.co.uk/</record_store_url>
+		<artist_status>1</artist_status>
+		<do_insert>artist,artist_synonym,subgenre,album,buy_album,buy_album_history</do_insert>
+		<do_update>buy_album:price_local,currency_id,buy_at_url,timestamp_updated;buy_album_history:price_local,currency_id,timestamp_updated</do_update>
+		<do_update_on_empty>album;artist</do_update_on_empty>
+		<dbg_state>SearchListing(1): 'L10', OptionIndex: 1</dbg_state>
+		<dbg_navigation_done>''</dbg_navigation_done>
+	</title>
+	<total_items>1</total_items>
+	<TIME_SCANNING_END_UTC>20120624T213718</TIME_SCANNING_END_UTC>
+	<TIME_SCANNING_END_LOCAL>2012-Jun-24 23:37:18</TIME_SCANNING_END_LOCAL>
+	<TIME_SCANNING_ELAPSED>000155</TIME_SCANNING_ELAPSED>
+	<TIME_SCANNING_ELAPSED>00:01:55</TIME_SCANNING_ELAPSED>
+</ROOT>

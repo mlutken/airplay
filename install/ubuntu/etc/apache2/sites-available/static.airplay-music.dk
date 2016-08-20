@@ -1,0 +1,38 @@
+<VirtualHost *:80>
+	ServerAdmin airplaysite@airplaymusic.dk
+	ServerName static.airplay-music.dk
+	ServerAlias *.airplay-music.dk
+	DocumentRoot /home/sleipner/airplay/static_site
+	AccessFileName .htaccess
+
+	<Directory /home/sleipner/airplay/static_site/>
+		# Speed up caching
+		FileETag MTime Size
+		# Expires
+		ExpiresActive On
+		ExpiresDefault "access plus 2 weeks"
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	# Use Mod_deflate to compress static files
+	<ifmodule mod_deflate.c>
+		<filesmatch ".(ico|txt|htm|html|php)$">
+			SetOutputFilter DEFLATE
+		</filesmatch>
+	</ifmodule>
+
+	# Future Expires Headers
+	<filesmatch ".(ico|pdf|flv|jpg|jpeg|png|gif)$">
+		Header set Expires "Sat, 27 Dec 2014 23:59:59 GMT"
+	</filesmatch>
+	
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel error
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

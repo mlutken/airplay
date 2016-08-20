@@ -1,0 +1,183 @@
+<?php 
+// $Id$
+
+module_load_include('inc', 'airplay_base', 'airplay_base_constants');  
+module_load_include('inc', 'airplay_base', 'airplay_base_locale_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_url_functions');  
+module_load_include('inc', 'airplay_base', 'airplay_base_utils');  
+module_load_include('inc', 'airplay_base', 'airplay_youtube_utils');  
+module_load_include('inc', 'prices', 'prices_db_views');  
+module_load_include('inc', 'prices', 'prices_display_album');  
+module_load_include('inc', 'prices', 'prices_display_song');  
+module_load_include('inc', 'prices', 'prices_display_artist');  
+//drupal_add_js('jquery.js', 'module' );
+//drupal_add_js('https://www.google.com/jsapi', 'external' );
+
+function prices_preprocess_page(&$variables) 
+{
+    // Your drupal_add_js() goes here
+    //drupal_add_js('jquery.js', 'module' );
+    drupal_add_js('//www.google.com/jsapi', 'external' );
+}
+function prices_all() {
+	
+	$lookup = $_GET['lookup'];
+	$artist_name = $_GET['artist_name'];
+	$search_for = $_GET['search_for'];
+	$page_content = "";
+// 	// --- Headline ---	
+// 	$sHeadLine = t('Prices');
+// 	switch ( $search_for ) {
+// 		case 'album'	: $sHeadLine .= " [Album]: '" . $lookup . "'";		break;
+// 		case 'artist'	: $sHeadLine .= " [Artist]: '" . $lookup . "'";		break;
+// 		case 'song'		: $sHeadLine .= " [Song]: '" . $lookup . "'";		break;
+// 		default			: $sHeadLine .= "";	
+// 	}
+// 	$page_content .= "<h2>$sHeadLine</h2>";
+
+	switch ( $search_for ) {
+		case 'album'	: $page_content .= prices_display_album( $lookup, $artist_name );	break;
+		case 'artist'	: $page_content .= prices_display_artist( $lookup, true );				break;
+		case 'song'		: $page_content .= prices_display_song( $lookup, $artist_name );	break;
+		default			: $page_content .= prices_display_album( $lookup, $artist_name);
+	}
+	return $page_content;
+}
+
+
+/**
+* Implementation of hook_block
+* @param string $op one of "list", "view", "save" and "configure"
+* @param integer $delta code to identify the block
+* @param array $edit only for "save" operation
+**/
+function prices_block($op = 'list', $delta = 0, $edit = array()) 
+{ 
+	if ($op == "list") {
+		// Generate listing of blocks from this module, for the admin/block page
+		$block = array();
+		$block[0]["info"] = t('Prices');
+		return $block;
+	  }
+	else if ($op == 'view') {
+		// Generate our block content
+		
+		//$sBlockContent = "<input id=prices_free_search ></input>";
+		//$sBlockContent .= "<button >" . t("Seek prices") . "</button>";
+		$sBlockContent = "<form action='/prices'>
+		<input NAME='lookup' title='" . t('Search for') . "' /><BR />
+		<input NAME='artist_name' title='" . t('Optional artist specification') . "' /><BR />
+		<input type=submit value='" . t('Seek prices') . "' />
+		<select name='search_for' >
+			<option value=album >" . t('Album') . "</option>
+			<option value=artist >" . t('Artist') . "</option>
+			<option value=song >" . t('Song') . "</option>
+		</select>
+		</form>";
+		
+		// set up the block
+		$block['subject'] = 'Prices';
+		$block['content'] = $sBlockContent;
+		
+		return $block;
+	}
+} // function prices_block
+
+/*
+$rows = array( 
+	array( 'Cell 1', 'Cell 2', 'Cell 3' ), 
+	array( 'data' => array( 'Cell 1', array( 'data' => 'Cell 2', 'colspan' => 2)), 
+			'class' => 'funky' ) ); 
+
+*/
+			
+function prices_admin() 
+{
+	$form = array();
+	
+	$form['prices_maxdisp'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Maximum number of links'),
+		'#default_value' => variable_get('prices_maxdisp', 3),
+		'#size' => 2,
+		'#maxlength' => 2,
+		'#description' => t("The maximum number of links to display in the block."),
+		'#required' => TRUE,
+	);
+	
+	return system_settings_form($form);
+}
+
+function prices_menu() 
+{
+	$items = array();
+	
+	$items['admin/settings/prices'] = array(
+		'title' => 'Prices module settings',
+		'description' => 'Setup display settings for Prices pages',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('prices_admin'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['prices'] = array(
+		'title' => '',
+		'page callback' => 'prices_all',
+		'access arguments' => array('access prices content'),
+		'type' => MENU_CALLBACK
+	);
+
+	return $items;
+}
+
+function prices_admin_validate($form, &$form_state) {
+	$maxdisp = $form_state['values']['prices_maxdisp'];
+	if (!is_numeric($maxdisp)) {
+		form_set_error('prices_maxdisp', t('You must enter an integer for the maximum number of links.'));
+	}
+	else if ($maxdisp <= 0) {
+		form_set_error('prices_maxdisp', t('Maximum number of links must be positive.'));
+	}
+}
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the prices module
+*/
+function prices_perm() {
+	return array('access prices content');
+} // function prices_perm()
+
+function prices_permission() {
+  return array(
+    'access prices content' => array(
+      'title' => t('Acces permissions for prices'),
+    ),
+  );
+}
+
+/**
+* Display help and module information
+* @param path which path of the site we're displaying help
+* @param arg array that holds the current path as would be returned from arg() function
+* @return help text for the path
+*/
+function prices_help($path, $arg) {
+	$output = '';  //declare your output variable
+	switch ($path) {
+		case "admin/help#prices":
+		$output = '<p>'.  t("Displays the prices page in AirplayMusic Drupal CMS") .'</p>';
+		break;
+	}
+	return $output;
+} // function prices_help
+
+
+// --- Helper functions ---
+function ap_prices_sort_asc_cmp_fn($a, $b)
+{
+    if ($a == $b) {
+        return 0;
+    }
+    return ($a->price < $b->price) ? -1 : 1;
+}

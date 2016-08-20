@@ -1,0 +1,154 @@
+.pageDiscreteTitle { 
+    font-size:120%;
+    float:left;
+    font-style:italic;
+}
+
+.newLine 
+{
+    clear: both; 
+    float: left; 
+}
+
+.spaceRight { margin-right:10px; }
+
+.textVeryLarge { 
+    font-size:200%;
+    float:left;
+}
+
+.textLarge { 
+    font-size:150%;
+    float:left;
+}
+
+.textNormal { 
+    font-size:100%;
+    float:left;
+}
+
+.textNormalValue { 
+    font-size:100%;
+    float:left;
+    font-weight: bold;
+    
+}
+
+
+/* Music DB Autocomplete styling */
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; width: 700px; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+
+
+/*/*
+* { margin:0; padding:0; font-family: 'Open Sans', sans-serif, Arial, Helvetica; }
+body, div, span, p, a, img, ul, ol, li, table, th, tr, td, form, fieldset, legend, dl, dt, dd, blockquote, applet, object { border:0; }
+body { 	padding: 0px; font-family: 'Open Sans', sans-serif, Arial, Helvetica;	font-size: 12px;	color: #000000;	text-align: center; }
+
+a { color:#E55D09; text-decoration:none; border:none; cursor:pointer; }
+a:link, li a.active {color:#E55D09; text-decoration:none; border:none;}
+a:hover {color:#E55D09; text-decoration: underline; border:none;}
+img a { border:none; }
+tbody {
+  border-top: 0px solid #ccc;
+}
+h1, h2, h3, h4, h5, h6 { margin:0px 0px 10px 0px; }
+h1 { font-size:200%; }
+h2 { font-size:100%; font-weight: bold;}
+h3 { font-size:100%; font-weight: bold; margin:3px 0px 3px 0px;}
+h4 { font-size:100%; font-weight: bold;}
+h5 { font-size:100%; }
+
+#right .block h2 {  background: #9097a9 url(images/icons/menu-icon.png) no-repeat 10px center; color:#ffffff; padding:10px 10px 10px 45px; font-size:160%; }
+
+.node h2 { border-bottom:0px dotted #84a1af; }
+
+.node h2 a { color:#1c8cb5; font-size: 26px}
+
+.block .content { padding:0 0 10px 0; }
+
+p { margin:0 0 10px 0; }
+
+.node .content { font-size:12px;}
+
+.clearfix:after { content: " "; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+html[xmlns] .clearfix { display: block; }
+
+#page {
+    background: url("images/page_bg.gif") repeat-x scroll 0 102px transparent;
+}
+
+#header-top { display:none; }
+
+#header-top-inside {  height:52px; width:950px; margin:0 auto;}
+
+#header-top-inside-left {
+	float:left; 
+	text-align:left; 
+	padding:20px 0px 0px 0px; 
+	width:670px; 
+	color:#485766; 
+	font-family:Arial,Helvetica,sans-serif; font-size:12px;
+}
+#header-top-inside-left-content{
+	 margin-top: -13px; 
+	 padding-left: 80px;
+}
+#header-top-inside-left-content a{
+	color: #6a87a3;
+}
+#header-top-inside-left-feed { float:left; padding:18px 0 0 0; width:50px; }
+
+#header-top-inside-right { /*float:right; text-align:right; padding:15px 0 0 0; width:235px; margin-right: -27px;*/ display:none; }
+
+/*/*#wrapper { /*width:1150px;*/ width:1000px; margin:0 auto; text-align:left; padding:0 0 20px 0;}
+
+/*#wrapper-front { width:950px; margin:0 auto; text-align:left; padding:0 0 20px 0;}
+
+#header {
+	padding: 20px 0px 20px 0px;
+	background-color:#272221;
+	color:#ffffff;
+	border-bottom:5px solid #E55D09;
+}*/
+
+/*#logo-floater { float:left; width:510px; background-color:transparent; text-align:left;}
+#header-floater {  margin: auto; background-color:transparent; width:950px; }
+#logo img { background-color:transparent;}
+#logo-floater img{ background-color:transparent;}
+#logo-image { }
+
+#navigation { display:block; float:left; width:440px;  margin:7px 0px; }
+
+#banner{
+	margin: 5px 5px 0px 0px;
+	padding: 5px;
+	width:145px;
+	float:left;
+	text-align: center;
+	display:none;
+}
+
+#intro .content { 
+    background-color: #EDEDED;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+}
+#intro {
+
+	color:#000000;
+	margin-top:5px;
+	padding: 10px 10px 0px 10px;
+	width:930px;
+	float:left;
+	height: auto !important;
+    height: 220px;
+    min-height: 220px;
+
+}*/
+

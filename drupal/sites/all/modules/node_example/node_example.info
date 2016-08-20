@@ -1,0 +1,5 @@
+; $Id$
+name = Node Example
+description = Exmaple node module.
+core = 6.x
+package = "Airplay"

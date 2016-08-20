@@ -1,0 +1,7 @@
+name = Airplay Festival
+description = Show list of artists from a list of festivals on /festival page.
+core = 7.x
+package = "Airplay"
+; scripts[] = festival_js.js
+;
+configure = admin/config/content/airplay_festival

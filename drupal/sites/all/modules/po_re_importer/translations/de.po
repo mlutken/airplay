@@ -1,0 +1,214 @@
+# German translation of po_re_importer (6.x-1.x-dev)
+# Copyright (c) 2011 by the German translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: po_re_importer (6.x-1.x-dev)\n"
+"POT-Creation-Date: 2011-01-23 15:38+0100\n"
+"PO-Revision-Date: 2011-01-23 15:39+0100\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Last-Translator: Tobias Bähr <info@tobiasbaehr.de>\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Clean up textgroups in database before reimport"
+msgstr "Die Textgruppen in der Datenbank vor dem erneuten Import bereinigen"
+
+msgid "Multilanguage"
+msgstr "Mehrsprachig"
+
+msgid "Po-Re-Importer was successfully enabled. You can find the settings page !here."
+msgstr "Po-Re-Importer wurde erfolgreich aktiviert. Sie können die Einstellungsseite !here finden."
+
+msgid "Po-Re-Importer index"
+msgstr "Po-Re-Importer Index"
+
+msgid "Not yet imported"
+msgstr "Noch nicht importiert"
+
+msgid "Already imported"
+msgstr "Bereits importiert"
+
+msgid "--Choose one option--"
+msgstr "--Wähle ein Option--"
+
+msgid "Delete and import"
+msgstr "Löschen und Importieren"
+
+msgid "Delete and import - See the description below the checkbox %checkboxlabel"
+msgstr "Löschen und Importieren - Siehe Beschreibung unterhalb der Checkbox %checkboxlabel"
+
+msgid "All components"
+msgstr "Alle Komponenten"
+
+msgid "All components - all translations which not yet imported will be imported."
+msgstr "Alle Komponenten - Alle Übersetzungen, welche noch nicht importiert wurden, werden importiert."
+
+msgid "All components - all translations which already imported will be once again imported."
+msgstr "Alle Komponenten - Alle Übersetzungen, welche bereits importiert wurden, werden erneut importiert."
+
+msgid "There is nothing to import"
+msgstr "Es gibt nichts zum Importieren"
+
+msgid "Import into"
+msgstr "Importieren in"
+
+msgid "--Choose the language--"
+msgstr "--Wähle eine Sprache--"
+
+msgid "Component"
+msgstr "Komponente"
+
+msgid "Text group"
+msgstr "Textgruppe"
+
+msgid "Imported translations will be added to this text group."
+msgstr "Importierte Übersetzungen werden zu dieser Textgruppe hinzugefügt."
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Strings in the imported file(s) replace existing ones, new ones are added"
+msgstr "Zeichenketten in der/den importierten Datei(en) ersetzen vorhandene, neue werden hinzugefügt."
+
+msgid "Existing strings are kept, only new strings are added"
+msgstr "Bereits vorhandene Zeichenketten werden beibehalten; nur neue Zeichenketten werden hinzugefügt."
+
+msgid "Import"
+msgstr "Importieren"
+
+msgid "There is nothing to import."
+msgstr "Es gibt nichts zum Importieren."
+
+msgid "This component do not have translation files in this language."
+msgstr "Diese Komponente hat keine Übersetzungsdateien in dieser Sprache."
+
+msgid "There are no new translation files in this language."
+msgstr "In dieser Sprache gibt es keine neuen Übersetzungdateien."
+
+msgid "Rebuild the index"
+msgstr "Den Index neu aufbauen"
+
+msgid "Rebuild the index - all translations directories inside the modules, themes and so on directories will scan and updated/new translation files will include in the Po-Re-Importer index."
+msgstr "Den Index neu aufbauen - Alle translations-Verzeichnisse innerhalb der Modul-/Themes etc. Verzeichnissen werden gescannt und aktualisierte/neue Übersetzungsdateien werden in den Po-Re-Importer Index aufgenommen."
+
+msgid "Check interval for translation files"
+msgstr "Überprüfungsinterval für Übersetzungsdateien"
+
+msgid "This interval setting defines how often cron will re-check the status of translationfiles."
+msgstr "Diese Interval-Einstellung definiert wie oft der Cron nach neuen Übersetzungsdateien scannen soll."
+
+msgid "Check this if you want also already imported translation files in the select list"
+msgstr "Aktiviere diese Option, wenn bereits importierte Übersetzungsdateien zum Importieren zur Auswahl stehen sollen."
+
+msgid "If checked, all translations for the given language and selected textgroups will be deleted from the database first, and you will loose all your customized translations and those not available in the files being imported. Use with extreme caution. If you want do this, check this checkbox and choose the option %deloption."
+msgstr "Wenn aktiviert, werden alle Übersetzungen in der gewählten Sprache und Textgruppe zuerst aus der Datenbank gelöscht. Dadurch werden auch alle benutzerdefinierte Übersetzungen und solche Übersetzungen, die nicht in der Übersetzungsdateien vorhanden sind entfernt. Bitte mit Vorsicht verwenden. Um diese Funktion zubenutzen, muss diese Checkbox aktiviert werden sowie danach die Option %deloption gewählt werden."
+
+msgid "Delete and import."
+msgstr "Löschen und Importieren"
+
+msgid "Show the index"
+msgstr "Index anzeigen"
+
+msgid "If checked, you get an overview of all already imported translation files and not yet imported translation files."
+msgstr "Wenn aktiviert, bekommen Sie ein Überblick über alle bereits importierten sowie noch nicht importierten Übersetzungsdateien angezeigt."
+
+msgid "Cron"
+msgstr "Cron"
+
+msgid "There are no new translation files in the index to import."
+msgstr "Es gibt keine neuen Übersetzungsdateien im Index zum Importieren."
+
+msgid "At next !cron (last index - %time / next index - %time2) the Po-Re-Importer will scan for new translation files and include them in the index. Alternatively, choose another option from the select list."
+msgstr "Beim nächsten !cron (letztes indexieren - %time / nächstes indexieren - %time2) wird der Po-Re-Importer nach neuen Übersetzungsdateien suchen und nimmt diese in den Index auf. Alternativ wählen Sie eine andere Option aus der Auswahlliste aus."
+
+msgid "Translation file"
+msgstr "Übersetzungsdatei"
+
+msgid "Import time"
+msgstr "Zeit des Imports"
+
+msgid "Rebuild the Po-Re-Importer Index."
+msgstr "Den Po-Re-Importer Index neu aufbauen."
+
+msgid "Importing interface translations"
+msgstr "Importieren der Oberflächenübersetzung"
+
+msgid "Starting import"
+msgstr "Import gestartet"
+
+msgid "Error importing interface translations"
+msgstr "Fehler beim Import der Oberflächenübersetzung"
+
+msgid "The translation was successfully imported. There are %number newly created translated strings, %update strings were updated and %delete strings were removed."
+msgstr "Die Übersetzung wurde erfolgreich importiert. Es gibt %number neu übersetzte Zeichenketten, %update aktualisierte Zeichenketten und %delete Zeichenketten wurden entfernt."
+
+msgid "Translation file: @file"
+msgstr "Übersetzungsdatei: @file"
+
+msgid "The translation file was not imported."
+msgstr "Die Übersetzungsdatei wurde nicht importiert."
+
+msgid "Po Re-Importer Index rebuilded."
+msgstr "Po-Re-Importer Index neu aufgebaut"
+
+msgid "Po Re-Importer"
+msgstr "Po-Re-Importer"
+
+msgid "locale"
+msgstr "Lokalisierung"
+
+msgid "The following translation file has been imported: @files"
+msgstr "Die folgende Übersetzungsdatei wurde importiert: @files"
+
+msgid "The following translation files have been imported: <pre>@files</pre>"
+msgstr "Die folgenden Übersetzungsdateien wurden importiert <pre>@files</pre>"
+
+msgid "New translation file(s) from the @component component are ready for importing under !url."
+msgstr "Neue Übersetzungsdatei(en) von der @component Komponente können unter !url importiert werden."
+
+msgid "Updated translation file(s) from the @component component are ready for importing under !url."
+msgstr "Aktualisierte Übersetzungsdatei(en) von der @component Komponente können unter !url importiert werden."
+
+msgid "There is a new translation file in the index to import."
+msgid_plural "There are @count new translation files in the index to import."
+msgstr[0] "Es gibt eine neue Übersetzungsdatei im Index zum Importieren."
+msgstr[1] "Es gibt @count neue Übersetzungsdateien im Index zum Importieren."
+
+msgid "One translation file imported."
+msgid_plural "@count translation files imported."
+msgstr[0] "Eine Übersetzungsdatei importiert."
+msgstr[1] "@count Übersetzungsdateien importiert."
+
+msgid "Po-Re-Importer"
+msgstr "Po-Re-Importer"
+
+msgid "Translation update status"
+msgstr "Übersetzung-Aktualisierungstatus"
+
+msgid "There are available updates"
+msgstr "Es sind Aktualisierungen verfügbar"
+
+msgid "All your translations are up to date"
+msgstr "Alle Übersetzungen sind aktuell"
+
+msgid "No update data available"
+msgstr "Keine Aktualisierungsdaten verfügbar"
+
+msgid "Po-Re-Importer was successfully installed. You can find the settings page !here."
+msgstr "Po-Re-Importer wurde erfolgreich installiert. Sie können die Einstellungsseite !here finden."
+
+msgid "Import new translations files or scan manually for new translations files."
+msgstr "Neue Übersetzungsdateien importieren oder manuell nach neuen Übersetzungsdateien suchen lassen."
+
+msgid "During a cron or manual scan, the module checks the MD5 hash of the content of the translation files in the module, theme directories, indexed them and offers you the option to import them"
+msgstr "Während eines Cron-Durchlaufs oder eines manuellen Scannen überprüft das Modul den MD5-Hashwert des Inhalts der Übersetzungsdateien in den Verzeichnissen der Module und Themes. Indexiert diese und bietet die Option, diese zu importieren."
+

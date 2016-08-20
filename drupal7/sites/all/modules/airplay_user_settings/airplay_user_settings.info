@@ -1,0 +1,7 @@
+name = Airplay User Settings
+description = Page for setting and changing settings for Airplay Music Users.
+core = 7.x
+package = "Airplay"
+; scripts[] = user_settings_js.js
+;
+configure = admin/config/content/airplay_user_settings

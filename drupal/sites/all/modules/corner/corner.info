@@ -1,0 +1,11 @@
+name = "Corner"
+description = "Shows configurable image corners on your site."
+core = 6.x
+
+
+; Information added by drupal.org packaging script on 2011-08-31
+version = "6.x-2.2"
+core = "6.x"
+project = "corner"
+datestamp = "1314778917"
+

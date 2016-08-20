@@ -1,0 +1,9 @@
+# $Id: COPY_HERE.txt,v 1.2 2009/05/28 05:31:16 iva2k Exp $
+
+Go to http://tinymce.moxiecode.com/download.php
+
+Download the latest version of PHP Spellchecker plugin.
+
+Uncompress and copy spellchecker directory to this directory (wysiwyg_spellcheck/tinymce).
+
+You may want to edit wysiwyg_spellcheck/tinymce/spellchecker/config.php file for your choice of spellchecker engine and its settings.

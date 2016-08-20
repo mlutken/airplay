@@ -1,0 +1,5 @@
+; $Id$
+name = Airplay Shops
+description = A module that displays the recordstore, streaming services page.
+core = 7.x
+package = "Airplay"

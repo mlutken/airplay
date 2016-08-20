@@ -1,0 +1,106 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  artist_display_artist.inc: n/a
+#  artist.module: n/a
+#  artist.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2010-05-31 14:39+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: artist_display_artist.inc:20
+msgid "Sorry artist"
+msgstr ""
+
+#: artist_display_artist.inc:20
+msgid "not found"
+msgstr ""
+
+#: artist_display_artist.inc:41
+msgid "Discography"
+msgstr ""
+
+#: artist_display_artist.inc:74
+msgid "Album"
+msgstr ""
+
+#: artist_display_artist.inc:75
+msgid "Year"
+msgstr ""
+
+#: artist_display_artist.inc:136
+msgid "album"
+msgstr ""
+
+#: artist_display_artist.inc:145
+msgid "Name"
+msgstr ""
+
+#: artist_display_artist.inc:146
+msgid "Time"
+msgstr ""
+
+#: artist.module:24 artist.info:0
+msgid "Artist"
+msgstr ""
+
+#: artist.module:63
+msgid "More events on this day."
+msgstr ""
+
+#: artist.module:64
+msgid "more"
+msgstr ""
+
+#: artist.module:84
+msgid "Maximum number of links"
+msgstr ""
+
+#: artist.module:88
+msgid "The maximum number of links to display in the block."
+msgstr ""
+
+#: artist.module:120
+msgid "You must enter an integer for the maximum number of links."
+msgstr ""
+
+#: artist.module:123
+msgid "Maximum number of links must be positive."
+msgstr ""
+
+#: artist.module:146
+msgid "Displays the artist page in AirplayMusic Drupal CMS"
+msgstr ""
+
+#: artist.module:132
+msgid "access artist content"
+msgstr ""
+
+#: artist.module:100
+msgid "Artist module settings"
+msgstr ""
+
+#: artist.module:101
+msgid "Setup display settings for Artist pages"
+msgstr ""
+
+#: artist.info:0
+msgid "A module that displays the artist's page."
+msgstr ""
+
+#: artist.info:0
+msgid "Airplay"
+msgstr ""
+

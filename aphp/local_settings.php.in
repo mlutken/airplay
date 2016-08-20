@@ -1,0 +1,3 @@
+<?php
+$g_fileDbBaseDir = '/var/lib/mysql/root/sleipner/filedb';
+?>

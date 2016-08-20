@@ -1,0 +1,7 @@
+name = Airplay Priceagent
+description = Priceagent module for users to subscribe to events and prices mails, SMS and other.
+core = 7.x
+package = "Airplay"
+scripts[] = airplay_price_agent_js.js
+;
+configure = admin/config/content/airplay_price_agent

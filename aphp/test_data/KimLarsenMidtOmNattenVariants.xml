@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+	<TIME_SCANNING_START_UTC>20120624T213523</TIME_SCANNING_START_UTC>
+	<TIME_SCANNING_START_LOCAL>2012-Jun-24 23:35:23</TIME_SCANNING_START_LOCAL>
+	<miner_name>AmazonCoUk</miner_name>
+	<URL_SITE>http://www.amazon.co.uk/</URL_SITE>
+	<scanMode>quick</scanMode>
+    <title>
+        <buy_at_url><![CDATA[http://www.amazon.co.uk/1234]]></buy_at_url>
+        <record_store_reliability>25</record_store_reliability>
+        <item_base_reliability>25</item_base_reliability>
+        <data_record_type>album</data_record_type>
+        <album_name><![CDATA[Mit om natten [special]]]></album_name>
+        <artist_name><![CDATA[Kim Larsen]]></artist_name>
+        <genre_name><![CDATA[pop]]></genre_name>
+        <currency_name>GBP</currency_name>
+        <price_local>12.7</price_local>
+        <album_year>1984</album_year>
+        <media_format_name>cd</media_format_name>
+        <media_type_name>audio</media_type_name>
+        <record_store_name>Amazon (UK)</record_store_name>
+        <record_store_url>http://www.amazon.co.uk</record_store_url>
+    </title>
+    <title>
+        <buy_at_url><![CDATA[http://www.cdon.dk/AA]]></buy_at_url>
+        <record_store_reliability>25</record_store_reliability>
+        <item_base_reliability>25</item_base_reliability>
+        <data_record_type>album</data_record_type>
+        <album_name><![CDATA[Midt om natten [special edition]]]></album_name>
+        <artist_name><![CDATA[Kim Larsen]]></artist_name>
+        <genre_name><![CDATA[pop]]></genre_name>
+        <currency_name>DKK</currency_name>
+        <price_local>50</price_local>
+        <album_year>1984</album_year>
+        <media_format_name>cd</media_format_name>
+        <media_type_name>audio</media_type_name>
+        <record_store_name>CdOn (DK)</record_store_name>
+        <record_store_url>http://www.cdon.dk</record_store_url>
+    </title>
+    <title>
+        <buy_at_url><![CDATA[http://www.cdwauw.dk/AA]]></buy_at_url>
+        <record_store_reliability>25</record_store_reliability>
+        <item_base_reliability>25</item_base_reliability>
+        <data_record_type>album</data_record_type>
+        <album_name><![CDATA[Midt om naten [extended edition]]]></album_name>
+        <artist_name><![CDATA[Kim Larsen]]></artist_name>
+        <genre_name><![CDATA[pop]]></genre_name>
+        <currency_name>DKK</currency_name>
+        <price_local>60</price_local>
+        <album_year>1984</album_year>
+        <media_format_name>cd</media_format_name>
+        <media_type_name>audio</media_type_name>
+        <record_store_name>CdWauw (DK)</record_store_name>
+        <record_store_url>http://www.cdwauw.dk</record_store_url>
+    </title>
+    <title>
+        <buy_at_url><![CDATA[http://www.cdon.dk/CC]]></buy_at_url>
+        <record_store_reliability>25</record_store_reliability>
+        <item_base_reliability>25</item_base_reliability>
+        <data_record_type>song</data_record_type>
+        <song_name><![CDATA[Midt om natten [special edition]]]></song_name>
+        <artist_name><![CDATA[Kim Larsen]]></artist_name>
+        <genre_name><![CDATA[pop]]></genre_name>
+        <currency_name>DKK</currency_name>
+        <price_local>10</price_local>
+        <song_year>1984</song_year>
+        <media_format_name>cd</media_format_name>
+        <media_type_name>audio</media_type_name>
+        <record_store_name>CdOn (DK)</record_store_name>
+        <record_store_url>http://www.cdon.dk</record_store_url>
+    </title>
+	<total_items>2</total_items>
+	<TIME_SCANNING_END_UTC>20120624T213718</TIME_SCANNING_END_UTC>
+	<TIME_SCANNING_END_LOCAL>2012-Jun-24 23:37:18</TIME_SCANNING_END_LOCAL>
+	<TIME_SCANNING_ELAPSED>000155</TIME_SCANNING_ELAPSED>
+	<TIME_SCANNING_ELAPSED>00:01:55</TIME_SCANNING_ELAPSED>
+</ROOT>

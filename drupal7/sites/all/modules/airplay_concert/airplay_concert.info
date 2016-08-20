@@ -1,0 +1,7 @@
+name = Airplay Concert
+description = Show list of artists from a list of Concerts on /Concert page.
+core = 7.x
+package = "Airplay"
+; scripts[] = concert_js.js
+;
+configure = admin/config/content/airplay_concert

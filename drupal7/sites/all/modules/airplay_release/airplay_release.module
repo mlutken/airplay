@@ -1,0 +1,89 @@
+<?php 
+// $Id: airplay_release.module Exp $
+module_load_include('inc', 'airplay_base_url', 'airplay_base_url_functions');  
+module_load_include('inc', 'airplay_base_utils', 'airplay_base_utils');  
+module_load_include('inc', 'airplay_release', 'airplay_release_functions');
+/**
+ * Implementation of hook_block_info().
+ */
+function airplay_release_block_info() {
+  $blocks['my-block-id'] = array(
+    'info' => t('Block Name'),
+  );
+  return $blocks;
+}
+ 
+/**
+ * Implementation of hook_block_view().
+ */
+function airplay_release_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'my-block-id':
+      $block['subject'] = t('Block Name');
+      $block['content'] = airplay_release_frontpage_contents();
+      break;
+  }
+  return $block;
+}
+ 
+/**
+ * Release list for the frontpage
+ * @return string
+ */
+function airplay_release_frontpage_release() {
+    $ArrayReleaseList = getReleaseListFrontpage();
+    $language_code = ap_language_code();
+    $ap_artist_suburl = ap_artist_suburl();
+    $ap_album_suburl = ap_album_suburl();
+
+    $sHTML = "";
+    $sAlbumLink = "";
+    $sHTML .= '<div class="block frontpage_release"><h2>' . t("Release") . '</h2><div class="content">';
+    
+    foreach ( $ArrayReleaseList as $a ) {
+        $item_base_name = $a['item_base_name'];
+        $artist_name = $a['artist_name'];
+        $artist_name_to_url = airplay_name_to_url($a['artist_name']);
+        $album_name_to_url = airplay_name_to_url( $a["item_base_name"] );
+        
+        $sAlbumLink  = "<a class=\"album\" href=\"/" . $ap_artist_suburl . "/" . $artist_name_to_url ."/" . $ap_album_suburl . "/" . $album_name_to_url . "\" title=\"" . $album_name_to_url ."\">" . $item_base_name . "</a>";
+        $sArtistLink = "<a class=\"artist\" href=\"/" . $ap_artist_suburl . "/" . $artist_name_to_url . "\" title=\"" . $artist_name ."\">" . $artist_name . "</a>";
+        
+		$sHTML .= "<p>" . $sArtistLink . " - " . ap_format_date($a['release_date'], $language_code) . "<br/>" . $sAlbumLink . "</p>";
+	}
+    
+    $sHTML .= "</div></div>";
+    
+    return $sHTML;
+}
+
+function airplay_release_frontpage_prerelease() {
+    $ArrayReleaseList = getPreReleaseListFrontpage();
+    $language_code = ap_language_code();
+    $ap_artist_suburl = ap_artist_suburl();
+    $ap_album_suburl = ap_album_suburl();
+
+    $sHTML = "";
+    $sAlbumLink = "";
+    $sHTML .= '<div class="block frontpage_release"><h2>' . t("Coming") . '</h2><div class="content">';
+    
+    foreach ( $ArrayReleaseList as $a ) {
+        $item_base_name = $a['item_base_name'];
+        $artist_name = $a['artist_name'];
+        $artist_name_to_url = airplay_name_to_url($a['artist_name']);
+        $album_name_to_url = airplay_name_to_url( $a["item_base_name"] );
+        
+        $sAlbumLink  = "<a class=\"album\" href=\"/" . $ap_artist_suburl . "/" . $artist_name_to_url ."/" . $ap_album_suburl . "/" . $album_name_to_url . "\" title=\"" . $album_name_to_url ."\">" . $item_base_name . "</a>";
+        $sArtistLink = "<a class=\"artist\" href=\"/" . $ap_artist_suburl . "/" . $artist_name_to_url . "\" title=\"" . $artist_name ."\">" . $artist_name . "</a>";
+        
+		$sHTML .= "<p>" . $sArtistLink . " - " . ap_format_date($a['release_date'], $language_code) . "<br/>" . $sAlbumLink . "</p>";
+	}
+    
+    $sHTML .= "</div></div>";
+    
+    return $sHTML;
+}
+
+
+?>

@@ -1,0 +1,43 @@
+name = Airplay Music
+description = Best buy & Hard to find music
+version = 2013 1.0
+core = 7.x
+engine = phptemplate
+
+
+;-------------- R E G I O N S -------------
+
+regions[searchmusic] = Search for music and other stuff
+regions[content] = Content
+regions[topbanner] = Topbanner
+regions[txtfield_left] = Txtfield(frontpage) LEFT
+regions[txtfield_center] = Txtfield(frontpage) CENTER
+regions[txtfield_right] = Txtfield(frontpage) RIGHT
+regions[footertxt_left] = LEFT footer field
+regions[footertxt_center_left] = CENTER left footer field
+regions[footertxt_center_right] = CENTER right footer field
+regions[footertxt_right] = RIGHT footer field
+
+
+;-------------- C S S -------------
+	
+stylesheets[all][] = assets/css/bootstrap/bootstrap.min.css
+#stylesheets[all][] = assets/css/bootstrap/bootstrap_resp.css
+stylesheets[all][] = assets/css/txt_reset_normalize.css
+stylesheets[all][] = assets/css/style.css
+stylesheets[all][] = assets/css/resp.css
+
+
+
+;-------------- J S -------------
+
+scripts[] = assets/js/support-functions.js
+scripts[] = assets/js/script.js
+scripts[] = assets/js/jquery.tablesorter.js
+
+
+;-------------- B R E A K P O I N T S -------------
+
+breakpoints[TABPORT/SCREEN] = (min-width: 768px) and (max-width: 1035px) 
+breakpoints[TABLET] = (max-width: 767px)
+breakpoints[SMARTPHONE] = (max-width: 480px)

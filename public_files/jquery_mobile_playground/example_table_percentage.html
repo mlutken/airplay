@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title></title>
+  
+	<link href="/css/jquery.mobile-1.3.1.min.css" rel="stylesheet" type="text/css" />
+	<link href="codiqa.ext.css" rel="stylesheet" type="text/css" >
+	<script src="/js/jquery-1.9.1.min.js"></script>
+	<script src="/js/jquery.mobile-1.3.1.min.js"></script>
+	<script src="/js/codiqa.ext.js"></script>
+   
+</head>
+<body>
+<!-- Home -->
+<!--
+style="width: 100%; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
+-->
+
+<div data-role="page" id="quizWelcomePageID">
+	<div data-theme="a" data-role="header">
+		<h5>Quiz Welcome</h5>
+	</div>
+	<div data-role="content">
+		<a data-role="button" href="#autoCreateQuizPageID" data-transition="" >Auto create</a>
+		<a data-role="button" href="#searchQuizPageID">Search quiz</a>
+	</div>
+</div>
+<div data-role="page" id="autoCreateQuizPageID" data-add-back-btn="true" >
+	<div data-theme="a" data-role="header">
+		<h5>Auto create quiz</h5>
+	</div>
+	<div data-role="content">
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a mainQuizCreate"><h3>Size</h3></div>
+			<div class="ui-block-b sideQuizCreate">
+				<fieldset data-role="controlgroup" data-type="horizontal" data-theme="a" >
+					<input type="radio" name="numQuestionsRadio" id="numQuestionsRadioID_1" value="choice-1" checked="checked" data-theme="a" />
+					<label for="numQuestionsRadioID_1">5</label>
+
+					<input type="radio" name="numQuestionsRadio" id="numQuestionsRadioID_2" value="choice-2"  data-theme="a" />
+					<label for="numQuestionsRadioID_2">10</label>
+
+					<input type="radio" name="numQuestionsRadio" id="numQuestionsRadioID_3" value="choice-3" data-theme="a" />
+					<label for="numQuestionsRadioID_3">20</label>
+				</fieldset>
+			</div>
+		</fieldset>
+		<fieldset class="ui-grid-c">
+			<div class="ui-block-a"><h3>Size</h3></div>
+			<div class="ui-block-b">
+				<input id="numQuestionsRadioID_1" name="numQuestionsRadio" value="5" data-theme="a" type="radio" />
+				<label for="numQuestionsRadioID_1">5</label>
+			</div>
+			<div class="ui-block-c">
+				<input id="numQuestionsRadioID_2" name="numQuestionsRadio" value="10" data-theme="a" type="radio" checked="checked" />
+				<label for="numQuestionsRadioID_2">10</label>
+			</div>
+			<div class="ui-block-d">
+				<input id="numQuestionsRadioID_3" name="numQuestionsRadio" value="20" data-theme="a" type="radio" />
+				<label for="numQuestionsRadioID_3">20</label>
+			</div>
+		</fieldset>
+		
+	</div>
+</div>
+<div data-role="page" id="createAndRunQuizPageID" data-add-back-btn="true" >
+    <div data-theme="a" data-role="header">
+        <h5>Runing quiz create quiz</h5>
+    </div>
+    <div data-role="content">
+    </div>
+</div>
+
+
+<script>
+
+function quizTryLoad()
+{
+    console.log("quizTryLoad");
+
+}
+
+
+$( document ).delegate("#autoCreateQuizPageID", "pageinit", function() {
+  console.log('A page with an id of "autoCreateQuizPageID" was just created by jQuery Mobile!');
+});
+
+$( document ).delegate("#createAndRunQuizPageID", "pageinit", function() {
+  console.log('createAndRunQuizPageID');
+});
+
+$('#createAndRunQuizID').click(function() {
+    console.log("quizTryLoad...");
+    console.log("numQuestionsRadio: " + $('input[name=numQuestionsRadio]:checked').val());
+});
+
+
+</script>
+</body>
+</html>

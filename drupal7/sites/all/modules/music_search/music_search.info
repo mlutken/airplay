@@ -1,0 +1,6 @@
+; $Id$
+name = Music Search
+description = Airplay's 'Music Search Engine'.
+core = 7.x
+package = "Airplay"
+; scripts[] = music_search.js

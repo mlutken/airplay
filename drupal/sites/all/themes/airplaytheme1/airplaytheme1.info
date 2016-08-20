@@ -1,0 +1,15 @@
+; $Id: airplaytheme1.info,v 1.1 2008/06/05 03:04:45 hswong3i Exp $
+name = AirplayTheme1
+description = Tableless, multi-column, fluid width theme.
+version = VERSION
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[all][] = custom.css
+
+; Information added by drupal.org packaging script on 2009-05-14
+version = "6.x-1.6"
+core = "6.x"
+project = "airplaytheme1"
+datestamp = "1242294057"
+

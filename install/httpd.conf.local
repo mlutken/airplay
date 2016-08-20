@@ -1,0 +1,83 @@
+# --- Local settings ---
+# -------------------------------------
+# --- /etc/apache2/httpd.conf.local ---
+# -------------------------------------
+#LoadModule dav_module           		  	/usr/lib/apache2/mod_dav.so
+#LoadModule dav_fs_module        		  	/usr/lib/apache2/mod_dav_fs.so
+#LoadModule dav_svn_module       		  	/usr/lib/apache2/mod_dav_svn.so
+###LoadModule auth_ntlm_winbind	          	/usr/lib/apache2/mod_auth_ntlm_winbind.so
+
+#LoadModule ldap_module 						/usr/lib/apache2/mod_ldap.so
+#LoadModule authnz_ldap_module 				/usr/lib/apache2/mod_authnz_ldap.so
+#LoadModule authz_svn_module    	 		  	/usr/lib/apache2/mod_authz_svn.so
+
+
+#LoadModule rewrite_module    	 		  	/usr/lib/apache2/mod_rewrite.so	# Allready loaded in /etc/sysconfig/apache2
+#AddModule mod_rewrite.c
+
+#ScriptAlias /viewvc /srv/viewvc/bin/cgi/viewvc.cgi
+
+# --- The following line enables name based virtual hosts ---
+NameVirtualHost *:80
+
+
+<VirtualHost *:80>
+	ServerName airplay.ath.cx 
+	DocumentRoot /home/sleipner/airplay/drupal
+	AccessFileName .htaccess
+	<Directory "/home/sleipner/airplay/drupal">
+		RewriteEngine on
+		RewriteBase /
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+		AllowOverride All
+		Options Indexes Includes
+		Order allow,deny
+		allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName adminairplay.ath.cx:80
+	DocumentRoot /home/sleipner/adminairplay
+	<Directory "/home/sleipner/adminairplay">
+			Options Indexes FollowSymLinks MultiViews
+			Order allow,deny
+			allow from all
+			AuthType Basic
+			AuthName "Restricted Files"
+			AuthUserFile /home/htaccess/passwords
+			Require user sleipner
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:443>
+	ServerName adminairplay.ath.cx:443
+	DocumentRoot /home/sleipner/adminairplay
+ 	SSLEngine on
+ 	SSLCipherSuite ALL
+ 	SSLCertificateFile /etc/apache2/ssl.crt/airplaytest.crt
+	SSLCertificateKeyFile /etc/apache2/ssl.key/airplaytest.key
+ 	
+ 	<Files ~ "\.(cgi|shtml|phtml|php3?)$">
+ 	    SSLOptions +StdEnvVars
+ 	</Files>
+ 	<Directory "/srv/www/cgi-bin">
+ 	    SSLOptions +StdEnvVars
+ 	</Directory>
+ 	SetEnvIf User-Agent ".*MSIE.*"  		 nokeepalive ssl-unclean-shutdown  		 downgrade-1.0 force-response-1.0
+	
+	<Directory "/home/sleipner/adminairplay">
+			Options Indexes FollowSymLinks MultiViews
+			Order allow,deny
+			allow from all
+			AuthType Basic
+			AuthName "Restricted Files"
+			AuthUserFile /home/htaccess/passwords
+			Require user sleipner
+	</Directory>
+</VirtualHost>
+

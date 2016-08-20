@@ -1,0 +1,3826 @@
+[
+    {
+        "nCount": "40",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163578",
+        "item_base_name": "News Of The World",
+        "item_type": "1"
+    },
+    {
+        "nCount": "38",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "207720",
+        "item_base_name": "Flash Gordon",
+        "item_type": "1"
+    },
+    {
+        "nCount": "38",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163679",
+        "item_base_name": "Innuendo",
+        "item_type": "1"
+    },
+    {
+        "nCount": "37",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163294",
+        "item_base_name": "Greatest Hits 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "37",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163298",
+        "item_base_name": "Sheer Heart Attack",
+        "item_type": "1"
+    },
+    {
+        "nCount": "35",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163139",
+        "item_base_name": "Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "31",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163297",
+        "item_base_name": "Queen I",
+        "item_type": "1"
+    },
+    {
+        "nCount": "29",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "207721",
+        "item_base_name": "Hot Space",
+        "item_type": "1"
+    },
+    {
+        "nCount": "29",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163300",
+        "item_base_name": "A Night At The Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "28",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "208380",
+        "item_base_name": "Made In Heaven",
+        "item_type": "1"
+    },
+    {
+        "nCount": "28",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163299",
+        "item_base_name": "A Day At The Races",
+        "item_type": "1"
+    },
+    {
+        "nCount": "28",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163580",
+        "item_base_name": "Jazz",
+        "item_type": "1"
+    },
+    {
+        "nCount": "26",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163789",
+        "item_base_name": "Greatest Hits",
+        "item_type": "1"
+    },
+    {
+        "nCount": "23",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163677",
+        "item_base_name": "A Kind Of Magic",
+        "item_type": "1"
+    },
+    {
+        "nCount": "21",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163676",
+        "item_base_name": "The Works",
+        "item_type": "1"
+    },
+    {
+        "nCount": "21",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163678",
+        "item_base_name": "The Miracle",
+        "item_type": "1"
+    },
+    {
+        "nCount": "21",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "206760",
+        "item_base_name": "Night at the Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "17",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "217100",
+        "item_base_name": "Day at the Races",
+        "item_type": "1"
+    },
+    {
+        "nCount": "16",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "214642",
+        "item_base_name": "Deep Cuts Volume 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "16",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163579",
+        "item_base_name": "The Game",
+        "item_type": "1"
+    },
+    {
+        "nCount": "14",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "208379",
+        "item_base_name": "Game",
+        "item_type": "1"
+    },
+    {
+        "nCount": "14",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "214242",
+        "item_base_name": "Kind of Magic",
+        "item_type": "1"
+    },
+    {
+        "nCount": "14",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "216028",
+        "item_base_name": "Hungarian Rhapsody",
+        "item_type": "1"
+    },
+    {
+        "nCount": "13",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "212428",
+        "item_base_name": "Works",
+        "item_type": "1"
+    },
+    {
+        "nCount": "13",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "350",
+        "item_base_name": "Queen 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "13",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "216322",
+        "item_base_name": "Miracle",
+        "item_type": "1"
+    },
+    {
+        "nCount": "13",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "207018",
+        "item_base_name": "Absolute Greatest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "12",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "211709",
+        "item_base_name": "Queen Rock Montreal",
+        "item_type": "1"
+    },
+    {
+        "nCount": "11",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1454",
+        "item_base_name": "Deep Cuts 1973 1976",
+        "item_type": "1"
+    },
+    {
+        "nCount": "10",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "207390",
+        "item_base_name": "Live at Wembley Stadium",
+        "item_type": "1"
+    },
+    {
+        "nCount": "10",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "223265",
+        "item_base_name": "Rock You from Rio",
+        "item_type": "1"
+    },
+    {
+        "nCount": "9",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "250317",
+        "item_base_name": "Return of the Champion",
+        "item_type": "1"
+    },
+    {
+        "nCount": "9",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "432832",
+        "item_base_name": "Days of Our Lives",
+        "item_type": "1"
+    },
+    {
+        "nCount": "9",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "208870",
+        "item_base_name": "Live Killers",
+        "item_type": "1"
+    },
+    {
+        "nCount": "9",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "210710",
+        "item_base_name": "Live Magic",
+        "item_type": "1"
+    },
+    {
+        "nCount": "9",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "449144",
+        "item_base_name": "The Platinum Collection",
+        "item_type": "1"
+    },
+    {
+        "nCount": "7",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "4737273",
+        "item_base_name": "Document",
+        "item_type": "1"
+    },
+    {
+        "nCount": "7",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "432833",
+        "item_base_name": "Hungarian Rhapsody Live In Budapest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "7",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1478",
+        "item_base_name": "Platinum Collection",
+        "item_type": "1"
+    },
+    {
+        "nCount": "7",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "247969",
+        "item_base_name": "Stone Cold Classics",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "260032",
+        "item_base_name": "Live in Budapest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011117",
+        "item_base_name": "Deep Cuts 2 1977 82",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "209519",
+        "item_base_name": "Live Rock in Rio 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "233339",
+        "item_base_name": "Magic Tour Roadie Case Super Deluxe",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163581",
+        "item_base_name": "Deep Cuts 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "6",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766148",
+        "item_base_name": "Collectors Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "5",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9875780",
+        "item_base_name": "Icon",
+        "item_type": "1"
+    },
+    {
+        "nCount": "5",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "218314",
+        "item_base_name": "Rock You from Rio Live",
+        "item_type": "1"
+    },
+    {
+        "nCount": "5",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "788734",
+        "item_base_name": "Rock Montreal",
+        "item_type": "1"
+    },
+    {
+        "nCount": "5",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1949843",
+        "item_base_name": "Live At Wembley 86",
+        "item_type": "1"
+    },
+    {
+        "nCount": "5",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "216720",
+        "item_base_name": "40 Limited Edition Collectors Box Set #3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "248265",
+        "item_base_name": "Wembley Roadie Cube",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "4737943",
+        "item_base_name": "Greatest Flix III",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812108",
+        "item_base_name": "Cosmos Rocks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011149",
+        "item_base_name": "We Will Rock You",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "208833",
+        "item_base_name": "Greatest Hits 1 & 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011129",
+        "item_base_name": "One Vision",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5327055",
+        "item_base_name": "Deep Cuts",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011143",
+        "item_base_name": "Under Review 1973 1980",
+        "item_type": "1"
+    },
+    {
+        "nCount": "4",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5327083",
+        "item_base_name": "The Cosmos Rocks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10036815",
+        "item_base_name": "Greatest Hits we Will Rock You",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250461",
+        "item_base_name": "Made in Heaven Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "217359",
+        "item_base_name": "Volume 1 Singles Collection Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "644078",
+        "item_base_name": "Queen 40th Anniversary Collectors Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400397",
+        "item_base_name": "On Fire Live At The Bowl",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "788733",
+        "item_base_name": "Maximum Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "212736",
+        "item_base_name": "Volume 2 Queen 40th Anniversary Collectors Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10492237",
+        "item_base_name": "Deep Cuts 1973 1976 Vol 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "224006",
+        "item_base_name": "Night at the Opera 30th Anniversary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16642504",
+        "item_base_name": "Ii",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250452",
+        "item_base_name": "News of the World Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "229472",
+        "item_base_name": "Hot Space Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776417",
+        "item_base_name": "Kind Of Magic 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "433038",
+        "item_base_name": "QUEEN ROCK MONTREAL LIVE AID",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250453",
+        "item_base_name": "Jazz Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "230912",
+        "item_base_name": "Miracle Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10259156",
+        "item_base_name": "Rock Montreal live Aid",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14390055",
+        "item_base_name": "Live At Wembley Stadium 25th Anniversary Editon",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250454",
+        "item_base_name": "Game Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "235868",
+        "item_base_name": "Flash Gordon Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "484438",
+        "item_base_name": "In Nuce",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812095",
+        "item_base_name": "Queen X Posed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "757557",
+        "item_base_name": "Crown Jewels",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "323",
+        "item_base_name": "News Of The World 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "3",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250460",
+        "item_base_name": "Innuendo Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10278053",
+        "item_base_name": "Classic Albums the Makingltd Ed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5327084",
+        "item_base_name": "Queen Rock Montreal & Live Aid",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "211375",
+        "item_base_name": "Greatest Hits Volume 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011145",
+        "item_base_name": "Vol 1 queen 40th Anniversary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "325",
+        "item_base_name": "Hot Space 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813274",
+        "item_base_name": "Singles Collection Volume 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17078948",
+        "item_base_name": "Flash Gordon Soundtrack",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812170",
+        "item_base_name": "Live in Ukraine",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864722",
+        "item_base_name": "Platinum Collection Vol 1 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812172",
+        "item_base_name": "Jewels",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299114",
+        "item_base_name": "Various Artists Benito Mussolini I grandi dis",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011096",
+        "item_base_name": "2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17667556",
+        "item_base_name": "The Freddie Mercury Tribute Concert",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "445410",
+        "item_base_name": "Shm Flash Gordon",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011148",
+        "item_base_name": "We Thank You All",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "351",
+        "item_base_name": "Queen Ii 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21470945",
+        "item_base_name": "40 Vol 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "352",
+        "item_base_name": "Jazz 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776416",
+        "item_base_name": "Greatest Hits Vol1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1471",
+        "item_base_name": "Queen Ii 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011118",
+        "item_base_name": "Document The",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011099",
+        "item_base_name": "Magic Moments",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812141",
+        "item_base_name": "News of World",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "446309",
+        "item_base_name": "Usb Orb 15 Albums On Usb",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "165230",
+        "item_base_name": "Greatest Hits I Ii & Iii",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136591",
+        "item_base_name": "A Winters Tale",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299324",
+        "item_base_name": "Conversations On Non Duality Volume 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "433461",
+        "item_base_name": "Deep Cuts Vol 1 1973 76",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011120",
+        "item_base_name": "Game 11 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813261",
+        "item_base_name": "Live at Wembley 25th Anniversary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "471782",
+        "item_base_name": "Greatest Hits Vols 1 & 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136618",
+        "item_base_name": "We Will Rock You We Are The Champions",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "433462",
+        "item_base_name": "Live At Wembley Roadie Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "210285",
+        "item_base_name": "At the BBC",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011131",
+        "item_base_name": "Queen Ii 14 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011110",
+        "item_base_name": "An Evening At The Concert Hall",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "321",
+        "item_base_name": "A Day At The Races 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "760836",
+        "item_base_name": "X Posed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "448089",
+        "item_base_name": "At Wembley",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250458",
+        "item_base_name": "Works Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "216262",
+        "item_base_name": "Greatest Hits We Will Rock You Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011121",
+        "item_base_name": "Greatest Hits I & Ii =box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10270824",
+        "item_base_name": "Orb",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011132",
+        "item_base_name": "Queen Ii 180gr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "162639",
+        "item_base_name": "News Of The World 12 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011111",
+        "item_base_name": "Becoming Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250459",
+        "item_base_name": "Kind of Magic Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813267",
+        "item_base_name": "Queen Hungarian Rhapsody Live In Budapest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "406",
+        "item_base_name": "Flash Gordon 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "490990",
+        "item_base_name": "Shm Miracle",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10036785",
+        "item_base_name": "Vol 3 greatest Hits",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "210766",
+        "item_base_name": "Queen Collectors Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011133",
+        "item_base_name": "Rock Montreal & Live Aid",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813301",
+        "item_base_name": "Queen Under Review 1973 1980",
+        "item_type": "1"
+    },
+    {
+        "nCount": "2",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "162762",
+        "item_base_name": "Miracle 14 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136602",
+        "item_base_name": "Let Me Live",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16914084",
+        "item_base_name": "Queen Live Killers Emi Record Mr171906",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21714523",
+        "item_base_name": "Queen Vol 1 Singles Collection Bo",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011123",
+        "item_base_name": "Greatest Video Vol 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813268",
+        "item_base_name": "A Tribute to Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300399",
+        "item_base_name": "Various Artists Oldies But Goldies Presents I",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1449",
+        "item_base_name": "Greatest Hits 2 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776422",
+        "item_base_name": "Works 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16174849",
+        "item_base_name": "Karaoke Karaoke Queen We are the Champions",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299175",
+        "item_base_name": "Baierischer Humor",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "496258",
+        "item_base_name": "The Crown Jewels",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812100",
+        "item_base_name": "Jewels 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299533",
+        "item_base_name": "Autour de la Mer Autour de la mer",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "757731",
+        "item_base_name": "2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14393809",
+        "item_base_name": "Hungarian Rhapsody Bluray",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17415685",
+        "item_base_name": "Freddie Mercury Story 1946 91",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "442702",
+        "item_base_name": "Hungarian Rhapsody Live In Budapest Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17077517",
+        "item_base_name": "Greatest Hits I II & III The Platinum Collection",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "24511658",
+        "item_base_name": "Cosmos Rocks Collectors Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011134",
+        "item_base_name": "Live",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16821783",
+        "item_base_name": "Queen Greatest Hits",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301377",
+        "item_base_name": "Chaabi 100% Maroc",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864720",
+        "item_base_name": "Music Box Biographical Collection",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301707",
+        "item_base_name": "Buddhist Chillout",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011113",
+        "item_base_name": "Que",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812153",
+        "item_base_name": "Play the Tunes of Scotlan",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300024",
+        "item_base_name": "Gypsy Garden Vol 2 The World of Gypsy Grooves",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766149",
+        "item_base_name": "Deep Cuts Vol 2 1977 82 2011 Rem",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400395",
+        "item_base_name": "In The 1980s Documentary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299086",
+        "item_base_name": "Reiki y relajacion 4 elementos y el sonido de",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "449283",
+        "item_base_name": "Jazz Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17087078",
+        "item_base_name": "A Night At The Opera Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "643915",
+        "item_base_name": "Artist Karaoke Series",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10298936",
+        "item_base_name": "Absolute Greatest casebound Book Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136603",
+        "item_base_name": "News Of The World 1977 Swedish EMI label 11 track LP",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16914107",
+        "item_base_name": "Queen A Day At The Races Emi Record Mr206452",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21896773",
+        "item_base_name": "The Platinum Collection 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011124",
+        "item_base_name": "Hungarian blry",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300417",
+        "item_base_name": "Various Artists Sounds of Music pres Elvis P",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1451",
+        "item_base_name": "Queen 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "788731",
+        "item_base_name": "Game 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16176490",
+        "item_base_name": "Water Pumping",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299188",
+        "item_base_name": "British & American Comedy Legends",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812101",
+        "item_base_name": "In Vision 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299570",
+        "item_base_name": "Various Artists Pool House",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "758064",
+        "item_base_name": "Flash Gordon 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14397348",
+        "item_base_name": "Rock In Rio",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17415686",
+        "item_base_name": "Live at Wembley 25th Anniversary Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "444741",
+        "item_base_name": "Shm Made In Heaven",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10092872",
+        "item_base_name": "We Are the Champions",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "24512366",
+        "item_base_name": "The Complete Review",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011135",
+        "item_base_name": "Rockabye Baby",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16821784",
+        "item_base_name": "Queen Greatest Hits II",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301402",
+        "item_base_name": "Rough Guide To Celtic Women",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011146",
+        "item_base_name": "Vol 3 40th Anniversary Collec",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864721",
+        "item_base_name": "Queens London",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301735",
+        "item_base_name": "Various Artists Ti amo anche se non so chi se",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011114",
+        "item_base_name": "Collectors Box 3 Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300037",
+        "item_base_name": "Various Artists Absolute Relax",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "326",
+        "item_base_name": "The Works 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766150",
+        "item_base_name": "Hot Space 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400396",
+        "item_base_name": "Live At Wembley Stadium 2dvd 2cd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299099",
+        "item_base_name": "Tommy Boy Fitness Presents Sweat",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "449284",
+        "item_base_name": "Hot Space Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250539",
+        "item_base_name": "Live at WEMBLEY STADIUM 2DVD 2SHM LIMITED EDITION",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17087571",
+        "item_base_name": "A Night At The Opera 30th Anniversary Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10388855",
+        "item_base_name": "Shm news of the World",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136606",
+        "item_base_name": "Queen Original Japanese 1st Issue",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932294",
+        "item_base_name": "The Game Dlx 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16981874",
+        "item_base_name": "Rock You From Rio Live 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21921741",
+        "item_base_name": "Gold",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011125",
+        "item_base_name": "2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813275",
+        "item_base_name": "Queen Days of Our Lives",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300554",
+        "item_base_name": "Various Artists Spa and Relaxation Vol 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1452",
+        "item_base_name": "Sheer Heart Attack 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "788732",
+        "item_base_name": "Made In Heaven 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16176491",
+        "item_base_name": "Royal Son Of Ethiopia",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299285",
+        "item_base_name": "Gothic Tales Of Terror Volume 6",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011095",
+        "item_base_name": "Greatest I II & III",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812105",
+        "item_base_name": "Queen Queen In The 1980s",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299587",
+        "item_base_name": "The Best Of Scotland",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "758065",
+        "item_base_name": "Jazz 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14397349",
+        "item_base_name": "Under Review 1946 1991 The Freddie Mercury Story",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17415687",
+        "item_base_name": "Making Of A Night At The Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "444748",
+        "item_base_name": "Shm Innuendo",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10182587",
+        "item_base_name": "Soundtrack",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17078999",
+        "item_base_name": "The Game Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "24514277",
+        "item_base_name": "Bluray Audio",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011136",
+        "item_base_name": "Sheer Heart Attack 14 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16821785",
+        "item_base_name": "Unadorned",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301428",
+        "item_base_name": "Explorer Series Africa Music From The Nonesuch",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011147",
+        "item_base_name": "Queen Docume",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301747",
+        "item_base_name": "Scottish Serenade The Great Scottish Pipes Dr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011115",
+        "item_base_name": "2 Disc Do",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300060",
+        "item_base_name": "Paris With Love Essential French Songs",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766151",
+        "item_base_name": "Kind Of Magic 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "450686",
+        "item_base_name": "Shm A Day At The Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10252281",
+        "item_base_name": "Gh 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17090583",
+        "item_base_name": "Queen 40 Complete Deluxe Editions Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672205",
+        "item_base_name": "Queen 2 Deluxe Edition 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10397529",
+        "item_base_name": "Shm a Day at the Races",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136607",
+        "item_base_name": "Queen II Original 1974 US White Label Promotional Issue 11 track LP",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932295",
+        "item_base_name": "The Works 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051317",
+        "item_base_name": "Crazy Little Thing Called",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21964798",
+        "item_base_name": "Maximum",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011126",
+        "item_base_name": "Jazz 15tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813276",
+        "item_base_name": "Karaoke Karaoke Queen Vol2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300567",
+        "item_base_name": "Soundway presents The Original Sound of Cumbia",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1453",
+        "item_base_name": "A Night At The Opera 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16180721",
+        "item_base_name": "Stormtroopers In Stilettos",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299290",
+        "item_base_name": "Kurzgeschichten Das Hörbuch",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299616",
+        "item_base_name": "Various Artists Mega Dance Package",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "758066",
+        "item_base_name": "News Of The World 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14397792",
+        "item_base_name": "Queen In The 1980s",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250355",
+        "item_base_name": "Shm a Night at THE OPERA JAP IMP",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17081527",
+        "item_base_name": "Flash Gordon Soundtrack Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "24514278",
+        "item_base_name": "Shm a Night At The Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011137",
+        "item_base_name": "Story Of Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16839872",
+        "item_base_name": "A Night At jap Card",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301444",
+        "item_base_name": "Les Grands Orchestres Du Tango Argentin",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864723",
+        "item_base_name": "Brian May Talks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21389197",
+        "item_base_name": "Taylor Swift X Posed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011116",
+        "item_base_name": "Crown Jewels =box=",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812173",
+        "item_base_name": "Queen Somebody to Love",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300140",
+        "item_base_name": "Cumbia Cumbia 1 & 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766152",
+        "item_base_name": "Miracle 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400398",
+        "item_base_name": "1991",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299117",
+        "item_base_name": "Various Artists Pinocchio",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "450687",
+        "item_base_name": "Shm Sheet Heart Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10252425",
+        "item_base_name": "A Night at Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17092716",
+        "item_base_name": "Sheer Heart Attack Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672599",
+        "item_base_name": "A Night At The Opera Deluxe Edition 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136609",
+        "item_base_name": "Rocks Dutch Picture Issue",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932296",
+        "item_base_name": "Flash Gordon Dlx 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051318",
+        "item_base_name": "Greatest Hits Russia",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21980055",
+        "item_base_name": "The Document",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011127",
+        "item_base_name": "Mercury Rising",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813278",
+        "item_base_name": "Maximum Queen Interview",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300621",
+        "item_base_name": "Svenska Dragspelsmästare",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16372959",
+        "item_base_name": "Rock Case",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299301",
+        "item_base_name": "Various Artists Paroles pour demain",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011097",
+        "item_base_name": "Limited Edition Book Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812114",
+        "item_base_name": "Niht at Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299711",
+        "item_base_name": "Now Dance Arabia 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "758067",
+        "item_base_name": "Night At The Opera 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14397793",
+        "item_base_name": "Somebody To Love",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21285404",
+        "item_base_name": "Shm hot Space",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "446232",
+        "item_base_name": "Shm Sheer Heart Attack",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10250451",
+        "item_base_name": "Platinum Collection Red",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17081667",
+        "item_base_name": "Rocks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "24520110",
+        "item_base_name": "Flash gordon – soundtrack",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "212846",
+        "item_base_name": "Queen 40th Anniversary Limited Edition Collectors",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011138",
+        "item_base_name": "Album",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16849281",
+        "item_base_name": "Classic Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301483",
+        "item_base_name": "Tesoros de Colección Polka Redova y Taconazo",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864724",
+        "item_base_name": "Roger Taylor Talks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813257",
+        "item_base_name": "Queen At The BBC",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300169",
+        "item_base_name": "Best of Ethiopiques Lâge dor de la musique",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400399",
+        "item_base_name": "A Complete Rock Case Study",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299119",
+        "item_base_name": "Various Artists Six histoires de Jules Verne",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "450688",
+        "item_base_name": "Shm Queen 2 Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10252705",
+        "item_base_name": "Day at the Races Ltd Jap",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17099581",
+        "item_base_name": "The Works Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672625",
+        "item_base_name": "A Day At The Races Deluxe Edition 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "11198435",
+        "item_base_name": "Vol 3 40th Anniversary Collectors Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136611",
+        "item_base_name": "Sheer Heart Attack 1974 Scandinavian pressed 13 track LP",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "433037",
+        "item_base_name": "LIVE IN RIO 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932440",
+        "item_base_name": "Live at Wembley Stadium 2dvd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051319",
+        "item_base_name": "Heaven For Everyone PROMO",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21980061",
+        "item_base_name": "X posed The Interview",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011128",
+        "item_base_name": "Fat Bottomed Girl",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813286",
+        "item_base_name": "Night at Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300858",
+        "item_base_name": "The Greatest Comedy Of All Time",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "788735",
+        "item_base_name": "Works 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299315",
+        "item_base_name": "Various Artists La petite sirène et autres co",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011098",
+        "item_base_name": "2011 Deluxe Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812120",
+        "item_base_name": "Game The",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299723",
+        "item_base_name": "St Patricks Day 100 Irish Songs",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "760833",
+        "item_base_name": "Absolute Greatest Ltd Ed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14397794",
+        "item_base_name": "We Thank You All Queen Docume",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21298850",
+        "item_base_name": "Rough Guide To Paris Lounge",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "446233",
+        "item_base_name": "Shm Queen Ii",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17083102",
+        "item_base_name": "Queen Singles Collection 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011139",
+        "item_base_name": "Freddy Sings 30 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16849282",
+        "item_base_name": "A Night At The Opera Classic Albums Sp Ed",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301507",
+        "item_base_name": "Rough Guide To Desert Blues",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011150",
+        "item_base_name": "Works 12 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864725",
+        "item_base_name": "John Deacon Talks",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21470950",
+        "item_base_name": "Queen 40 Limited Edition Collectors Box Set Vol 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "165035",
+        "item_base_name": "Live Killers 22 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813259",
+        "item_base_name": "Greatest Hits 1 And 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300183",
+        "item_base_name": "Various Artists Ethiopiques Vol 25 Modern",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "356",
+        "item_base_name": "A Kind Of Magic 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14401810",
+        "item_base_name": "Ogv",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299126",
+        "item_base_name": "Various Artists Benito Mussolini Igrandi dis",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "450689",
+        "item_base_name": "Shm Queen Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10259010",
+        "item_base_name": "Making Of a Night at the",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17103983",
+        "item_base_name": "The Miracle Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672706",
+        "item_base_name": "The Platinum Collection Greatest Hits 1 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "12703700",
+        "item_base_name": "Miracle the",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136612",
+        "item_base_name": "Sheer Heart Attack Original 1974 Danish 13 track LP",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932443",
+        "item_base_name": "A Kind of Magic 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051321",
+        "item_base_name": "Shop Display Flat",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21980062",
+        "item_base_name": "Live At The Beeb",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813287",
+        "item_base_name": "Orb USB Gift Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301078",
+        "item_base_name": "Zorba Forever",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1472",
+        "item_base_name": "A Day At The Races 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "799371",
+        "item_base_name": "Innuendo 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16655127",
+        "item_base_name": "Absolute Greatest HARD COVER BOOK",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299319",
+        "item_base_name": "Songs and Story The Lion King",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301530",
+        "item_base_name": "Zorbas Dance Chants et danses de Grèce",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "163302",
+        "item_base_name": "Deep Cuts Limited Release",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299787",
+        "item_base_name": "Rough Guide To Scandinavia",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "760834",
+        "item_base_name": "Day At The Races 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14398503",
+        "item_base_name": "Greatest Video Hits",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21298879",
+        "item_base_name": "Espana",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17086695",
+        "item_base_name": "Queen II Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011140",
+        "item_base_name": "Logo",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864715",
+        "item_base_name": "Queen On Fire Live At The Bowl",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5118080",
+        "item_base_name": "Perform a Tribute to Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864726",
+        "item_base_name": "In the 1980s",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21501334",
+        "item_base_name": "Chill Out Tribute To Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011119",
+        "item_base_name": "Flash Gordon 19 Tr",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813260",
+        "item_base_name": "Platinum Collection Greatest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300205",
+        "item_base_name": "Archivo Del Cante Flamenco",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "357",
+        "item_base_name": "Innuendo 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776418",
+        "item_base_name": "Live At Wembley",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14699676",
+        "item_base_name": "The Complete Works",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299131",
+        "item_base_name": "Indian Invasion Comedy",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "450691",
+        "item_base_name": "Shm A Night At Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672852",
+        "item_base_name": "Sheer Heart Attack Deluxe Edition 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136615",
+        "item_base_name": "The Game Authentic Record Award Presented to Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932444",
+        "item_base_name": "The Miracle 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051322",
+        "item_base_name": "We Will Rock You Video",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "22071920",
+        "item_base_name": "Jewels II",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011130",
+        "item_base_name": "Crest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813289",
+        "item_base_name": "The Making Of A Night At The Opera Classic Albums",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301094",
+        "item_base_name": "Various Artists Best of Dixieland",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1473",
+        "item_base_name": "A Night At The Opera 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "824048",
+        "item_base_name": "We are the Champions b w We will rock You",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812085",
+        "item_base_name": "The Document Interview & Documentary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301590",
+        "item_base_name": "German Patriotic Music",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011100",
+        "item_base_name": "We Are The Champions Yoyogi National Stadium Japan 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812142",
+        "item_base_name": "Works Limited Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299813",
+        "item_base_name": "Celtic Women",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "320",
+        "item_base_name": "Sheer Heart Attack 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "760835",
+        "item_base_name": "2011 Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14398736",
+        "item_base_name": "Classic Album The Making Of A Night At The Opera",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21298897",
+        "item_base_name": "Deutsche Schlager Vol 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "446381",
+        "item_base_name": "LiveRoadie Box S M",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17086753",
+        "item_base_name": "A Kind Of Magic Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011141",
+        "item_base_name": "Spring Tour",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864716",
+        "item_base_name": "Collection Live At Wembley Stadium",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136594",
+        "item_base_name": "Single Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864727",
+        "item_base_name": "Freddie Mercury Tribute Concert",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21576736",
+        "item_base_name": "Queen Live Rock in Rio",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "167473",
+        "item_base_name": "Highlander",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300282",
+        "item_base_name": "Various Artists Afro Beat Airways",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "358",
+        "item_base_name": "Made In Heaven 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776419",
+        "item_base_name": "Miracle 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "15689155",
+        "item_base_name": "News of the World Dlx 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299137",
+        "item_base_name": "Heitere Schweinfurter Schlachtplatte",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10259157",
+        "item_base_name": "Hd rock Montreal & Live a",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299327",
+        "item_base_name": "The Celtic Fiddle Of Liz Knowles",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "672853",
+        "item_base_name": "Greatest Hits 2 Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14392938",
+        "item_base_name": "Hungarian Rhapsody Queen Live In Budapest",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932445",
+        "item_base_name": "Innuendo 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17051323",
+        "item_base_name": "Wycliff Jean Another One Bites PROMO",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "23512003",
+        "item_base_name": "Platinum Collection Spec",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813294",
+        "item_base_name": "Rhapsody Music of Queen A Symphonic Spectacular",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301147",
+        "item_base_name": "Various Artists Maxi mariage 51 titres",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1858951",
+        "item_base_name": "I Want It All",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812091",
+        "item_base_name": "Queen Bohemian Champions Interviews",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864717",
+        "item_base_name": "Roots of Rock",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301627",
+        "item_base_name": "Early Klezmer",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812143",
+        "item_base_name": "Day At Races",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299911",
+        "item_base_name": "75 Beste Deutsche Schlager der 1960er Jahre",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14398737",
+        "item_base_name": "Hungarian Rhapsody 2cd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21298917",
+        "item_base_name": "Cajun Sweet Home Louisiana",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17086877",
+        "item_base_name": "Magic Tour Roadie Case Super Deluxe Box Set",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011142",
+        "item_base_name": "The Freddie Mercury Story",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136595",
+        "item_base_name": "Greatest Video Hits II",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5327067",
+        "item_base_name": "A Night At The Opera Classic Albums",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16913875",
+        "item_base_name": "Queen A Kind Of Magic Emi Record Mr227403",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21664631",
+        "item_base_name": "The Miracle Deluxe Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813266",
+        "item_base_name": "Karaoke Queen We Are The Champions",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300296",
+        "item_base_name": "French Dinner Party Classics",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "376",
+        "item_base_name": "The Miracle 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776420",
+        "item_base_name": "Night At The Opera 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "15689156",
+        "item_base_name": "Hot Space Dlx 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299148",
+        "item_base_name": "Hófehérke és a hét elgyötört törpe",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299337",
+        "item_base_name": "Les 100 plus grandes chansons françaises vol 1",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14393789",
+        "item_base_name": "Queen Rock Montreal And Live Aid",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17138350",
+        "item_base_name": "Too Much Love Will Kill You",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "437342",
+        "item_base_name": "Flash Gordon Ltd",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "9932446",
+        "item_base_name": "Made in Heaven 2011 Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17055395",
+        "item_base_name": "A Message From The Palace",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "23513885",
+        "item_base_name": "Innuendo Deluxe Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16813299",
+        "item_base_name": "We Will Rock You a Tribute to Queen",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301218",
+        "item_base_name": "World Classical 2010",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "1858952",
+        "item_base_name": "Queen ll",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864718",
+        "item_base_name": "Live in Japan 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301650",
+        "item_base_name": "Vive La France",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812144",
+        "item_base_name": "Singles Collection 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299983",
+        "item_base_name": "Chansons de Paris vol 8",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "766147",
+        "item_base_name": "A4 Hard Back Book",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14398738",
+        "item_base_name": "We Are The Champions Japan 1985",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21298926",
+        "item_base_name": "59 x Super Deutschland Olé Die Fußball Party",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17087019",
+        "item_base_name": "A Day At The Races Deluxe Edition",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "10270825",
+        "item_base_name": "Wembley Magic Tour Roadie Case",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17136600",
+        "item_base_name": "Interview Disc",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16913878",
+        "item_base_name": "Queen Queen Emi Record Mr206454",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21713926",
+        "item_base_name": "Queen Vol 3 Greatest Hits",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011122",
+        "item_base_name": "Greatest Hits us Version",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21300357",
+        "item_base_name": "Jacques Prevert Chansons & Poesies",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "776421",
+        "item_base_name": "Platinum Collection Greatest Hits 1 3",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "15689157",
+        "item_base_name": "Jazz Dlx 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299155",
+        "item_base_name": "Various Artists Prières de Saint François dA",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812098",
+        "item_base_name": "Queen We Will Rock You A Complete Rock Study",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299435",
+        "item_base_name": "Festival Of Irish Folk Music Volume 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "757730",
+        "item_base_name": "Day At The Races 2011 Rem Dlx",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14393808",
+        "item_base_name": "Days Of Our Lives Documentary",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17291769",
+        "item_base_name": "Queen We Will Rock U",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "442699",
+        "item_base_name": "Hungarian Rhapsody Live In Budapest Ltd BR",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17055396",
+        "item_base_name": "A Night At The Opera Japan",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "23579376",
+        "item_base_name": "Jewels Vol 2",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301356",
+        "item_base_name": "Japanese Traditional Music Gagaku & Buddhist C",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011144",
+        "item_base_name": "Under Review Freddie Merc",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16864719",
+        "item_base_name": "Under Review",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21301670",
+        "item_base_name": "Music Of The World Portugal",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "5011112",
+        "item_base_name": "Bohemian Champions Interviews",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "16812150",
+        "item_base_name": "1986 Live at Wembley Merch Box",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299995",
+        "item_base_name": "The Best 40 Favourite Irish Pub Songs",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "324",
+        "item_base_name": "The Game 2011",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "14400394",
+        "item_base_name": "Complete Review",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "21299007",
+        "item_base_name": "Discover Celtic Music Traditional",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "449152",
+        "item_base_name": "Hot Space Deluxe",
+        "item_type": "1"
+    },
+    {
+        "nCount": "1",
+        "artist_name": "Queen",
+        "artist_id": "10491",
+        "item_base_id": "17087021",
+        "item_base_name": "Queen 40 Deluxe Editions Box Set",
+        "item_type": "1"
+    }
+]

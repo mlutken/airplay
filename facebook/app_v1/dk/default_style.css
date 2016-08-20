@@ -1,0 +1,81 @@
+* { margin:0px;padding:0px; }
+body { font-family: 'Open Sans',sans-serif,Arial,Helvetica; font-size:12px; background-color:#E7EBF2; }
+a { color: #3B5998; }
+.list-album-price-value,
+.list-song-price-value { display:none; }
+.page-wrapper { float:left; width:810px; clear:both; }
+.content { float:left; /*height: 500px; overflow: scroll;*/ }
+.content .list-price-table { width:810px; border:0px; margin:0px; padding: 0px; }
+.content .list-price-table tbody td { padding: 4px 0px 4px 0px; }
+.spacer { line-height:5px; height:5px; width:100%; float:left; }
+#tabs { float: left; background-color: #EFEFEF; }
+#tabs .album, #tabs .song, #tabs .merchandise, #tabs .concert { float:left; width:201px; margin: 0px 1px 0px 0px; height:35px; line-height:35px; border-color:#EFEFEF; background-color: #DFDFDF; border-radius: 10px 10px 0px 0px; text-align:center; }
+#tabs .concert { margin:0px; width:204px; }
+#tabs a { color:#3B5998; font-size:160%; text-decoration:none; }
+#tabs .selected { background-color: #3B5998; color:#E7EBF2; }
+#tabs .selected a { color:#E7EBF2; }
+
+.record-store-top { float:left;width:100%;margin-top:0px; }
+.record-store-top .text { padding:0px 20px 0px 20px; }
+.record-store-top .icons { float:left;padding:10px 20px 0px 20px; }
+.record-store-top .icons .text { line-height:25px; padding:0px; }
+.record-store-top .icons .icon { float:left; width:60px; margin:auto; text-align:center; }
+
+.fb-comments { padding-top: 0px; text-align:center; width:100%; }
+
+.powered_by { float:left; height: 18px; line-height: 18px; text-align: right; width: 810px;}
+.powered_by .text { line-height: 13px; height: 13px; padding:0px 10px 0px 0px; }
+.powered_by .image { line-height: 13px; height: 13px; padding:0px 10px 0px 0px; }
+.powered_by a { color:#BBBBBB; text-decoration:none; }
+.powered_by img { margin: 0px; padding:5px 0px 0px 0px; }
+
+thead { width:100%; background-color: #3B5998; color: #FFFFFF; font-weight: bold; vertical-align: top; }
+thead .title { width:324px; font-size:120%; line-height:20px; height:40px; }
+thead .media_format, 
+thead .date_time { width:141px; font-size:120%; line-height:20px; height:40px; }
+thead .price { width:102px; font-size:120%; line-height:20px; height:40px; }
+thead .buy_at { width:303px; font-size:120%; line-height:20px; height:40px; }
+thead .streaming { width:183px; font-size:120%; line-height:20px; height:40px; }
+thead .venue { width:223px; font-size:120%; line-height:20px; height:40px; }
+thead .selected { color:#FFFFFF; }
+thead a { font-size:75%; text-decoration:none; color:#E7EBF2; }
+thead #media_formats_container { position: relative; }
+thead #currency_codes_container { position: relative; }
+thead #media_formats { float: left; left: 0px; position: absolute; top: 25px; background-color: #3B5998; border-radius: 5px; padding:5px; }
+thead #currency_codes { float: left; left: 0px; position: absolute; top: 25px; background-color: #3B5998; border-radius: 5px; padding:5px; }
+
+tbody .title { width:324px; font-size:115%; }
+tbody .media_format,
+tbody .date_time { width:151px; }
+tbody .price { width:102px; }
+tbody .buy_at { width:303px; }
+tbody .buy_at a {  font-weight: bold; text-decoration: underline; }
+tbody .streaming { width:183px; }
+tbody .venue { width:223px; }
+tbody .odd { background-color: #FFFFFF; }
+tbody .even { background-color: #EEEEEE; border-bottom: 1px solid #CCCCCC; }
+tbody .buy_at .text { float:left; width:88px; line-height: 28px; }
+tbody .buy_at .price { float:left; width:190px; line-height: 28px; }
+tbody .buy_at .icons { float:left; width:190px; overflow:hidden; height: 28px; }
+tbody .buy_at .text a { text-decoration:underline; font-weight:bold; }
+tbody .deezer { float: left;	height: 18px;	padding-right: 6px;	width: 32px; padding-top: 4px; display:none;}
+tbody .spotify, tbody .wimp, tbody .rdio, tbody .napster { float: left;	height: 18px; padding-right: 6px; width: 18px; padding-top: 4px; display:none; }
+tbody .itunes, tbody .amazon, tbody .cdon, tbody .sevendigital, tbody .emusic, tbody .imusic, tbody .platekompaniet, tbody .stereostudio { float: left;	height: 20px; padding-right: 5px; width: 55px; padding-top: 4px; display:none; }
+
+.header-intro-table { width:810px; border:0px; margin:0px; padding: 0px; }
+.header-intro-table .item_name { font-size:160%;	color: #3B5998; text-align:left; }
+.header-intro-table .item_text {	padding:0px 10px 0px 0px; }
+.header-intro-table .streaming_icons .spotify, .header-intro-table .streaming_icons .wimp, .header-intro-table .streaming_icons .rdio, .header-intro-table .streaming_icons .napster {	display:block; float: left; height: 25px; padding-right: 6px; width: 25px; padding-top: 4px; }
+.header-intro-table .streaming_icons .deezer {	display:block; float: left; height: 25px; padding-right: 6px; width: 45px; padding-top: 4px; }
+.header-intro-table .picture { width:800px; padding:5px;	text-align:left; vertical-align:top;}
+.header-intro-table .text {	width: 527px;	padding:20px;	text-align:left; vertical-align:top; font-size: 112%;}
+.header-intro-table .record_store_icons {	 padding:15px 0px 0px 0px;float:left; width: 527px; }
+.header-intro-table .record_store_icons img {	padding:0px 10px 0px 10px;}
+.header-intro-table .streaming_icons {	 padding:10px 0px 0px 0px; float:left; width: 527px; }
+.header-intro-table .streaming_icons img {	padding:0px 10px 0px 10px;}
+.header-intro-table .text .streaming_icons .label {	 float:left;	 line-height: 29px; padding-right:10px;color: #3B5998; font-size: 100%; width:70px; font-weight: bold;}
+.header-intro-table .text .record_store_icons .label {	 float:left; line-height: 20px; padding-right:10px;color: #3B5998; font-size: 100%; width:70px;font-weight: bold;}
+.header-intro-table .text .record_store_icons .link { line-height: 20px; padding-right:10px;color: #3B5998; font-size: 100%; float:left;}
+.header-intro-table .text .record_store_icons .link a {	 font-weight:bold;}
+.header-intro-table .text .record_store_icons .icon {	 line-height: 20px; float:left; }
+.header-intro-table .text .record_store_icons .icons {	/*float: left; */ height:30px; }

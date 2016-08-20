@@ -1,0 +1,10 @@
+/**
+ * @file
+ *   Style sheet for the Pralexa module.
+ */
+
+.weblinks-rank {
+  font-style: italic;
+  font-size: 89%;
+  margin-left: 2em;
+}
